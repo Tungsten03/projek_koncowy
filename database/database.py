@@ -18,21 +18,20 @@ class Station(Model):
         database = db
 
 
-class Sensor(Model):
-    id = AutoField()
-    stationId = CharField(null='False')
+class Sensor(Station):
+    id = CharField()
+    stationId = ForeignKeyField(Station, backref='sensors')
     paramName = CharField(null='False')
     paramFormula = CharField(null='False')
     paramCode = CharField(null='False')
     idParam = CharField()
 
-    class Meta:
-        database = db
 
 
 if __name__ == '__main__':
     db.connect()
     Station.drop_table()
+    Sensor.drop_table()
     db.create_tables([Station, Sensor])
 
     with open('station_list.json', 'r', encoding='utf-8') as f:
