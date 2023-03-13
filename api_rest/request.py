@@ -1,5 +1,4 @@
 import requests
-import json
 
 
 
@@ -9,7 +8,7 @@ __base_url = 'https://api.gios.gov.pl/pjp-api/rest/'
 
 def get_stations():
     '''
-    Request all stations list and save to json file
+    Request all stations list and return json
     :return: json
     '''
     headers = {'Accept': 'application/json'}
@@ -21,8 +20,8 @@ def get_stations():
     except requests.exceptions.HTTPError as error:
         print(error)
     else:
-        with open('station_list.json', 'w', encoding='utf-8') as file:
-            json.dump(response.json(), file, ensure_ascii=False)
+        return response.json()
+
 
 def get_station_sensors(station_id: int):
     '''
@@ -63,8 +62,10 @@ def get_sensor_values(sensor_id: int):
         if not response.json()['values']:
             print(f'Sensor number: {sensor_id} has no data')
         else:
-            return response.json()['values']
+            return response.json()
 
+#get_index() - trzeba popracować. Funkcja będzie pomocna przy graficznym odwzorowaniu jakosci
+#powietrza na mapie. WARTO PRZYSIASC!!!
 def get_index(station_id: int, param_key: str):
     '''
     Request an index level of measured parameter.
@@ -89,18 +90,5 @@ def get_index(station_id: int, param_key: str):
             except KeyError:
                 print('There is no such parameter') #Popracować nad alertem
 
-
-
-if __name__ == '__main__':
-
-    with open('station_list.json', 'r', encoding='utf-8') as f:
-        data = json.load(f)
-        sensors = []
-        with open('sensor_list.json', 'w', encoding='utf-8') as sens:
-            for station in data:
-                sensor = get_station_sensors(station['id'])
-                sensors.append(sensor)
-                print(station['id'])
-            json.dump(sensors, sens)
 
 
