@@ -58,11 +58,11 @@ def get_sensor_values(sensor_id: int):
         response.raise_for_status()
     except requests.exceptions.HTTPError as error:
         print(error)
+    # else:
+    #     if not response.json()['values']:
+    #         print(f'Sensor number: {sensor_id} has no data')
     else:
-        if not response.json()['values']:
-            print(f'Sensor number: {sensor_id} has no data')
-        else:
-            return response.json()
+        return response.json()
 
 #get_index() - trzeba popracować. Funkcja będzie pomocna przy graficznym odwzorowaniu jakosci
 #powietrza na mapie. WARTO PRZYSIASC!!!
