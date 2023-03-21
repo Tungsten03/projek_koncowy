@@ -36,7 +36,7 @@ def get_station_sensors(station_id: int):
     try:
         response.raise_for_status()
     except requests.exceptions.HTTPError as error:
-        print(error)
+        print(f'Wystapil blad {error}')
     else:
         if not response.json():
             print(f'Station with id number: {station_id} does not exist.')
@@ -58,9 +58,6 @@ def get_sensor_values(sensor_id: int):
         response.raise_for_status()
     except requests.exceptions.HTTPError as error:
         print(error)
-    # else:
-    #     if not response.json()['values']:
-    #         print(f'Sensor number: {sensor_id} has no data')
     else:
         return response.json()
 
@@ -90,5 +87,6 @@ def get_index(station_id: int, param_key: str):
             except KeyError:
                 print('There is no such parameter') #Popracować nad alertem
 
-
+if __name__ == '__main__':
+    get_station_sensors('asd')
 

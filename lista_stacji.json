@@ -3343,4 +3343,7 @@
         },
         "addressStreet": "J. Matejki"
     }
-]
+]    
+def pracuj(self, ile_h):
+    # wywołać pracuj z klasy bazowej
+    super().pracuj(ile_h)

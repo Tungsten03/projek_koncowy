@@ -1,6 +1,6 @@
 from peewee import *
 import database
-from api_rest import request as r
+from api_rest import api_request as r
 
 db = SqliteDatabase('stations.db', pragmas={'foreign_keys': 1})
 

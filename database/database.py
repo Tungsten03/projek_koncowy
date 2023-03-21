@@ -1,5 +1,6 @@
 from peewee import *
-from api_rest import request as r
+from api_rest import api_request as r
+from utility import utils
 
 db = SqliteDatabase('stations.db')
 
@@ -34,15 +35,8 @@ class Measurement(BaseModel):
     date = CharField()
     value = FloatField(null=True)
 
-if __name__ == '__main__':
-    db.connect()
-
-    db.drop_tables([Station, Sensor, Measurement])
-
-    db.create_tables([Station, Sensor, Measurement])
-
-
-    stations = r.get_stations()
+@utils.time_count
+def db_add_stations():
     print('Adding stations to db...')
     for i in stations:
         station = Station.create(id=i['id'],
@@ -58,6 +52,8 @@ if __name__ == '__main__':
         station.save()
     print('All stations added!')
 
+@utils.time_count
+def db_add_sensors():
     print('adding sensors...')
     for station in Station.select():
         request_sensor = r.get_station_sensors(station.id)
@@ -72,6 +68,8 @@ if __name__ == '__main__':
 
     print('sensors added!')
 
+@utils.time_count
+def db_add_measurements():
     print('taking measurements...')
     for sensor in Sensor.select():
         request_value = r.get_sensor_values(sensor.id)
@@ -80,4 +78,19 @@ if __name__ == '__main__':
             measurement.save()
 
     print('DB READY!')
+
+if __name__ == '__main__':
+    db.connect()
+
+    db.drop_tables([Station, Sensor, Measurement])
+
+    db.create_tables([Station, Sensor, Measurement])
+
+
+    stations = r.get_stations()
+
+    db_add_stations()
+    db_add_sensors()
+    db_add_measurements()
+
 
