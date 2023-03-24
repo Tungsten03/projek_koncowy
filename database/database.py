@@ -79,18 +79,35 @@ def db_add_measurements():
 
     print('DB READY!')
 
+@utils.time_count
+def db_add_sesnor_measurements(sensor_id):
+    request = r.get_sensor_values(sensor_id)
+    query = Measurement.select().join(Sensor).where(Sensor.id == 644)
+    i=0
+    for val in request['values']:
+        for measurement in query:
+            if measurement.date == val['date']:
+                pass
+            else:
+                measurement.save()
+                i+=1
+    print(f'{i} new measurements added to database')
+
+
 if __name__ == '__main__':
     db.connect()
 
-    db.drop_tables([Station, Sensor, Measurement])
+    # db.drop_tables([Station, Sensor, Measurement])
+    #
+    # db.create_tables([Station, Sensor, Measurement])
+    #
+    #
+    # stations = r.get_stations()
+    #
+    # db_add_stations()
+    # db_add_sensors()
+    # db_add_measurements()
 
-    db.create_tables([Station, Sensor, Measurement])
-
-
-    stations = r.get_stations()
-
-    db_add_stations()
-    db_add_sensors()
-    db_add_measurements()
+    db_add_sesnor_measurements(644)
 
 
