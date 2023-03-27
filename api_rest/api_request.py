@@ -9,6 +9,7 @@ __base_url = 'https://api.gios.gov.pl/pjp-api/rest/'
 def get_stations():
     '''
     Request all stations list and return json
+
     :return: json
     '''
     headers = {'Accept': 'application/json'}
