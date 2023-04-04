@@ -8,8 +8,9 @@ if __name__ == '__main__':
     # querry = database.Sensor.select().join(database.Station).where(database.Station.id == '190')
     # for _ in querry:
     #     print(_.paramName)
+    db.connect()
 
-    for sensor in start_database.Sensor.select():
-        request_value = r.get_sensor_values(sensor.id)
-        for _ in request_value['values']:
-            print(repr(_['value']))
+
+    stations =start_database.Station.select()
+    for station in stations:
+        print(station.stationName, station.id)

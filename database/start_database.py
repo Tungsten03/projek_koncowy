@@ -114,6 +114,9 @@ class Measurement(BaseModel):
 if __name__ == '__main__':
     db.connect()
 
+    stations = Station.select()
+    for station in stations:
+        print(station.stationName, station.id)
     # db.drop_tables([Station, Sensor, Measurement])
     #
     # db.create_tables([Station, Sensor, Measurement])

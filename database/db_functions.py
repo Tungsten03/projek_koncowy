@@ -3,27 +3,43 @@ import start_database as sdb
 from api_rest import api_request as r
 from utility import utils
 
+# Module contains functions to start and update database
+# Uses api_requests module
 
-@utils.time_count
+#Not yet sure if all functions needed.
+
+@utils.time_count #Time-measuring decorator.
 def db_add_stations():
+    """
+    Function that adds station records to database
+
+    :return:
+    """
     print('Adding stations to db...')
     stations = r.get_stations()
-    for i in stations:
-        station = sdb.Station.create(id=i['id'],
-                                 stationName=i['stationName'],
-                                 gegrLat=i['gegrLat'],
-                                 gegrLon=i['gegrLon'],
-                                 cityId=i['city']['id'],
-                                 cityName=i['city']['name'],
-                                 communeName=i['city']['commune']['communeName'],
-                                 districtName=i['city']['commune']['districtName'],
-                                 provinceName=i['city']['commune']['provinceName'],
-                                 addressStreet=i['addressStreet'])
-        station.save()
+    for station in stations:
+        record = sdb.Station.create(id=station['id'],
+                                    stationName=station['stationName'],
+                                    gegrLat=station['gegrLat'],
+                                    gegrLon=station['gegrLon'],
+                                    cityId=station['city']['id'],
+                                    cityName=station['city']['name'],
+                                    communeName=station['city']['commune']['communeName'],
+                                    districtName=station['city']['commune']['districtName'],
+                                    provinceName=station['city']['commune']['provinceName'],
+                                    addressStreet=station['addressStreet'])
+        record.save()
     print('All stations added!')
 
 @utils.time_count
 def db_add_sensors():
+    """
+    Function that adds sensor records to database
+
+    Saving data to db can take around 1 min.
+
+    :return:
+    """
     print('adding sensors...')
     for station in sdb.Station.select():
         request_sensor = r.get_station_sensors(station.id)
@@ -40,11 +56,20 @@ def db_add_sensors():
 
 @utils.time_count
 def db_add_measurements():
+    """
+    Function that adds ALL measurements from gios.api to database.
+    After that database will be fully completed.
+    WARNING!
+    Use with caution
+    Takes time (up to 4 min)
+    For a single sensor measurements use db_add_sensor_measurements()
+    :return:
+    """
     print('taking measurements...')
     for sensor in sdb.Sensor.select():
         request_value = r.get_sensor_values(sensor.id)
         for i in request_value['values']:
-            measurement = Measurement(sensorId=sensor.id, date=i['date'], value=i['value'])
+            measurement = sdb.Measurement(sensorId=sensor.id, date=i['date'], value=i['value'])
             measurement.save()
 
     print('DB READY!')
@@ -53,7 +78,7 @@ def db_add_measurements():
 def db_add_sensor_measurements(sensor_id):
     """
     Request all measurements for specified station id
-    and add record to db if measurement not in db.
+    adds a record to db if measurement not in db.
 
     Function will count and print a prompt of saved records quantity.
 
@@ -77,6 +102,55 @@ def db_add_sensor_measurements(sensor_id):
                 measurement.save()
                 i+=1
     print(f'{i} records added to database')
+@utils.time_count
+def update_stations():
+    """
+    Checks if station already exixst in database if not adds a new record to stations.db
+
+    :return:
+    """
+    request = r.get_stations()
+    i=0
+    for station in request:
+        existing_station = sdb.Station.get_or_none(stationName=station['stationName'])
+        if existing_station is None:
+            record = sdb.Station.create(id=station['id'],
+                                         stationName=station['stationName'],
+                                         gegrLat=station['gegrLat'],
+                                         gegrLon=station['gegrLon'],
+                                         cityId=station['city']['id'],
+                                         cityName=station['city']['name'],
+                                         communeName=station['city']['commune']['communeName'],
+                                         districtName=station['city']['commune']['districtName'],
+                                         provinceName=station['city']['commune']['provinceName'],
+                                         addressStreet=station['addressStreet'])
+            record.save()
+            i+=1
+    print(f'{i} stations added to database')
+@utils.time_count
+def update_sensors():
+    """
+    Checks if station already exixst in database if not adds a new record to stations.db
+
+    May take up to 90 seconds
+
+    :return:
+    """
+    i=0
+    for station in sdb.Station.select():
+        request = r.get_station_sensors(station.id)
+        for sensor in request:
+            existing_sensor = sdb.Sensor.get_or_none(id=sensor['id'])
+            if existing_sensor is None:
+                record = sdb.Sensor.create(id=sensor['id'],
+                                           stationId=sensor['stationId'],
+                                           paramName=sensor['param']['paramName'],
+                                           paramFormula=sensor['param']['paramFormula'],
+                                           paramCode=sensor['param']['paramCode'],
+                                           idParam=sensor['param']['idParam'])
+                record.save()
+                i+=1
+    print(f'{i} sensors added to database')
 
 if __name__ == '__main__':
-    db_add_sensor_measurements(644)
+    update_sensors()
