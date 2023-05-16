@@ -36,7 +36,7 @@ def get_station_sensors(station_id: int):
     try:
         response.raise_for_status()
     except requests.exceptions.HTTPError as error:
-        print(f'Wystapil blad {error}')
+        print(error)
     else:
         if not response.json():
             print(f'Station with id number: {station_id} does not exist.')

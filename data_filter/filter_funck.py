@@ -1,8 +1,8 @@
 from peewee import *
-from database import start_database
+from database import start_database as sdb
 from api_rest import api_request as r
 
-db = SqliteDatabase('stations.db', pragmas={'foreign_keys': 1})
+db = SqliteDatabase('stations.db')
 
 if __name__ == '__main__':
     # querry = database.Sensor.select().join(database.Station).where(database.Station.id == '190')
@@ -11,6 +11,6 @@ if __name__ == '__main__':
     db.connect()
 
 
-    stations =start_database.Station.select()
+    stations =sdb.Station.select()
     for station in stations:
         print(station.stationName, station.id)

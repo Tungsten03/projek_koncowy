@@ -1,0 +1,8 @@
+2023-05-16 23:23:13,788:INFO:fuction db_add_stations executed in 0.99 seconds
+2023-05-16 23:23:13,788:INFO:Function db_add_stations called with args: () and kwargs: {}
+2023-05-16 23:23:16,324:INFO:fuction db_add_sensors executed in 2.5 seconds
+2023-05-16 23:23:16,324:INFO:Function db_add_sensors called with args: (True,) and kwargs: {}
+2023-05-16 23:23:24,331:INFO:fuction db_add_measurements executed in 8.0 seconds
+2023-05-16 23:23:24,331:INFO:Function db_add_measurements called with args: (True,) and kwargs: {}
+2023-05-16 23:23:24,334:INFO:fuction list_stations executed in 0.0027 seconds
+2023-05-16 23:23:24,334:INFO:Function list_stations called with args: () and kwargs: {}

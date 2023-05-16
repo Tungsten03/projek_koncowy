@@ -1,6 +1,4 @@
 from peewee import *
-from api_rest import api_request as r
-from utility import utils
 
 
 db = SqliteDatabase('stations.db')
@@ -117,16 +115,6 @@ if __name__ == '__main__':
     stations = Station.select()
     for station in stations:
         print(station.stationName, station.id)
-    # db.drop_tables([Station, Sensor, Measurement])
-    #
-    # db.create_tables([Station, Sensor, Measurement])
-    #
-    #
-    #
-    #
-    # db_add_stations()
-    # db_add_sensors()
-    # db_add_measurements()
 
 
 
