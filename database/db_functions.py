@@ -1,14 +1,20 @@
 import requests
 from peewee import *
-import start_database as sdb
+# import start_database as sdb
+from . import start_database as sdb
 from api_rest import api_request as r
 from utility import utils
 from tqdm import tqdm
 from concurrent.futures import ThreadPoolExecutor, as_completed
+# from . import config
 from data_filter import data_analysis as da
 
-db = SqliteDatabase('stations.db')
 
+import tkinter as tk
+from tkinter import ttk
+
+
+db = SqliteDatabase('stations.db')
 
 
 @utils.log_exec_time #Time-measuring decorator.
@@ -35,6 +41,7 @@ def db_add_stations():
         # Reset Station Table in database
         db.drop_tables([sdb.Station])
         db.create_tables([sdb.Station])
+
         # Add data into db
         for station in tqdm(stations):
             record = sdb.Station.create(id=station['id'],

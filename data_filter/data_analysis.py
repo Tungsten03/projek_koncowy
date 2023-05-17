@@ -116,7 +116,7 @@ def plot_values2(sensor_id: int):
         plt.plot(data_encoded, regression_line, color='red')
 
         # X-axis setup for clearance
-        plt.xticks(np.arange(0, len(dates), 5), dates[::5], rotation=25)
+        plt.xticks(np.arange(0, len(dates), 5), dates[::5], rotation=90)
 
         # Adjust plot layout and title position
         plt.tight_layout()
