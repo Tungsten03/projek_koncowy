@@ -13,6 +13,7 @@ class EntryWithPlaceholder(tk.Entry):
         self.placeholder_color = color
         self.default_fg_color = self['fg']
 
+
         self.bind("<FocusIn>", self.foc_in)
         self.bind("<FocusOut>", self.foc_out)
 

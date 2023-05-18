@@ -173,6 +173,7 @@ def db_add_measurements(conection_flag: bool):
                 for i in values['values']:
                     measurement = sdb.Measurement(sensorId=sensor.id, date=i['date'], value=i['value'])
                     measurements.append(measurement)
+
         #batch_size = 200 is 3s faster than default (50)
             sdb.Measurement.bulk_create(measurements, batch_size=200)
 

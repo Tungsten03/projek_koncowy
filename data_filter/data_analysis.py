@@ -7,7 +7,7 @@ from scipy import stats
 
 query = sdb.Measurement.select()
 
-@utils.log_exec_time
+
 def highest_measurement(sensor: int):
     """
     Function takes sensor ID and print out highest value saved in database.
@@ -15,17 +15,15 @@ def highest_measurement(sensor: int):
     :return: str
     """
     try:
-        # Get measured parameter from database
-        param_measured = sdb.Sensor.select().where(sdb.Sensor.id == sensor).get()
         # Setup query and sort values descending
         query = sdb.Measurement.select().order_by(sdb.Measurement.value.desc()).where(sdb.Measurement.sensorId == sensor).get()
 
-        print(f'najwyższa wartość {param_measured.paramFormula} tej stacji: {round(query.value, 2)}')
-        print(f'data pomiaru: {query.date}')
+        max_result = {query.value: query.date}
+        return max_result
     except sdb.Sensor.DoesNotExist:
         print('podano niepoprawny id')
 
-@utils.log_exec_time
+
 def lowest_measurement(sensor: int):
     """
     Function takes sensor ID and print out the highest value saved in database.
@@ -33,15 +31,24 @@ def lowest_measurement(sensor: int):
     :return: str
     """
     try:
-        # Get measured parameter from database
-        param_measured = sdb.Sensor.select().where(sdb.Sensor.id == sensor).get()
         # Setup query and sort values descending
-        query = sdb.Measurement.select().order_by(sdb.Measurement.value.asc()).where(sdb.Measurement.sensorId == sensor).get()
-
-        print(f'najwyższa wartość {param_measured.paramFormula} tej stacji: {round(query.value, 2)}')
-        print(f'data pomiaru: {query.date}')
+        query = sdb.Measurement.select().order_by(sdb.Measurement.value.asc()).where(
+            (sdb.Measurement.value.is_null(False)) & (sdb.Measurement.sensorId == sensor)).get()
+        min_result = {query.value: query.date}
+        return min_result
     except sdb.Sensor.DoesNotExist:
         print('podano niepoprawny id')
+
+
+# def avg_measurement(sensor: int):
+#     query = sdb.Measurement.select(sdb.Measurement.value).where(
+#         (sdb.Measurement.value.is_null(False)) & (sdb.Measurement.sensorId == sensor))
+    # for measurement in query:
+    #     measurements.append(measurement)
+
+    # total = sum(measurements)
+    # average = total / len(measurements)
+
 
 
 
@@ -127,3 +134,9 @@ def plot_values2(sensor_id: int):
         plt.show()
     except (sdb.Station.DoesNotExist, sdb.Sensor.DoesNotExist):
         print('podano niepoprawny id')
+
+if __name__ == '__main__':
+    from peewee import *
+    db = SqliteDatabase('database/stations.db')
+    db.connect()
+    avg_measurement(744)

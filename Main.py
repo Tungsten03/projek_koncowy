@@ -7,6 +7,7 @@
 # User can analyze data blablablabla
 
 from utility import labels as lbl
+from peewee import *
 
 
 
@@ -33,6 +34,10 @@ def start_database_full():
         start.configure(bg='blue', state='disabled')
         status_bar.configure(text=lbl.status_bar_history, bg='blue', fg='white')
         root.update()
+def quit():
+    db = SqliteDatabase('database/stations.db')
+    db.close()
+    root.destroy()
 
 
 
@@ -59,7 +64,7 @@ start = tk.Button(root, text='START', command=start_database_full, bg='red', wid
 show_map = tk.Button(root, text=lbl.show_map, width=20)
 analyze = tk.Button(root, text='Analiza danych', command=analyze_full, width=20)
 
-kill = tk.Button(root, text='WYJŚCIE', command=root.destroy)
+kill = tk.Button(root, text='WYJŚCIE', command=quit)
 
 
 app_name.grid(column=0, columnspan=2, row=0)

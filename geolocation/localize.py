@@ -20,16 +20,16 @@ def get_coords(descritpion):
 
 
 @utils.log_exec_time
-def stations_in_range():
+def stations_in_range(user_place, range=10):
     """
     Function takes description of user location (City, street) / (place name e.g. "Uniwersytet Adama Mickiewicza") and prints a list of stations
     in given range (50km by default).
 
     :return: str
     """
-    #get data from user
-    user_place = input('Podaj opis swojej lokalizacji w formacie: Miasto, ulica lub: Nazwa własna miejsca')
-    range = float(input('Wskaż promień poszukiwań (w km)'))
+    # #get data from user
+    # user_place = input('Podaj opis swojej lokalizacji w formacie: Miasto, ulica lub: Nazwa własna miejsca')
+    # range = float(input('Wskaż promień poszukiwań (w km)'))
 
     #get user location
     user_location = geolocator.geocode(user_place)
@@ -42,12 +42,9 @@ def stations_in_range():
         station_location = (station.gegrLat, station.gegrLon)
         user_distance = geopy.distance.distance(user_coords, station_location)
         if user_distance <= range:
-            station_list.append({station.stationName: int(user_distance.km)})
+            station_list.append((station.id, station.stationName))
+    return station_list
 
-    #return results
-    if not station_list:
-        print('W podanym promieniu nie ma żadnej stacji.')
-    else: print(*station_list.keys, sep='\n')
 @utils.log_exec_time
 def stations_in_city():
     """
