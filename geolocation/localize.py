@@ -20,17 +20,15 @@ def get_coords(descritpion):
 
 
 @utils.log_exec_time
-def stations_in_range(user_place, range=10):
+def stations_in_range(user_place: str, range: int):
     """
     Function takes description of user location (City, street) / (place name e.g. "Uniwersytet Adama Mickiewicza") and prints a list of stations
     in given range (50km by default).
 
-    :return: str
+    :user_place: A description of localization given by user
+    :range: Search radius in km
+    :return: Station in given radius list
     """
-    # #get data from user
-    # user_place = input('Podaj opis swojej lokalizacji w formacie: Miasto, ulica lub: Nazwa własna miejsca')
-    # range = float(input('Wskaż promień poszukiwań (w km)'))
-
     #get user location
     user_location = geolocator.geocode(user_place)
     user_coords = (user_location.latitude, user_location.longitude)
@@ -48,36 +46,56 @@ def stations_in_range(user_place, range=10):
 @utils.log_exec_time
 def stations_in_city():
     """
-    Function asks for a city name and prints out a list of stations in it.
+    Asks the user for a city name and prints a list of stations in that city.
 
-    :return:
+    This function asks user to enter a city name and then retrieves a list of stations in that city from the
+    database. It filters the stations based on the provided city name and prints the names of the stations.
+
+    :return: None
     """
-    #Ask user for a city name
+    # Ask user for a city name
     city_to_find = input('Podaj nazwę miasta: ').capitalize()
     result = []
 
-    #set the query and filter stations
+    # Set the query and filter stations
     query = sdb.Station.select().where(sdb.Station.cityName == city_to_find)
     for station in query:
         result.append(station.stationName)
 
-    #print the result:
+    # Print the result:
     if not result:
         print(f'Nie można znaleźć stacji w: {city_to_find}')
     else: print(*result, sep='\n')
 
-def show_stations_on_map():
-
-    # Wczytanie danych z bazy danych
-    query = sdb.Station.select()
-    stations = pd.DataFrame(list(query.dicts()))
-    print(stations)
-
-    # Utworzenie obiektu ramki danych GeoDataFrame
-    geometry = gpd.points_from_xy(stations.gegrLon, stations.gegrLat)
-    stations_gdf = gpd.GeoDataFrame(stations, geometry=geometry)
-
-    # Wyświetlenie stacji na mapie
-    stations_gdf.plot()
+# def show_stations_on_map():
+#     geopandas.tools.geocode(boros.BoroName, provider='nominatim', user_agent="my-application")
+#     import osmnx as ox
+#
+#     # Pobranie grafu drogowego Polski z OpenStreetMap
+#     graph = ox.graph_from_place('Poland', network_type='all')
+#
+#
+#     plt.show()
+#
+#     # Wczytanie danych z bazy danych
+#     query = sdb.Station.select()
+#     stations = pd.DataFrame(list(query.dicts()))
+#     print(stations)
+#
+#     # Wczytanie pliku kształtu Polski
+#     poland_shapefile = 'path/to/poland_shapefile.shp'
+#     poland = gpd.read_file(poland_shapefile)
+#
+#     # Utworzenie obiektu ramki danych GeoDataFrame
+#     geometry = gpd.points_from_xy(stations.gegrLon, stations.gegrLat)
+#     stations_gdf = gpd.GeoDataFrame(stations, geometry=geometry)
+#
+#     # Wyświetlenie stacji na mapie
+#     ax = gdf.plot(edgecolor='black', linewidth=0.5)
+#     ax.set_axis_off()
+#
+#     stations_gdf.plot(ax=ax, markersize=5, color='red')
+#     plt.show()
 ## Funckja ma pobierac lokalizacje stacji pomiarowych w polsce i wyswietlac na mapie.
 ## uzycie bilblioteki geopandass
+

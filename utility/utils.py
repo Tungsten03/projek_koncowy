@@ -6,7 +6,26 @@ import tkinter as tk
 logging.basicConfig(filename='app.log', level=logging.INFO, format='%(asctime)s:%(levelname)s:%(message)s', filemode='w')
 
 class EntryWithPlaceholder(tk.Entry):
+    """
+    Custom entry widget with a placeholder.
+
+    This class inherits from `tk.Entry` and adds a placeholder functionality to the entry widget. It displays a
+    placeholder text when the widget is empty and loses focus, then removes the placeholder text when the widget gains
+    focus or receives user input.
+
+    :param master: The parent widget.
+    :param placeholder: The placeholder text to display.
+    :param color: The color of the placeholder text.
+    """
+
     def __init__(self, master=None, placeholder="PLACEHOLDER", color='grey'):
+        """
+        Initialize the EntryWithPlaceholder widget.
+
+        :param master: The parent widget.
+        :param placeholder: The placeholder text to display when the widget is empty.
+        :param color: The color of the placeholder text.
+        """
         super().__init__(master)
 
         self.placeholder = placeholder

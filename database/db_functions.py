@@ -6,18 +6,13 @@ from api_rest import api_request as r
 from utility import utils
 from tqdm import tqdm
 from concurrent.futures import ThreadPoolExecutor, as_completed
-# from . import config
-from data_filter import data_analysis as da
-
-
-import tkinter as tk
-from tkinter import ttk
-
+from datetime import datetime
+from geolocation import localize
 
 db = SqliteDatabase('stations.db')
 
 
-@utils.log_exec_time #Time-measuring decorator.
+@utils.log_exec_time
 def db_add_stations():
     """
     Function that adds station records to the database.
@@ -26,12 +21,11 @@ def db_add_stations():
     retrieves station data from an external API  using the `get_stations()` function from `request` module,
     then creates a table for the `Station` model and inserts the station records into the table.
 
-    NOTE: In case of connection exeptions it connects to database without dropping tables,
+    NOTE: In case of connection exceptions it connects to database without dropping tables,
     assuming that historical data will be available
 
     :return: None
     """
-    global conection_flag
     print('Adding stations to db...')
     try:
         # Request station list
@@ -64,6 +58,7 @@ def db_add_stations():
         print(f'Wystąpił problem z połączenien. Wczytywanie danych historycznych')
         conection_flag = False
         return conection_flag
+
 
 def get_sensor_values(sensor_id: int):
     """
@@ -105,14 +100,13 @@ def db_add_sensors(conection_flag: bool):
         db.create_tables([sdb.Sensor])
         # Setup multithreading and save result in dictionary
         with ThreadPoolExecutor() as executor:
-            #Retrieve station sensrors using API for each station in database
+            # Retrieve station sensrors using API for each station in database
             station_sensors = {
                 station.id: executor.submit(r.get_station_sensors, station.id)
                 for station in sdb.Station.select()
             }
 
-
-        #iterate through dictionary and save records in database
+            # iterate through dictionary and save records in database
             for station_id, future in tqdm(station_sensors.items()):
                 # Wait fot sensor data
                 request_sensor = future.result()
@@ -129,6 +123,8 @@ def db_add_sensors(conection_flag: bool):
         print('sensors added!')
     else:
         print(f'Wczytywanie historycznych danych sensorów')
+
+
 #
 
 @utils.log_exec_time
@@ -146,7 +142,7 @@ def db_add_measurements(conection_flag: bool):
     If the `connection_flag` is False, it means there is no connection to the API. Function will skip the measurement
     retrieval process and will not drop the table.
 
-    :param conection_flag: A boolean indicating whether to connect to the API and retrieve measurements. Default is True.
+    :param conection_flag: A boolean indicating whether to connect to the API and retrieve measurements.
     :return: None
     """
     # Check the conection
@@ -163,18 +159,22 @@ def db_add_measurements(conection_flag: bool):
             db.drop_tables([sdb.Measurement])
             db.create_tables([sdb.Measurement])
 
-        # Setup bulk saving
+            # Setup bulk saving
             measurements = []
-        # Iterate through futures dictionary and add them into database
-        # Bulk create is used for further optimalization
+            # Iterate through futures dictionary and add them into database
+            # Bulk create is used for further optimalization
             for future in tqdm(as_completed(futures), total=len(sdb.Sensor.select())):
                 values = future.result()
                 sensor = futures[future]
                 for i in values['values']:
-                    measurement = sdb.Measurement(sensorId=sensor.id, date=i['date'], value=i['value'])
+                    # Make date object and format date for clearence
+                    date = datetime.strptime(i['date'], "%Y-%m-%d %H:%M:%S")
+                    formatted_date = date.strftime("%d.%m.%y %H:%M")
+
+                    measurement = sdb.Measurement(sensorId=sensor.id, date=formatted_date, value=i['value'])
                     measurements.append(measurement)
 
-        #batch_size = 200 is 3s faster than default (50)
+            # batch_size = 200 is 3s faster than default (50)
             sdb.Measurement.bulk_create(measurements, batch_size=200)
 
         print('Baza danych gotowa!')
@@ -196,6 +196,7 @@ def list_stations():
     for station in sdb.Station.select().order_by(sdb.Station.cityName.asc()):
         print(f'{station.id}: {station.stationName}')
 
+
 @utils.log_exec_time
 def sensors_in_station(station: int):
     """
@@ -213,28 +214,30 @@ def sensors_in_station(station: int):
         print(f'{sensor.id}: {sensor.paramCode}')
 
 
-
-
 if __name__ == '__main__':
-    #clear log at start
 
+    # query = sdb.Measurement.select().order_by(sdb.Measurement.value).where(
+    #     (sdb.Measurement.value.is_null(False)) & (sdb.Measurement.sensorId == 297))
+    # for i in query:
+    #     print(i.value)
 
-
-    conection_flag = db_add_stations()
-    print(conection_flag)
-    db_add_sensors(conection_flag)
-    db_add_measurements(conection_flag)
-
+    # clear log at start
     #
-    # # print(localize.stations_in_range('Uniwersytet Adama Mickiewicza, Poznań'))
-    # localize.stations_in_city()
-    # update_stations()
-    list_stations()
-    # localize.show_stations_on_map()
-    choice = input('podaj id stacji')
-    sensors_in_station(choice)
-    values = input('podaj id sensora')
-    da.highest_measurement(values)
-    da.plot_values2(values)
-
-
+    #
+    #
+    # conection_flag = db_add_stations()
+    # print(conection_flag)
+    # db_add_sensors(conection_flag)
+    # db_add_measurements(conection_flag)
+    #
+    # #
+    # # # print(localize.stations_in_range('Uniwersytet Adama Mickiewicza, Poznań'))
+    # # localize.stations_in_city()
+    # # update_stations()
+    # list_stations()
+    localize.show_stations_on_map()
+    # choice = input('podaj id stacji')
+    # sensors_in_station(choice)
+    # values = input('podaj id sensora')
+    # da.highest_measurement(values)
+    # da.plot_values2(values)

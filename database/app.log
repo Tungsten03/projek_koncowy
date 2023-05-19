@@ -1,14 +1,1 @@
-2023-05-17 20:58:21,840:INFO:fuction db_add_stations executed in 1.015 seconds
-2023-05-17 20:58:21,840:INFO:Function db_add_stations called with args: () and kwargs: {}
-2023-05-17 20:58:24,433:INFO:fuction db_add_sensors executed in 2.594 seconds
-2023-05-17 20:58:24,433:INFO:Function db_add_sensors called with args: (True,) and kwargs: {}
-2023-05-17 20:58:32,803:INFO:fuction db_add_measurements executed in 8.37 seconds
-2023-05-17 20:58:32,803:INFO:Function db_add_measurements called with args: (True,) and kwargs: {}
-2023-05-17 20:58:32,806:INFO:fuction list_stations executed in 0.002345 seconds
-2023-05-17 20:58:32,806:INFO:Function list_stations called with args: () and kwargs: {}
-2023-05-17 20:58:37,895:INFO:fuction sensors_in_station executed in 0.0004599 seconds
-2023-05-17 20:58:37,895:INFO:Function sensors_in_station called with args: ('856',) and kwargs: {}
-2023-05-17 20:58:41,845:INFO:fuction highest_measurement executed in 0.001707 seconds
-2023-05-17 20:58:41,845:INFO:Function highest_measurement called with args: ('14917',) and kwargs: {}
-2023-05-17 20:59:04,572:INFO:fuction plot_values2 executed in 22.73 seconds
-2023-05-17 20:59:04,572:INFO:Function plot_values2 called with args: ('14917',) and kwargs: {}
+2023-05-20 00:56:12,551:ERROR:path/to/poland_shapefile.shp: No such file or directory

@@ -4,7 +4,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 from scipy import stats
 
-
 query = sdb.Measurement.select()
 
 
@@ -16,9 +15,10 @@ def highest_measurement(sensor: int):
     """
     try:
         # Setup query and sort values descending
-        query = sdb.Measurement.select().order_by(sdb.Measurement.value.desc()).where(sdb.Measurement.sensorId == sensor).get()
+        query = sdb.Measurement.select().order_by(sdb.Measurement.value.desc()).where(
+            sdb.Measurement.sensorId == sensor).get()
 
-        max_result = {query.value: query.date}
+        max_result = f'{query.value} d:{query.date}'
         return max_result
     except sdb.Sensor.DoesNotExist:
         print('podano niepoprawny id')
@@ -34,58 +34,26 @@ def lowest_measurement(sensor: int):
         # Setup query and sort values descending
         query = sdb.Measurement.select().order_by(sdb.Measurement.value.asc()).where(
             (sdb.Measurement.value.is_null(False)) & (sdb.Measurement.sensorId == sensor)).get()
-        min_result = {query.value: query.date}
+        min_result = f'{query.value} d:{query.date}'
         return min_result
     except sdb.Sensor.DoesNotExist:
         print('podano niepoprawny id')
 
 
-# def avg_measurement(sensor: int):
-#     query = sdb.Measurement.select(sdb.Measurement.value).where(
-#         (sdb.Measurement.value.is_null(False)) & (sdb.Measurement.sensorId == sensor))
-    # for measurement in query:
-    #     measurements.append(measurement)
+def avg_measurement(sensor: int):
+    pass
+    query = sdb.Measurement.select(sdb.Measurement.value).where(
+        (sdb.Measurement.value.is_null(False)) & (sdb.Measurement.sensorId == sensor))
 
-    # total = sum(measurements)
-    # average = total / len(measurements)
+    measurements = [measurement.value for measurement in query]
 
+    total = sum(measurements)
+    average = total / len(measurements)
+    return round(average, 3)
 
-
-
-
-
-def plot_values(sensor):
-
-    #Get data from database and filter them
-    dates = []
-    values = []
-
-
-    #measured sensor querry
-    sensor_measured = sdb.Sensor.select().where(sdb.Sensor.id == sensor).get()
-    #station data querry
-    station = sdb.Station.select().where(sdb.Station.id == sensor_measured.stationId).get()
-    #
-    query = sdb.Measurement.select().order_by(sdb.Measurement.date.asc()).where(sdb.Measurement.sensorId == sensor)
-    #iterate through database and save them in lists
-    for measurement in query:
-        dates.append(measurement.date)
-        values.append(measurement.value)
-
-    plt.scatter(dates, values)
-
-    # set the labels rotation for clearence
-    plt.xticks(np.arange(0, len(dates), 5), rotation=25)
-
-    #show the plot
-    plt.xlabel('Data i godzina pomiaru')
-    plt.ylabel('Zmierzona wartość')
-    plt.title(f'wykres: {sensor_measured.paramFormula} dla stacji: {station.stationName}')
-
-    plt.show()
 
 @utils.log_exec_time
-def plot_values2(sensor_id: int):
+def plot_values(sensor_id: int):
     """
     Plots the values measured by sensor of a sensor with a linear regression line.
 
@@ -102,7 +70,8 @@ def plot_values2(sensor_id: int):
 
         sensor_measured = sdb.Sensor.select().where(sdb.Sensor.id == sensor_id).get()
         station = sdb.Station.select().where(sdb.Station.id == sensor_measured.stationId).get()
-        query = sdb.Measurement.select().order_by(sdb.Measurement.date.asc()).where(sdb.Measurement.sensorId == sensor_id)
+        query = sdb.Measurement.select().order_by(sdb.Measurement.date.asc()).where(
+            sdb.Measurement.sensorId == sensor_id)
 
         for measurement in query:
             # Filter out unmeasured data
@@ -123,7 +92,25 @@ def plot_values2(sensor_id: int):
         plt.plot(data_encoded, regression_line, color='red')
 
         # X-axis setup for clearance
-        plt.xticks(np.arange(0, len(dates), 5), dates[::5], rotation=90)
+        plt.xticks(np.arange(0, len(dates), 5), dates[::5], rotation=-90)
+        # plt.grid(True, which='both')
+
+        # Get max and min values
+        max_val = max(values)
+        min_val = min(values)
+
+        # Make annotations on plot and format arrow
+        plt.annotate(f'Max: {max_val}', xy=(data_encoded[values.index(max_val)], max_val),
+                     xytext=(10, -20),
+                     textcoords='offset points',
+                     color='red',
+                     arrowprops=dict(arrowstyle='simple'))
+
+        plt.annotate(f'Min: {min_val}', xy=(data_encoded[values.index(min_val)], min_val),
+                     xytext=(10, 20),
+                     textcoords='offset points',
+                     color='red',
+                     arrowprops=dict(arrowstyle='simple'))
 
         # Adjust plot layout and title position
         plt.tight_layout()
@@ -135,8 +122,10 @@ def plot_values2(sensor_id: int):
     except (sdb.Station.DoesNotExist, sdb.Sensor.DoesNotExist):
         print('podano niepoprawny id')
 
+
 if __name__ == '__main__':
     from peewee import *
+
     db = SqliteDatabase('database/stations.db')
     db.connect()
     avg_measurement(744)
