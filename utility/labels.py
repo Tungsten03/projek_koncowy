@@ -13,7 +13,8 @@ status_prog = 'Zaciąganie danych proszę czekać'
 status_done = 'Baza danych zaktualizowana'
 status_history = 'Używasz historycznych danych'
 show_map = 'Mapa stacji'
-show_map_info = 'Moduł pozwala na wyświetlenie wszystkich stacji na mapie'
+show_map_info = """Moduł pozwala na wyświetlenie wszystkich stacji na mapie
+                Otworzy okno domyślnej przeglądarki"""
 analyze_info = 'Moduł pozwala na pełną analizę danych z bazy'
 
 popup_warn = """Wprowadzono błędne dane!

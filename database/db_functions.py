@@ -1,13 +1,11 @@
 import requests
 from peewee import *
-# import start_database as sdb
-from . import start_database as sdb
-from api_rest import api_request as r
+from . import start_database as sdb, api_request as r
 from utility import utils
 from tqdm import tqdm
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime
-from geolocation import localize
+from data_filter import localize
 
 db = SqliteDatabase('stations.db')
 
@@ -235,6 +233,7 @@ if __name__ == '__main__':
     # # localize.stations_in_city()
     # # update_stations()
     # list_stations()
+    db.connect()
     localize.show_stations_on_map()
     # choice = input('podaj id stacji')
     # sensors_in_station(choice)

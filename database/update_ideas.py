@@ -1,6 +1,6 @@
 import requests
 import start_database as sdb
-from api_rest import api_request as r
+from database import api_request as r
 from utility import utils
 from tqdm import tqdm
 

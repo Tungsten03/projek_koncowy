@@ -1,10 +1,12 @@
-2023-05-20 01:09:25,098:INFO:fuction db_add_stations executed in 1.107 seconds
-2023-05-20 01:09:25,098:INFO:Function db_add_stations called with args: () and kwargs: {}
-2023-05-20 01:09:27,479:INFO:fuction db_add_sensors executed in 2.381 seconds
-2023-05-20 01:09:27,479:INFO:Function db_add_sensors called with args: (True,) and kwargs: {}
-2023-05-20 01:09:35,373:INFO:fuction db_add_measurements executed in 7.894 seconds
-2023-05-20 01:09:35,374:INFO:Function db_add_measurements called with args: (True,) and kwargs: {}
-2023-05-20 01:09:38,944:INFO:fuction show_sensors executed in 0.002781 seconds
-2023-05-20 01:09:38,944:INFO:Function show_sensors called with args: () and kwargs: {}
-2023-05-20 01:09:42,996:INFO:fuction plot_values executed in 1.668 seconds
-2023-05-20 01:09:42,996:INFO:Function plot_values called with args: (19696,) and kwargs: {}
+2023-05-21 14:52:54,127:INFO:fuction db_add_stations executed in 1.191 seconds
+2023-05-21 14:52:54,127:INFO:Function db_add_stations called with args: () and kwargs: {}
+2023-05-21 14:52:56,821:INFO:fuction db_add_sensors executed in 2.694 seconds
+2023-05-21 14:52:56,821:INFO:Function db_add_sensors called with args: (True,) and kwargs: {}
+2023-05-21 14:53:06,558:INFO:fuction db_add_measurements executed in 9.737 seconds
+2023-05-21 14:53:06,559:INFO:Function db_add_measurements called with args: (True,) and kwargs: {}
+2023-05-21 14:53:07,938:INFO:fuction show_stations_on_map executed in 0.1536 seconds
+2023-05-21 14:53:07,939:INFO:Function show_stations_on_map called with args: () and kwargs: {}
+2023-05-21 14:53:12,408:INFO:fuction show_sensors executed in 0.002949 seconds
+2023-05-21 14:53:12,408:INFO:Function show_sensors called with args: () and kwargs: {}
+2023-05-21 14:53:14,721:INFO:fuction plot_values executed in 1.26 seconds
+2023-05-21 14:53:14,721:INFO:Function plot_values called with args: (19657,) and kwargs: {}

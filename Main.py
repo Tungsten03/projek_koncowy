@@ -11,6 +11,8 @@ from peewee import *
 import tkinter as tk
 from database import db_functions
 from analyze_full import analyze_full
+from data_filter.localize import show_stations_on_map
+
 
 
 def start_database_full():
@@ -76,7 +78,7 @@ instruction = tk.Label(root, text=lbl.start_menu, justify="center")
 
 # Create buttons
 start = tk.Button(root, text='START', command=start_database_full, bg='red', width=20)
-show_map = tk.Button(root, text=lbl.show_map, width=20)
+show_map = tk.Button(root, text=lbl.show_map, command=show_stations_on_map, width=20)
 analyze = tk.Button(root, text='Analiza danych', command=analyze_full, width=20)
 kill = tk.Button(root, text='WYJŚCIE', command=quit_app)
 

@@ -2,7 +2,7 @@ from utility import labels as lbl
 from utility import utils
 from database import start_database as sdb
 from data_filter.data_analysis import plot_values
-from geolocation import localize
+from data_filter import localize
 from data_filter.data_analysis import lowest_measurement, highest_measurement, avg_measurement
 import tkinter as tk
 
@@ -25,7 +25,8 @@ def analyze_full():
         choose_station.configure(state='normal')
         # Retrieve stations from the database and insert them into the listbox
         for i in sdb.Station.select().order_by(sdb.Station.cityName.asc()):
-            listbox.insert(tk.END, (i.id, i.stationName))
+            formatted_string = f'{i.id:<10} {i.stationName:<20}'
+            listbox.insert(tk.END, formatted_string)
 
     def update_entry(event):
         """
@@ -39,7 +40,7 @@ def analyze_full():
         """
         selected_item = listbox.get(listbox.curselection())
         if selected_item:
-            selected_id = selected_item[0]
+            selected_id = selected_item.split()[0]
             listbox_entry.delete(0, tk.END)
             listbox_entry.insert(tk.END, selected_id)
         else:
@@ -89,7 +90,8 @@ def analyze_full():
             listbox.delete(0, tk.END)
             # Populate the listbox
             for sensor in query:
-                listbox.insert(tk.END, (sensor.id, sensor.paramCode))
+                formatted_string = f'{sensor.id:<10} {sensor.paramFormula:<20}'
+                listbox.insert(tk.END, formatted_string)
             # Switch the buttons to proper state
             calculate.configure(state='normal')
             plot_data.configure(state='normal')
@@ -131,7 +133,8 @@ def analyze_full():
             # Prepare station dictionary and populate listbox
             station_dict = localize.stations_in_range(user_place, user_range)
             for key, value in station_dict:
-                listbox.insert(tk.END, (key, value))
+                formatted_string = f'{key:<10} {value:<20}'
+                listbox.insert(tk.END, formatted_string)
             #
             calculate.configure(state='disabled')
             plot_data.configure(state='disabled')
@@ -193,7 +196,7 @@ def analyze_full():
     in_range = tk.Button(root, text='W zasięgu', command=show_in_range, width=15)
     choose_station = tk.Button(root, text='Wybierz stacje', command=show_sensors, width=20)
 
-    #Setup Entry widgets with placeholders
+    # Setup Entry widgets with placeholders
     station_info = utils.EntryWithPlaceholder(root, 'Opis lokacji')
     entry_range = utils.EntryWithPlaceholder(root, 'Promień [km]')
     plot_data = tk.Button(root, text='Wykres', command=make_plot, width=20)
@@ -201,7 +204,7 @@ def analyze_full():
     listbox_entry = utils.EntryWithPlaceholder(root, 'Aktywny wybór', 'red')
 
     # Setup listbox
-    listbox = tk.Listbox(root, width=400)
+    listbox = tk.Listbox(root, width=400, font='Courier')
     scrollbar = tk.Scrollbar(listbox, orient='vertical', command=listbox.yview)
     listbox.config(yscrollcommand=scrollbar.set, height=40)
     scrollbar.pack(side='right', fill='y')
@@ -238,7 +241,8 @@ def analyze_full():
 
     # Fill listbox with stations at start
     for station in sdb.Station.select().order_by(sdb.Station.cityName.asc()):
-        listbox.insert(tk.END, (station.id, station.stationName))
+        formatted_string = f'{station.id:<10} {station.stationName:<20}'
+        listbox.insert(tk.END, formatted_string)
 
     # Set column and row weights
     root.columnconfigure(0, weight=1)
