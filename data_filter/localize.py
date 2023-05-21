@@ -1,3 +1,18 @@
+"""
+Module for Geographic Operations and Visualization.
+
+This module provides functions for geolocation operations and visualization of station data on a map.
+
+Functions:
+
+    get_coords(description: str) -> Tuple: Retrieves the latitude and longitude coordinates
+    of a given location description.
+    stations_in_range(user_place: str, range: int) -> List: Retrieves a list of stations within
+    a given range (in km) from a user-defined location.
+    stations_in_city(): Asks the user for a city name and prints a list of stations in that city.
+    show_stations_on_map(): Retrieves station data from the database and displays them on a map.
+"""
+
 import geopy.distance
 from geopy import geocoders
 from database import start_database as sdb
@@ -21,14 +36,15 @@ def get_coords(descritpion):
 
 
 @utils.log_exec_time
-def stations_in_range(user_place: str, range: int):
+def stations_in_range(user_place: str, range: int) -> list[tuple[int, str]]:
     """
     Function takes description of user location (City, street) / (place name e.g. "Uniwersytet Adama Mickiewicza") and prints a list of stations
     in given range (50km by default).
 
     :user_place: A description of localization given by user
-    :range: Search radius in km
-    :return: Station in given radius list
+    :range: Search radius in kilometers
+    :return: A list of tuples representing the stations within the specified range. Each tuple contains the station ID
+             and station name.
     """
     #get user location
     user_location = geolocator.geocode(user_place)
@@ -45,7 +61,7 @@ def stations_in_range(user_place: str, range: int):
     return station_list
 
 @utils.log_exec_time
-def stations_in_city():
+def stations_in_city() -> None:
     """
     Asks the user for a city name and prints a list of stations in that city.
 
@@ -69,7 +85,7 @@ def stations_in_city():
     else: print(*result, sep='\n')
 
 @utils.log_exec_time
-def show_stations_on_map():
+def show_stations_on_map() -> None:
     """
     Function retrieves data from the database and displays them on map.
 

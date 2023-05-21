@@ -1,9 +1,21 @@
+"""
+Functions for Retrieving Data from GIOS API.
+
+This module contains functions to request data from the GIOS API and return responses in JSON format.
+
+Functions:
+
+    get_stations(): Requests a list of all stations from the GIOS API.
+    get_station_sensors(station_id): Requests all sensors for a specific station from the GIOS API.
+    get_sensor_values(sensor_id): Requests collected data values for a specific sensor ID from the GIOS API.
+"""
+
 import requests
 
 __base_url = 'https://api.gios.gov.pl/pjp-api/rest/'
 
 
-def get_stations():
+def get_stations() -> dict:
     """
     Request list of all stations
 
@@ -27,7 +39,7 @@ def get_stations():
         return response.json()
 
 
-def get_station_sensors(station_id: int):
+def get_station_sensors(station_id: int) -> dict:
     """
     Request all sensors fora specific station
 
@@ -54,7 +66,7 @@ def get_station_sensors(station_id: int):
             return response.json()
 
 
-def get_sensor_values(sensor_id: int):
+def get_sensor_values(sensor_id: int) -> dict:
     """
       Request collected data values for a specific sensor ID.
 
@@ -77,31 +89,3 @@ def get_sensor_values(sensor_id: int):
     else:
         return response.json()
 
-# get_index() - trzeba popracować. Funkcja będzie pomocna przy graficznym odwzorowaniu jakosci
-# powietrza na mapie. WARTO PRZYSIASC!!!
-# def get_index(station_id: int, param_key: str):
-#     '''
-#     Retrieves sensor values from the GIOS API for a specific sensor.
-#
-#     This function takes a sensor ID as input and uses it to request sensor values from the GIOS API. The retrieved
-#     values are then returned.
-#
-#     :param sensor_id: An integer representing the ID of the sensor.
-#     :return: The sensor values retrieved from the API.
-#     '''
-#     headers = {'Accept': 'application/json'}
-#
-#     url = f'{__base_url}aqindex/getIndex/{station_id}'
-#     response = requests.get(url=url, headers=headers)
-#     try:
-#         response.raise_for_status()
-#     except requests.exceptions.HTTPError as error:
-#         print(error)
-#     else:
-#         if not response.json():
-#             print(f'iii')
-#         else:
-#             try:
-#                 print(response.json()[f'{param_key}IndexLevel']['indexLevelName'])
-#             except KeyError:
-#                 print('There is no such parameter')

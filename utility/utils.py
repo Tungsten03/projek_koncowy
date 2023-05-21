@@ -1,3 +1,13 @@
+"""
+Module containing utility functions and classes.
+
+This module provides various utility functions and classes that can be used in other parts of the application.
+
+Functions:
+    log_exec_time(f): A decorator that logs the execution time of a function and any exceptions that occur.
+    EntryWithPlaceholder: A custom entry widget with a placeholder.
+"""
+
 from functools import wraps
 import time
 import logging

@@ -1,3 +1,18 @@
+"""
+This module provides a graphical user interface (GUI) for analyzing air quality data.
+It allows users to view stations, retrieve sensor data, calculate statistics, and plot data.
+
+Functions:
+
+    refresh_stations: Lists stations in the listbox.
+    update_entry: Updates the entry widget with the selected ID from the listbox.
+    calculate_data: Calculates and displays data based on the selected sensor ID.
+    show_sensors: Displays the sensors for the selected station.
+    make_plot: Displays a plot for the selected sensor ID.
+    show_in_range: Displays stations within a specified range from a user-defined place.
+    show_help: Displays a help popup window with instructions.
+"""
+
 from utility import labels as lbl
 from utility import utils
 from database import start_database as sdb

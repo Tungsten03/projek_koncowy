@@ -1,3 +1,19 @@
+"""
+SQLite Database Functions for Setting up the Database.
+
+This module contains functions to set up the SQLite database. It includes functions to add stations, sensors,
+and measurements to the database.
+
+Functions:
+
+    db_add_stations(): Function that adds station records to the database.
+    get_sensor_values(sensor_id): Retrieves sensor values from the GIOS API for a specific sensor.
+    db_add_sensors(conection_flag): Requests station sensors from an API and adds them to the database.
+    db_add_measurements(conection_flag): Adds measurements from the GIOS API to the database for all sensors.
+    list_stations(): Prints out all stations saved in the database.
+    sensors_in_station(station): Prints out all sensors for a given station ID.
+"""
+
 import requests
 from peewee import *
 from . import start_database as sdb, api_request as r
@@ -5,13 +21,13 @@ from utility import utils
 from tqdm import tqdm
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime
-from data_filter import localize
+
 
 db = SqliteDatabase('stations.db')
 
 
 @utils.log_exec_time
-def db_add_stations():
+def db_add_stations() -> bool:
     """
     Function that adds station records to the database.
 
@@ -19,10 +35,10 @@ def db_add_stations():
     retrieves station data from an external API  using the `get_stations()` function from `request` module,
     then creates a table for the `Station` model and inserts the station records into the table.
 
-    NOTE: In case of connection exceptions it connects to database without dropping tables,
+    In case of connection exceptions it connects to database without dropping tables,
     assuming that historical data will be available
 
-    :return: None
+    :return: A boolean flag indicating the success of adding stations to the database.
     """
     print('Adding stations to db...')
     try:
@@ -58,7 +74,7 @@ def db_add_stations():
         return conection_flag
 
 
-def get_sensor_values(sensor_id: int):
+def get_sensor_values(sensor_id: int) -> dict:
     """
         Retrieves sensor values from the GIOS API for a specific sensor.
 
@@ -75,7 +91,7 @@ def get_sensor_values(sensor_id: int):
 
 
 @utils.log_exec_time
-def db_add_sensors(conection_flag: bool):
+def db_add_sensors(conection_flag: bool) -> None:
     """
     Requests station sensors from an API and adds them to the database.
 
@@ -126,7 +142,7 @@ def db_add_sensors(conection_flag: bool):
 #
 
 @utils.log_exec_time
-def db_add_measurements(conection_flag: bool):
+def db_add_measurements(conection_flag: bool) -> None:
     """
     Adds measurements from the GIOS API to the database for all sensors.
 
@@ -182,7 +198,7 @@ def db_add_measurements(conection_flag: bool):
 
 
 @utils.log_exec_time
-def list_stations():
+def list_stations() -> None:
     """
     Prints out all stations saved in the database.
 
@@ -196,7 +212,7 @@ def list_stations():
 
 
 @utils.log_exec_time
-def sensors_in_station(station: int):
+def sensors_in_station(station: int) -> None:
     """
     Prints out all sensors for a given station ID.
 
@@ -210,33 +226,3 @@ def sensors_in_station(station: int):
 
     for sensor in query:
         print(f'{sensor.id}: {sensor.paramCode}')
-
-
-if __name__ == '__main__':
-
-    # query = sdb.Measurement.select().order_by(sdb.Measurement.value).where(
-    #     (sdb.Measurement.value.is_null(False)) & (sdb.Measurement.sensorId == 297))
-    # for i in query:
-    #     print(i.value)
-
-    # clear log at start
-    #
-    #
-    #
-    # conection_flag = db_add_stations()
-    # print(conection_flag)
-    # db_add_sensors(conection_flag)
-    # db_add_measurements(conection_flag)
-    #
-    # #
-    # # # print(localize.stations_in_range('Uniwersytet Adama Mickiewicza, Poznań'))
-    # # localize.stations_in_city()
-    # # update_stations()
-    # list_stations()
-    db.connect()
-    localize.show_stations_on_map()
-    # choice = input('podaj id stacji')
-    # sensors_in_station(choice)
-    # values = input('podaj id sensora')
-    # da.highest_measurement(values)
-    # da.plot_values2(values)

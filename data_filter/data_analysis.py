@@ -1,3 +1,18 @@
+"""
+Module for Data Analysis of Measurement Values.
+
+This module provides functions for analyzing measurement values stored in the database. It includes functions to
+retrieve the highest and lowest measurement values, calculate the average measurement value, and plot the measurement
+values with a linear regression line.
+
+Functions:
+
+    highest_measurement(sensor: int) -> str: Retrieves the highest measurement value saved in the database for a given sensor ID.
+    lowest_measurement(sensor: int) -> str: Retrieves the lowest measurement value saved in the database for a given sensor ID.
+    avg_measurement(sensor: int) -> float: Calculates the average measurement value for a given sensor ID.
+    plot_values(sensor_id: int): Plots the measurement values with a linear regression line for a given sensor ID.
+"""
+
 from database import start_database as sdb
 from utility import utils
 import matplotlib.pyplot as plt
@@ -7,11 +22,16 @@ from scipy import stats
 query = sdb.Measurement.select()
 
 
-def highest_measurement(sensor: int):
+def highest_measurement(sensor: int) -> str:
     """
-    Function takes sensor ID and print out highest value saved in database.
-    :param sensor:
-    :return: str
+    Retrieve the highest value saved in the database for a given sensor ID.
+
+    This function takes a sensor ID as input and retrieves the highest value stored in the database for that sensor.
+    It sorts the values in descending order and returns the result as a string in the format "{value} d:{date}".
+
+    :param sensor: The ID of the sensor.
+    :return: The highest value as a string in the format "{value} d:{date}".
+    :raises sdb.Sensor.DoesNotExist: If the sensor ID does not exist in the database.
     """
     try:
         # Setup query and sort values descending
@@ -24,11 +44,16 @@ def highest_measurement(sensor: int):
         print('podano niepoprawny id')
 
 
-def lowest_measurement(sensor: int):
+def lowest_measurement(sensor: int) -> str:
     """
-    Function takes sensor ID and print out the highest value saved in database.
-    :param sensor:
-    :return: str
+    Retrieve the lowest value saved in the database for a given sensor ID.
+
+    This function takes a sensor ID as input and retrieves the lowest value stored in the database for that sensor.
+    It sorts the values in ascending order and returns the result as a string in the format "{value} d:{date}".
+
+    :param sensor: The ID of the sensor.
+    :return: The lowest value as a string in the format "{value} d:{date}".
+    :raises sdb.Sensor.DoesNotExist: If the sensor ID does not exist in the database.
     """
     try:
         # Setup query and sort values descending
@@ -40,8 +65,16 @@ def lowest_measurement(sensor: int):
         print('podano niepoprawny id')
 
 
-def avg_measurement(sensor: int):
-    pass
+def avg_measurement(sensor: int) -> float:
+    """
+    Calculate the average measurement value for a given sensor ID.
+
+    This function takes a sensor ID as input and calculates the average measurement value for that sensor.
+    It retrieves the measurements from the database, filters out the null values, and calculates the average.
+
+    :param sensor: The ID of the sensor.
+    :return: The average measurement value rounded to 3 decimal places.
+    """
     query = sdb.Measurement.select(sdb.Measurement.value).where(
         (sdb.Measurement.value.is_null(False)) & (sdb.Measurement.sensorId == sensor))
 
@@ -53,7 +86,7 @@ def avg_measurement(sensor: int):
 
 
 @utils.log_exec_time
-def plot_values(sensor_id: int):
+def plot_values(sensor_id: int) -> None:
     """
     Plots the values measured by sensor of a sensor with a linear regression line.
 

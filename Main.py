@@ -1,10 +1,22 @@
-"""----------------------------------KRAQEN-----------------------------------
--------------------------Kacper Rajewski Air Quality Environment-----------------------
 """
+Main application for requesting air quality data from the GIOS API and saving it to an SQLite database.
+The user can analyze the data and view it on a map.
 
-# Application requests air quality data from GIOS Api
-# Requested data is saved in sqlite3 database
-# User can analyze data blablablabla
+Functionality:
+
+    Populating the database with stations, sensors, and measurements from the GIOS API.
+    Analyzing the air quality data in new window using the analyze_full() function.
+    Displaying the stations on a map of Poland using the show_stations_on_map() function.
+
+Usage:
+
+    Click the "START" button to populate the database with stations, sensors, and measurements.
+    Click the "Mapa stacji" button to display the stations on a map of Poland.
+    Click the "Analiza danych" button to analyze the air quality data.
+    Click the "WYJŚCIE" button to exit the application.
+
+Author: Kacper Rajewski
+"""
 
 from utility import labels as lbl
 from peewee import *
@@ -15,7 +27,7 @@ from data_filter.localize import show_stations_on_map
 
 
 
-def start_database_full():
+def start_database_full() -> None:
     """
      Start the process of populating the database with stations, sensors, and measurements.
 
@@ -47,7 +59,7 @@ def start_database_full():
         root.update()
 
 
-def quit_app():
+def quit_app() -> None:
     """
     Quit the application by closing the database connection and destroying the root window.
 
