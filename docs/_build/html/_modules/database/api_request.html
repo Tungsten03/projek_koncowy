@@ -1,41 +1,90 @@
-
 <!DOCTYPE html>
-
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>database.api_request &#8212; KRAQEN 1.0.0 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css" />
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>database.api_request &mdash; KRAQEN 1.0.0 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
-   
-  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
 
-  </head><body>
-  
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
           
+          
+          <a href="../../index.html" class="icon icon-home">
+            KRAQEN
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">projek_koncowy</a></li>
+</ul>
 
-          <div class="body" role="main">
-            
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">KRAQEN</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">database.api_request</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
   <h1>Source code for database.api_request</h1><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Functions for Retrieving Data from GIOS API.</span>
+
+<span class="sd">This module contains functions to request data from the GIOS API and return responses in JSON format.</span>
+
+<span class="sd">Functions:</span>
+
+<span class="sd">    get_stations(): Requests a list of all stations from the GIOS API.</span>
+<span class="sd">    get_station_sensors(station_id): Requests all sensors for a specific station from the GIOS API.</span>
+<span class="sd">    get_sensor_values(sensor_id): Requests collected data values for a specific sensor ID from the GIOS API.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">__base_url</span> <span class="o">=</span> <span class="s1">&#39;https://api.gios.gov.pl/pjp-api/rest/&#39;</span>
 
 
-<div class="viewcode-block" id="get_stations"><a class="viewcode-back" href="../../database.html#database.api_request.get_stations">[docs]</a><span class="k">def</span> <span class="nf">get_stations</span><span class="p">():</span>
+<div class="viewcode-block" id="get_stations"><a class="viewcode-back" href="../../database.html#database.api_request.get_stations">[docs]</a><span class="k">def</span> <span class="nf">get_stations</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Request list of all stations</span>
 
@@ -59,7 +108,7 @@
         <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span></div>
 
 
-<div class="viewcode-block" id="get_station_sensors"><a class="viewcode-back" href="../../database.html#database.api_request.get_station_sensors">[docs]</a><span class="k">def</span> <span class="nf">get_station_sensors</span><span class="p">(</span><span class="n">station_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+<div class="viewcode-block" id="get_station_sensors"><a class="viewcode-back" href="../../database.html#database.api_request.get_station_sensors">[docs]</a><span class="k">def</span> <span class="nf">get_station_sensors</span><span class="p">(</span><span class="n">station_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Request all sensors fora specific station</span>
 
@@ -86,7 +135,7 @@
             <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span></div>
 
 
-<div class="viewcode-block" id="get_sensor_values"><a class="viewcode-back" href="../../database.html#database.api_request.get_sensor_values">[docs]</a><span class="k">def</span> <span class="nf">get_sensor_values</span><span class="p">(</span><span class="n">sensor_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+<div class="viewcode-block" id="get_sensor_values"><a class="viewcode-back" href="../../database.html#database.api_request.get_sensor_values">[docs]</a><span class="k">def</span> <span class="nf">get_sensor_values</span><span class="p">(</span><span class="n">sensor_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">      Request collected data values for a specific sensor ID.</span>
 
@@ -109,95 +158,33 @@
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span></div>
 
-<span class="c1"># get_index() - trzeba popracować. Funkcja będzie pomocna przy graficznym odwzorowaniu jakosci</span>
-<span class="c1"># powietrza na mapie. WARTO PRZYSIASC!!!</span>
-<span class="c1"># def get_index(station_id: int, param_key: str):</span>
-<span class="c1">#     &#39;&#39;&#39;</span>
-<span class="c1">#     Retrieves sensor values from the GIOS API for a specific sensor.</span>
-<span class="c1">#</span>
-<span class="c1">#     This function takes a sensor ID as input and uses it to request sensor values from the GIOS API. The retrieved</span>
-<span class="c1">#     values are then returned.</span>
-<span class="c1">#</span>
-<span class="c1">#     :param sensor_id: An integer representing the ID of the sensor.</span>
-<span class="c1">#     :return: The sensor values retrieved from the API.</span>
-<span class="c1">#     &#39;&#39;&#39;</span>
-<span class="c1">#     headers = {&#39;Accept&#39;: &#39;application/json&#39;}</span>
-<span class="c1">#</span>
-<span class="c1">#     url = f&#39;{__base_url}aqindex/getIndex/{station_id}&#39;</span>
-<span class="c1">#     response = requests.get(url=url, headers=headers)</span>
-<span class="c1">#     try:</span>
-<span class="c1">#         response.raise_for_status()</span>
-<span class="c1">#     except requests.exceptions.HTTPError as error:</span>
-<span class="c1">#         print(error)</span>
-<span class="c1">#     else:</span>
-<span class="c1">#         if not response.json():</span>
-<span class="c1">#             print(f&#39;iii&#39;)</span>
-<span class="c1">#         else:</span>
-<span class="c1">#             try:</span>
-<span class="c1">#                 print(response.json()[f&#39;{param_key}IndexLevel&#39;][&#39;indexLevelName&#39;])</span>
-<span class="c1">#             except KeyError:</span>
-<span class="c1">#                 print(&#39;There is no such parameter&#39;)</span>
 </pre></div>
 
+           </div>
           </div>
-          
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Kacper Rajewski.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="../../index.html">KRAQEN</a></h1>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
 
-
-
-
-
-
-
-
-<h3>Navigation</h3>
-
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="../../index.html">Documentation overview</a><ul>
-  <li><a href="../index.html">Module code</a><ul>
-  </ul></li>
-  </ul></li>
-</ul>
-</div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
-      <input type="submit" value="Go" />
-    </form>
-    </div>
-</div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
-
-
-
-
-
-
-
-
-        </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="footer">
-      &copy;2023, Kacper Rajewski.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.2.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
-      
-    </div>
-
-    
-
-    
-  </body>
+</body>
 </html>

@@ -28,13 +28,6 @@ database.start\_database module
    :undoc-members:
    :show-inheritance:
 
-database.update\_ideas module
------------------------------
-
-.. automodule:: database.update_ideas
-   :members:
-   :undoc-members:
-   :show-inheritance:
 
 Module contents
 ---------------

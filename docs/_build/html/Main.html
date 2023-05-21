@@ -83,11 +83,25 @@
              
   <section id="module-Main">
 <span id="main-module"></span><h1>Main module<a class="headerlink" href="#module-Main" title="Permalink to this heading"></a></h1>
-<p>———————————-KRAQEN———————————–
-————————-Kacper Rajewski Air Quality Environment———————–</p>
+<p>Main application for requesting air quality data from the GIOS API and saving it to an SQLite database.
+The user can analyze the data and view it on a map.</p>
+<p>Functionality:</p>
+<blockquote>
+<div><p>Populating the database with stations, sensors, and measurements from the GIOS API.
+Analyzing the air quality data in new window using the analyze_full() function.
+Displaying the stations on a map of Poland using the show_stations_on_map() function.</p>
+</div></blockquote>
+<p>Usage:</p>
+<blockquote>
+<div><p>Click the “START” button to populate the database with stations, sensors, and measurements.
+Click the “Mapa stacji” button to display the stations on a map of Poland.
+Click the “Analiza danych” button to analyze the air quality data.
+Click the “WYJŚCIE” button to exit the application.</p>
+</div></blockquote>
+<p>Author: Kacper Rajewski</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="Main.quit_app">
-<span class="sig-prename descclassname"><span class="pre">Main.</span></span><span class="sig-name descname"><span class="pre">quit_app</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Main.html#quit_app"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Main.quit_app" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">Main.</span></span><span class="sig-name descname"><span class="pre">quit_app</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/Main.html#quit_app"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Main.quit_app" title="Permalink to this definition"></a></dt>
 <dd><p>Quit the application by closing the database connection and destroying the root window.</p>
 <p>This function is called when the application needs to be closed. It closes the database connection by calling the
 <cite>close()</cite> method on the database object. It also terminates the application.</p>
@@ -100,7 +114,7 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="Main.start_database_full">
-<span class="sig-prename descclassname"><span class="pre">Main.</span></span><span class="sig-name descname"><span class="pre">start_database_full</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Main.html#start_database_full"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Main.start_database_full" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">Main.</span></span><span class="sig-name descname"><span class="pre">start_database_full</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/Main.html#start_database_full"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Main.start_database_full" title="Permalink to this definition"></a></dt>
 <dd><blockquote>
 <div><p>Start the process of populating the database with stations, sensors, and measurements.</p>
 </div></blockquote>

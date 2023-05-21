@@ -70,7 +70,6 @@
 <li class="toctree-l4"><a class="reference internal" href="#database.start_database.Station"><code class="docutils literal notranslate"><span class="pre">Station</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#database-update-ideas-module">database.update_ideas module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#module-database">Module contents</a></li>
 </ul>
 </li>
@@ -111,9 +110,17 @@
 </section>
 <section id="module-database.api_request">
 <span id="database-api-request-module"></span><h2>database.api_request module<a class="headerlink" href="#module-database.api_request" title="Permalink to this heading"></a></h2>
+<p>Functions for Retrieving Data from GIOS API.</p>
+<p>This module contains functions to request data from the GIOS API and return responses in JSON format.</p>
+<p>Functions:</p>
+<blockquote>
+<div><p>get_stations(): Requests a list of all stations from the GIOS API.
+get_station_sensors(station_id): Requests all sensors for a specific station from the GIOS API.
+get_sensor_values(sensor_id): Requests collected data values for a specific sensor ID from the GIOS API.</p>
+</div></blockquote>
 <dl class="py function">
 <dt class="sig sig-object py" id="database.api_request.get_sensor_values">
-<span class="sig-prename descclassname"><span class="pre">database.api_request.</span></span><span class="sig-name descname"><span class="pre">get_sensor_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sensor_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database/api_request.html#get_sensor_values"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database.api_request.get_sensor_values" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">database.api_request.</span></span><span class="sig-name descname"><span class="pre">get_sensor_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sensor_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference internal" href="_modules/database/api_request.html#get_sensor_values"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database.api_request.get_sensor_values" title="Permalink to this definition"></a></dt>
 <dd><p>Request collected data values for a specific sensor ID.</p>
 <p>This function sends a request to the GIOS API to retrieve collected data values for the specified sensor ID.
 It returns the response in JSON format.</p>
@@ -129,7 +136,7 @@ It returns the response in JSON format.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="database.api_request.get_station_sensors">
-<span class="sig-prename descclassname"><span class="pre">database.api_request.</span></span><span class="sig-name descname"><span class="pre">get_station_sensors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">station_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database/api_request.html#get_station_sensors"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database.api_request.get_station_sensors" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">database.api_request.</span></span><span class="sig-name descname"><span class="pre">get_station_sensors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">station_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference internal" href="_modules/database/api_request.html#get_station_sensors"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database.api_request.get_station_sensors" title="Permalink to this definition"></a></dt>
 <dd><p>Request all sensors fora specific station</p>
 <p>Function takes station ID as a parameterm, sends request do GIOS API and returns respond in JSON format</p>
 <dl class="field-list simple">
@@ -144,7 +151,7 @@ It returns the response in JSON format.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="database.api_request.get_stations">
-<span class="sig-prename descclassname"><span class="pre">database.api_request.</span></span><span class="sig-name descname"><span class="pre">get_stations</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/database/api_request.html#get_stations"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database.api_request.get_stations" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">database.api_request.</span></span><span class="sig-name descname"><span class="pre">get_stations</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference internal" href="_modules/database/api_request.html#get_stations"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database.api_request.get_stations" title="Permalink to this definition"></a></dt>
 <dd><p>Request list of all stations</p>
 <p>Function uses get method to request a list of stations from GIOS API and returns
 the response in JSON format.</p>
@@ -158,9 +165,21 @@ the response in JSON format.</p>
 </section>
 <section id="module-database.db_functions">
 <span id="database-db-functions-module"></span><h2>database.db_functions module<a class="headerlink" href="#module-database.db_functions" title="Permalink to this heading"></a></h2>
+<p>SQLite Database Functions for Setting up the Database.</p>
+<p>This module contains functions to set up the SQLite database. It includes functions to add stations, sensors,
+and measurements to the database.</p>
+<p>Functions:</p>
+<blockquote>
+<div><p>db_add_stations(): Function that adds station records to the database.
+get_sensor_values(sensor_id): Retrieves sensor values from the GIOS API for a specific sensor.
+db_add_sensors(conection_flag): Requests station sensors from an API and adds them to the database.
+db_add_measurements(conection_flag): Adds measurements from the GIOS API to the database for all sensors.
+list_stations(): Prints out all stations saved in the database.
+sensors_in_station(station): Prints out all sensors for a given station ID.</p>
+</div></blockquote>
 <dl class="py function">
 <dt class="sig sig-object py" id="database.db_functions.db_add_measurements">
-<span class="sig-prename descclassname"><span class="pre">database.db_functions.</span></span><span class="sig-name descname"><span class="pre">db_add_measurements</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conection_flag</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database/db_functions.html#db_add_measurements"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database.db_functions.db_add_measurements" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">database.db_functions.</span></span><span class="sig-name descname"><span class="pre">db_add_measurements</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conection_flag</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/database/db_functions.html#db_add_measurements"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database.db_functions.db_add_measurements" title="Permalink to this definition"></a></dt>
 <dd><p>Adds measurements from the GIOS API to the database for all sensors.</p>
 <p>This function retrieves sensor values from the GIOS API for each sensor in the database using a multithreaded
 approach. It then saves the measurements in the database using bulk create for optimal performance.</p>
@@ -181,7 +200,7 @@ retrieval process and will not drop the table.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="database.db_functions.db_add_sensors">
-<span class="sig-prename descclassname"><span class="pre">database.db_functions.</span></span><span class="sig-name descname"><span class="pre">db_add_sensors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conection_flag</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database/db_functions.html#db_add_sensors"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database.db_functions.db_add_sensors" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">database.db_functions.</span></span><span class="sig-name descname"><span class="pre">db_add_sensors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conection_flag</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/database/db_functions.html#db_add_sensors"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database.db_functions.db_add_sensors" title="Permalink to this definition"></a></dt>
 <dd><p>Requests station sensors from an API and adds them to the database.</p>
 <p>This function retrieves sensor data for each station in the database using a multithreaded approach. It makes
 concurrent API requests to fetch the sensor data and then saves the records in the database.</p>
@@ -198,23 +217,23 @@ retrieval process and will not reset the database to make the historical data av
 
 <dl class="py function">
 <dt class="sig sig-object py" id="database.db_functions.db_add_stations">
-<span class="sig-prename descclassname"><span class="pre">database.db_functions.</span></span><span class="sig-name descname"><span class="pre">db_add_stations</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/database/db_functions.html#db_add_stations"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database.db_functions.db_add_stations" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">database.db_functions.</span></span><span class="sig-name descname"><span class="pre">db_add_stations</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/database/db_functions.html#db_add_stations"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database.db_functions.db_add_stations" title="Permalink to this definition"></a></dt>
 <dd><p>Function that adds station records to the database.</p>
 <p>The function, sets the connection to sqlite3 database ‘stations.db’,
 retrieves station data from an external API  using the <cite>get_stations()</cite> function from <cite>request</cite> module,
 then creates a table for the <cite>Station</cite> model and inserts the station records into the table.</p>
-<p>NOTE: In case of connection exceptions it connects to database without dropping tables,
+<p>In case of connection exceptions it connects to database without dropping tables,
 assuming that historical data will be available</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>None</p>
+<dd class="field-odd"><p>A boolean flag indicating the success of adding stations to the database.</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="database.db_functions.get_sensor_values">
-<span class="sig-prename descclassname"><span class="pre">database.db_functions.</span></span><span class="sig-name descname"><span class="pre">get_sensor_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sensor_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database/db_functions.html#get_sensor_values"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database.db_functions.get_sensor_values" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">database.db_functions.</span></span><span class="sig-name descname"><span class="pre">get_sensor_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sensor_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference internal" href="_modules/database/db_functions.html#get_sensor_values"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database.db_functions.get_sensor_values" title="Permalink to this definition"></a></dt>
 <dd><p>Retrieves sensor values from the GIOS API for a specific sensor.</p>
 <p>This function takes a sensor ID as input and uses it to request sensor values from the GIOS API. The retrieved
 values are then returned.</p>
@@ -232,7 +251,7 @@ for ‘db_add_sensor’ and ‘db_add_measurements’ functions.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="database.db_functions.list_stations">
-<span class="sig-prename descclassname"><span class="pre">database.db_functions.</span></span><span class="sig-name descname"><span class="pre">list_stations</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/database/db_functions.html#list_stations"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database.db_functions.list_stations" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">database.db_functions.</span></span><span class="sig-name descname"><span class="pre">list_stations</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/database/db_functions.html#list_stations"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database.db_functions.list_stations" title="Permalink to this definition"></a></dt>
 <dd><p>Prints out all stations saved in the database.</p>
 <p>This function retrieves all stations from the database and prints their IDs and names in ascending order
 based on the city name.</p>
@@ -245,7 +264,7 @@ based on the city name.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="database.db_functions.sensors_in_station">
-<span class="sig-prename descclassname"><span class="pre">database.db_functions.</span></span><span class="sig-name descname"><span class="pre">sensors_in_station</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">station</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database/db_functions.html#sensors_in_station"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database.db_functions.sensors_in_station" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">database.db_functions.</span></span><span class="sig-name descname"><span class="pre">sensors_in_station</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">station</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/database/db_functions.html#sensors_in_station"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database.db_functions.sensors_in_station" title="Permalink to this definition"></a></dt>
 <dd><p>Prints out all sensors for a given station ID.</p>
 <p>This function retrieves all sensors associated with the provided station ID from the database
 and prints their IDs and parameter codes.</p>
@@ -262,6 +281,19 @@ and prints their IDs and parameter codes.</p>
 </section>
 <section id="module-database.start_database">
 <span id="database-start-database-module"></span><h2>database.start_database module<a class="headerlink" href="#module-database.start_database" title="Permalink to this heading"></a></h2>
+<p>SQLite Database Models using Peewee ORM.</p>
+<p>This module defines the database models for SQLite using the Peewee ORM.</p>
+<p>Classes:</p>
+<blockquote>
+<div><p>BaseModel: Base model class for Peewee models.
+Station: Represents a station in the database.
+Sensor: Represents a sensor in the database.
+Measurement: Represents a measurement in the database.</p>
+</div></blockquote>
+<p>Dependencies:</p>
+<blockquote>
+<div><p>Peewee: Python ORM for SQLite.</p>
+</div></blockquote>
 <dl class="py class">
 <dt class="sig sig-object py" id="database.start_database.BaseModel">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">database.start_database.</span></span><span class="sig-name descname"><span class="pre">BaseModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database/start_database.html#BaseModel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database.start_database.BaseModel" title="Permalink to this definition"></a></dt>
@@ -442,9 +474,6 @@ that correspond to the columns in the ‘station’ table in the database.</p>
 
 </dd></dl>
 
-</section>
-<section id="database-update-ideas-module">
-<h2>database.update_ideas module<a class="headerlink" href="#database-update-ideas-module" title="Permalink to this heading"></a></h2>
 </section>
 <section id="module-database">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-database" title="Permalink to this heading"></a></h2>
