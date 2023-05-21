@@ -1,0 +1,4353 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_0f457e6a6bd41333b57d06010f894db1 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_0f457e6a6bd41333b57d06010f894db1" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_0f457e6a6bd41333b57d06010f894db1 = L.map(
+                "map_0f457e6a6bd41333b57d06010f894db1",
+                {
+                    center: [52.2297, 19.0127],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 5,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_6f872b8cc9c73833747174397c7198c1 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+            var marker_4a056b4f5e80e4fd23e1e2c761969a42 = L.marker(
+                [50.100569, 20.122561],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_e58ee26fa445b361de3c5b6bf4203001 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fad68cfdd3b507ace6326f58c6554a1d = $(`<div id="html_fad68cfdd3b507ace6326f58c6554a1d" style="width: 100.0%; height: 100.0%;">[114, 'Kraków, os. Wadów']</div>`)[0];
+                popup_e58ee26fa445b361de3c5b6bf4203001.setContent(html_fad68cfdd3b507ace6326f58c6554a1d);
+            
+        
+
+        marker_4a056b4f5e80e4fd23e1e2c761969a42.bindPopup(popup_e58ee26fa445b361de3c5b6bf4203001)
+        ;
+
+        
+    
+    
+            var marker_be3a3d402cb7addbe9bad34c55d1f386 = L.marker(
+                [50.018253, 20.992578],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_7a240dc80f342575cfea5ea56295f12c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ed0a3e75425cb48693fde9c6721e0d6f = $(`<div id="html_ed0a3e75425cb48693fde9c6721e0d6f" style="width: 100.0%; height: 100.0%;">[117, 'Tarnów, Ks. Romana Sitko']</div>`)[0];
+                popup_7a240dc80f342575cfea5ea56295f12c.setContent(html_ed0a3e75425cb48693fde9c6721e0d6f);
+            
+        
+
+        marker_be3a3d402cb7addbe9bad34c55d1f386.bindPopup(popup_7a240dc80f342575cfea5ea56295f12c)
+        ;
+
+        
+    
+    
+            var marker_c6ea93285c56f2bf78f1388fc499d877 = L.marker(
+                [53.181394, 22.054381],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_561a247c88748c6ff08595f1dba287a3 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_01b0581c4086b50b4534be4d6db7185d = $(`<div id="html_01b0581c4086b50b4534be4d6db7185d" style="width: 100.0%; height: 100.0%;">[129, 'Łomża, Sikorskiego']</div>`)[0];
+                popup_561a247c88748c6ff08595f1dba287a3.setContent(html_01b0581c4086b50b4534be4d6db7185d);
+            
+        
+
+        marker_c6ea93285c56f2bf78f1388fc499d877.bindPopup(popup_561a247c88748c6ff08595f1dba287a3)
+        ;
+
+        
+    
+    
+            var marker_7509cd2db525372e070166393a014704 = L.marker(
+                [49.571731, 22.195892],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_84a424d2141d888935b7f8579f608707 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ca063988fbd7dca7b45e09ff8f3eca6a = $(`<div id="html_ca063988fbd7dca7b45e09ff8f3eca6a" style="width: 100.0%; height: 100.0%;">[52, 'Sanok, Sadowa']</div>`)[0];
+                popup_84a424d2141d888935b7f8579f608707.setContent(html_ca063988fbd7dca7b45e09ff8f3eca6a);
+            
+        
+
+        marker_7509cd2db525372e070166393a014704.bindPopup(popup_84a424d2141d888935b7f8579f608707)
+        ;
+
+        
+    
+    
+            var marker_5bc50c5638c7a430172bf7e73b064b93 = L.marker(
+                [50.010575, 19.949189],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_344fd0da0d16ff532075780bd2eaeeb0 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_752ed0d2ffd2e2102461ce5e887d661e = $(`<div id="html_752ed0d2ffd2e2102461ce5e887d661e" style="width: 100.0%; height: 100.0%;">[109, 'Kraków, Bujaka']</div>`)[0];
+                popup_344fd0da0d16ff532075780bd2eaeeb0.setContent(html_752ed0d2ffd2e2102461ce5e887d661e);
+            
+        
+
+        marker_5bc50c5638c7a430172bf7e73b064b93.bindPopup(popup_344fd0da0d16ff532075780bd2eaeeb0)
+        ;
+
+        
+    
+    
+            var marker_80bfe8b9a5ee97ec630376625683ef17 = L.marker(
+                [51.150391, 15.008175],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_76a3dc0af920b874c2f00aa6522fd2f5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_925b1dc892c63b956dc6c7a4da82d44e = $(`<div id="html_925b1dc892c63b956dc6c7a4da82d44e" style="width: 100.0%; height: 100.0%;">[11, 'Zgorzelec, Bohaterów Getta']</div>`)[0];
+                popup_76a3dc0af920b874c2f00aa6522fd2f5.setContent(html_925b1dc892c63b956dc6c7a4da82d44e);
+            
+        
+
+        marker_80bfe8b9a5ee97ec630376625683ef17.bindPopup(popup_76a3dc0af920b874c2f00aa6522fd2f5)
+        ;
+
+        
+    
+    
+            var marker_1fc9341f9755812eea6a820a66d77d60 = L.marker(
+                [50.398834, 16.513855],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_4c9d944db30be3bcffb9c5a45e556016 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_63ac77c28114e779e67abedac0a6571f = $(`<div id="html_63ac77c28114e779e67abedac0a6571f" style="width: 100.0%; height: 100.0%;">[16, 'Polanica-Zdrój al. Zwycięzców']</div>`)[0];
+                popup_4c9d944db30be3bcffb9c5a45e556016.setContent(html_63ac77c28114e779e67abedac0a6571f);
+            
+        
+
+        marker_1fc9341f9755812eea6a820a66d77d60.bindPopup(popup_4c9d944db30be3bcffb9c5a45e556016)
+        ;
+
+        
+    
+    
+            var marker_2b0b1e86993bcac5a7226ab6851edfe0 = L.marker(
+                [54.582515, 16.873625],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_c9d8c60915c3a238e6ab319bea58d138 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f1e9f86ef88ce8e205c656adddcc2d26 = $(`<div id="html_f1e9f86ef88ce8e205c656adddcc2d26" style="width: 100.0%; height: 100.0%;">[70, 'Ustka, Rybacka']</div>`)[0];
+                popup_c9d8c60915c3a238e6ab319bea58d138.setContent(html_f1e9f86ef88ce8e205c656adddcc2d26);
+            
+        
+
+        marker_2b0b1e86993bcac5a7226ab6851edfe0.bindPopup(popup_c9d8c60915c3a238e6ab319bea58d138)
+        ;
+
+        
+    
+    
+            var marker_90a970ba96ed4fac0e1553924cd0b980 = L.marker(
+                [50.264611, 18.975028],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_7ab6b74ce7ede8d0ac7ff928559e06d6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7872d7b63db56ae3e181c9612a434240 = $(`<div id="html_7872d7b63db56ae3e181c9612a434240" style="width: 100.0%; height: 100.0%;">[74, 'Katowice, Kossutha']</div>`)[0];
+                popup_7ab6b74ce7ede8d0ac7ff928559e06d6.setContent(html_7872d7b63db56ae3e181c9612a434240);
+            
+        
+
+        marker_90a970ba96ed4fac0e1553924cd0b980.bindPopup(popup_7ab6b74ce7ede8d0ac7ff928559e06d6)
+        ;
+
+        
+    
+    
+            var marker_38a44f7628cf356e775e6f14b52f0547 = L.marker(
+                [50.836389, 19.130111],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_289d5cb5057190a505d5836ce7242852 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0b9483ca8375a51d2db1f57cbbe24c2d = $(`<div id="html_0b9483ca8375a51d2db1f57cbbe24c2d" style="width: 100.0%; height: 100.0%;">[84, 'Częstochowa, Baczyńskiego']</div>`)[0];
+                popup_289d5cb5057190a505d5836ce7242852.setContent(html_0b9483ca8375a51d2db1f57cbbe24c2d);
+            
+        
+
+        marker_38a44f7628cf356e775e6f14b52f0547.bindPopup(popup_289d5cb5057190a505d5836ce7242852)
+        ;
+
+        
+    
+    
+            var marker_6140401f2b514a01814d6ac148233f67 = L.marker(
+                [54.560836, 18.493331],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_573ad148e97207289f9f3f10ac38eef5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5e193faca351d5cde88aa60638fe6650 = $(`<div id="html_5e193faca351d5cde88aa60638fe6650" style="width: 100.0%; height: 100.0%;">[134, 'Gdynia, Porębskiego']</div>`)[0];
+                popup_573ad148e97207289f9f3f10ac38eef5.setContent(html_5e193faca351d5cde88aa60638fe6650);
+            
+        
+
+        marker_6140401f2b514a01814d6ac148233f67.bindPopup(popup_573ad148e97207289f9f3f10ac38eef5)
+        ;
+
+        
+    
+    
+            var marker_d0467b945c111dda88c624448fea94f6 = L.marker(
+                [50.913433, 15.765608],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_961a7e44ffc9e1a2208cdee8d7920f49 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_17efd5ac71eb6a426be3a1dd089c4462 = $(`<div id="html_17efd5ac71eb6a426be3a1dd089c4462" style="width: 100.0%; height: 100.0%;">[9153, 'Jelenia Góra, Ogińskiego']</div>`)[0];
+                popup_961a7e44ffc9e1a2208cdee8d7920f49.setContent(html_17efd5ac71eb6a426be3a1dd089c4462);
+            
+        
+
+        marker_d0467b945c111dda88c624448fea94f6.bindPopup(popup_961a7e44ffc9e1a2208cdee8d7920f49)
+        ;
+
+        
+    
+    
+            var marker_2940f648166dfa80f1ae554281718821 = L.marker(
+                [51.304817, 17.071367],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_63dd1d1a16306ccee1a913c6733788c3 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6bef41fed4fc62b2a49b5828cdfea1ec = $(`<div id="html_6bef41fed4fc62b2a49b5828cdfea1ec" style="width: 100.0%; height: 100.0%;">[11934, 'Trzebnica, 3 Maja']</div>`)[0];
+                popup_63dd1d1a16306ccee1a913c6733788c3.setContent(html_6bef41fed4fc62b2a49b5828cdfea1ec);
+            
+        
+
+        marker_2940f648166dfa80f1ae554281718821.bindPopup(popup_63dd1d1a16306ccee1a913c6733788c3)
+        ;
+
+        
+    
+    
+            var marker_e23244b6313413f11f98ec9221e4fd85 = L.marker(
+                [51.113033, 15.585239],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_06c641fa6c51982a1d8e3380ff753d6d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0e671f47c54adc9ae05f8b398e6de25e = $(`<div id="html_0e671f47c54adc9ae05f8b398e6de25e" style="width: 100.0%; height: 100.0%;">[12054, 'Lwówek Śląski, al. Wojska Polskiego']</div>`)[0];
+                popup_06c641fa6c51982a1d8e3380ff753d6d.setContent(html_0e671f47c54adc9ae05f8b398e6de25e);
+            
+        
+
+        marker_e23244b6313413f11f98ec9221e4fd85.bindPopup(popup_06c641fa6c51982a1d8e3380ff753d6d)
+        ;
+
+        
+    
+    
+            var marker_3a4afd283963716de0e86961147dfb31 = L.marker(
+                [50.969633, 16.348469],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_c6e07132fa806c73a26ce4f677b8cc53 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fc674e45bceb8341073d9a253088a5e1 = $(`<div id="html_fc674e45bceb8341073d9a253088a5e1" style="width: 100.0%; height: 100.0%;">[12055, 'Strzegom']</div>`)[0];
+                popup_c6e07132fa806c73a26ce4f677b8cc53.setContent(html_fc674e45bceb8341073d9a253088a5e1);
+            
+        
+
+        marker_3a4afd283963716de0e86961147dfb31.bindPopup(popup_c6e07132fa806c73a26ce4f677b8cc53)
+        ;
+
+        
+    
+    
+            var marker_5ef65ed118f4a2e266bd7d1fceccc2cd = L.marker(
+                [50.398834, 16.513855],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_1d1c7071f8416006dc6e7c1a848de0cd = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3ebdb0f071a448bccecbca15ae20c22f = $(`<div id="html_3ebdb0f071a448bccecbca15ae20c22f" style="width: 100.0%; height: 100.0%;">[17478, 'Polanica-Zdrój al. Zwycięzców']</div>`)[0];
+                popup_1d1c7071f8416006dc6e7c1a848de0cd.setContent(html_3ebdb0f071a448bccecbca15ae20c22f);
+            
+        
+
+        marker_5ef65ed118f4a2e266bd7d1fceccc2cd.bindPopup(popup_1d1c7071f8416006dc6e7c1a848de0cd)
+        ;
+
+        
+    
+    
+            var marker_27c5f1fd9456acb1550ca1a2822d1381 = L.marker(
+                [49.831237, 19.923591],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_820fdc5112d29f051d6c41579e1a94ea = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_63eb61e5acdd360ab2c5a8c16f5e13ed = $(`<div id="html_63eb61e5acdd360ab2c5a8c16f5e13ed" style="width: 100.0%; height: 100.0%;">[156, 'Myślenice']</div>`)[0];
+                popup_820fdc5112d29f051d6c41579e1a94ea.setContent(html_63eb61e5acdd360ab2c5a8c16f5e13ed);
+            
+        
+
+        marker_27c5f1fd9456acb1550ca1a2822d1381.bindPopup(popup_820fdc5112d29f051d6c41579e1a94ea)
+        ;
+
+        
+    
+    
+            var marker_8a20d0d4f0a7b7ee0e60e8a3903c9042 = L.marker(
+                [52.219298, 21.004724],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_bce813ef81f6d01bab7506ac7bd6a9fb = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_27e96ff1a79d8cdbe72020a7e454abf3 = $(`<div id="html_27e96ff1a79d8cdbe72020a7e454abf3" style="width: 100.0%; height: 100.0%;">[158, 'Warszawa, al. Niepodległości']</div>`)[0];
+                popup_bce813ef81f6d01bab7506ac7bd6a9fb.setContent(html_27e96ff1a79d8cdbe72020a7e454abf3);
+            
+        
+
+        marker_8a20d0d4f0a7b7ee0e60e8a3903c9042.bindPopup(popup_bce813ef81f6d01bab7506ac7bd6a9fb)
+        ;
+
+        
+    
+    
+            var marker_a9a84552bd008ba3ae1d8cfc51120ccf = L.marker(
+                [52.443327, 15.564809],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_31312223307d24a1ac3ef246cdd43b7c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_25e8a30264b9d19693cb90dc744c9696 = $(`<div id="html_25e8a30264b9d19693cb90dc744c9696" style="width: 100.0%; height: 100.0%;">[16216, 'Międzyrzecz Komisji Edukacji Narodowej']</div>`)[0];
+                popup_31312223307d24a1ac3ef246cdd43b7c.setContent(html_25e8a30264b9d19693cb90dc744c9696);
+            
+        
+
+        marker_a9a84552bd008ba3ae1d8cfc51120ccf.bindPopup(popup_31312223307d24a1ac3ef246cdd43b7c)
+        ;
+
+        
+    
+    
+            var marker_46ac6b9971a452277fcd4b94c2457f50 = L.marker(
+                [51.809103, 15.708042],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_53b8f34bc514a256b57568298ccfe17b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ddcd3a903213db465ad9fffc4479a1be = $(`<div id="html_ddcd3a903213db465ad9fffc4479a1be" style="width: 100.0%; height: 100.0%;">[16613, 'Nowa Sól']</div>`)[0];
+                popup_53b8f34bc514a256b57568298ccfe17b.setContent(html_ddcd3a903213db465ad9fffc4479a1be);
+            
+        
+
+        marker_46ac6b9971a452277fcd4b94c2457f50.bindPopup(popup_53b8f34bc514a256b57568298ccfe17b)
+        ;
+
+        
+    
+    
+            var marker_ff1d362cb9000532b65476cf0e8051a4 = L.marker(
+                [51.75805, 19.529786],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_b03c505fe8b7e26a646ebb26bd88c9ae = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4974728e971ff89fd10bb919f87b9974 = $(`<div id="html_4974728e971ff89fd10bb919f87b9974" style="width: 100.0%; height: 100.0%;">[295, 'Łódź, Czernika']</div>`)[0];
+                popup_b03c505fe8b7e26a646ebb26bd88c9ae.setContent(html_4974728e971ff89fd10bb919f87b9974);
+            
+        
+
+        marker_ff1d362cb9000532b65476cf0e8051a4.bindPopup(popup_b03c505fe8b7e26a646ebb26bd88c9ae)
+        ;
+
+        
+    
+    
+            var marker_6128b2ab86e070c533863192dc889f89 = L.marker(
+                [51.775378, 19.450992],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_958a70eb05c7f95ccbdb676a900f0e7e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_79ff8577d14e1383c01fa47d0368dde1 = $(`<div id="html_79ff8577d14e1383c01fa47d0368dde1" style="width: 100.0%; height: 100.0%;">[296, 'Łódź, Gdańska']</div>`)[0];
+                popup_958a70eb05c7f95ccbdb676a900f0e7e.setContent(html_79ff8577d14e1383c01fa47d0368dde1);
+            
+        
+
+        marker_6128b2ab86e070c533863192dc889f89.bindPopup(popup_958a70eb05c7f95ccbdb676a900f0e7e)
+        ;
+
+        
+    
+    
+            var marker_26fba8cf07afb1953af52b01053d41f9 = L.marker(
+                [51.667981, 19.368683],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_cb33f7e8a8c6246dd162821a2e8f9d6f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6f187d3deea0b40cbb05568097a4372e = $(`<div id="html_6f187d3deea0b40cbb05568097a4372e" style="width: 100.0%; height: 100.0%;">[314, 'Pabianice, Konstantynowska']</div>`)[0];
+                popup_cb33f7e8a8c6246dd162821a2e8f9d6f.setContent(html_6f187d3deea0b40cbb05568097a4372e);
+            
+        
+
+        marker_26fba8cf07afb1953af52b01053d41f9.bindPopup(popup_cb33f7e8a8c6246dd162821a2e8f9d6f)
+        ;
+
+        
+    
+    
+            var marker_a6f2b5c6170a23f08e9e5f401309ced9 = L.marker(
+                [51.856692, 19.421231],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_3f14d96536747fb1387544e190228924 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_96f78de92384351045565dee7b40b9ba = $(`<div id="html_96f78de92384351045565dee7b40b9ba" style="width: 100.0%; height: 100.0%;">[355, 'Zgierz, Mielczarskiego']</div>`)[0];
+                popup_3f14d96536747fb1387544e190228924.setContent(html_96f78de92384351045565dee7b40b9ba);
+            
+        
+
+        marker_a6f2b5c6170a23f08e9e5f401309ced9.bindPopup(popup_3f14d96536747fb1387544e190228924)
+        ;
+
+        
+    
+    
+            var marker_6f0178ddb43c8650212a53973982d091 = L.marker(
+                [51.754613, 19.434925],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_c74d697c035f46a661725b8ec12f91c1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_49fdb61e685ead47614ef9d64e48a259 = $(`<div id="html_49fdb61e685ead47614ef9d64e48a259" style="width: 100.0%; height: 100.0%;">[10058, 'Łódź, al. Jana Pawła II']</div>`)[0];
+                popup_c74d697c035f46a661725b8ec12f91c1.setContent(html_49fdb61e685ead47614ef9d64e48a259);
+            
+        
+
+        marker_6f0178ddb43c8650212a53973982d091.bindPopup(popup_c74d697c035f46a661725b8ec12f91c1)
+        ;
+
+        
+    
+    
+            var marker_ad37dce53b18c5c8d21ffb10c9e0f2b8 = L.marker(
+                [52.143258, 19.233217],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_8d56d0ee73df12f3990e302749f54e73 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_166ec4cc8c283ccd2f1d988b0e791699 = $(`<div id="html_166ec4cc8c283ccd2f1d988b0e791699" style="width: 100.0%; height: 100.0%;">[291, 'Gajew, Ujęcie Wody']</div>`)[0];
+                popup_8d56d0ee73df12f3990e302749f54e73.setContent(html_166ec4cc8c283ccd2f1d988b0e791699);
+            
+        
+
+        marker_ad37dce53b18c5c8d21ffb10c9e0f2b8.bindPopup(popup_8d56d0ee73df12f3990e302749f54e73)
+        ;
+
+        
+    
+    
+            var marker_0fa94a4305fb9ba32e34163f9e9ba3f7 = L.marker(
+                [51.291175, 19.517556],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_270170ab20116189e63d291956616988 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b0c9032b3ff6e528929b9715e883f06e = $(`<div id="html_b0c9032b3ff6e528929b9715e883f06e" style="width: 100.0%; height: 100.0%;">[319, 'Parzniewice, Ujęcie Wody']</div>`)[0];
+                popup_270170ab20116189e63d291956616988.setContent(html_b0c9032b3ff6e528929b9715e883f06e);
+            
+        
+
+        marker_0fa94a4305fb9ba32e34163f9e9ba3f7.bindPopup(popup_270170ab20116189e63d291956616988)
+        ;
+
+        
+    
+    
+            var marker_caa3e642471ebf00c4ddaccfa1401389 = L.marker(
+                [51.404406, 19.696956],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_bbf2c3f1c052f9381a2515231cf9edd8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f8172539ccc37e0a3057d825fe9cec44 = $(`<div id="html_f8172539ccc37e0a3057d825fe9cec44" style="width: 100.0%; height: 100.0%;">[322, 'Piotrków Trybunalski, Krakowskie Przedmieście']</div>`)[0];
+                popup_bbf2c3f1c052f9381a2515231cf9edd8.setContent(html_f8172539ccc37e0a3057d825fe9cec44);
+            
+        
+
+        marker_caa3e642471ebf00c4ddaccfa1401389.bindPopup(popup_bbf2c3f1c052f9381a2515231cf9edd8)
+        ;
+
+        
+    
+    
+            var marker_e2e27b55f42140091ce753aab9e02dad = L.marker(
+                [51.067417, 19.448714],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_eaa8a48d8d6a073389de2f19c5570434 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0d29f02842c90f9693862594eda3003f = $(`<div id="html_0d29f02842c90f9693862594eda3003f" style="width: 100.0%; height: 100.0%;">[331, 'Radomsko, Rolna']</div>`)[0];
+                popup_eaa8a48d8d6a073389de2f19c5570434.setContent(html_0d29f02842c90f9693862594eda3003f);
+            
+        
+
+        marker_e2e27b55f42140091ce753aab9e02dad.bindPopup(popup_eaa8a48d8d6a073389de2f19c5570434)
+        ;
+
+        
+    
+    
+            var marker_4e1f8b92ec4175e391315b103fa527b6 = L.marker(
+                [52.053811, 20.429892],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_a540b92340a3d88878840ad72cc99e0c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9a5a79b2fd48dafaab6557e944d41272 = $(`<div id="html_9a5a79b2fd48dafaab6557e944d41272" style="width: 100.0%; height: 100.0%;">[562, 'Żyrardów, Roosevelta']</div>`)[0];
+                popup_a540b92340a3d88878840ad72cc99e0c.setContent(html_9a5a79b2fd48dafaab6557e944d41272);
+            
+        
+
+        marker_4e1f8b92ec4175e391315b103fa527b6.bindPopup(popup_a540b92340a3d88878840ad72cc99e0c)
+        ;
+
+        
+    
+    
+            var marker_bc27fde858e4a463531ee3adf9fa2e7b = L.marker(
+                [52.943172, 21.288167],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_c66f38d1d7436bccfb472c6686610827 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8212bf19289387018838affadefa9b33 = $(`<div id="html_8212bf19289387018838affadefa9b33" style="width: 100.0%; height: 100.0%;">[9913, 'Guty Duże']</div>`)[0];
+                popup_c66f38d1d7436bccfb472c6686610827.setContent(html_8212bf19289387018838affadefa9b33);
+            
+        
+
+        marker_bc27fde858e4a463531ee3adf9fa2e7b.bindPopup(popup_c66f38d1d7436bccfb472c6686610827)
+        ;
+
+        
+    
+    
+            var marker_b997807b863b78d8161e50e51858ca1a = L.marker(
+                [52.602534, 19.6451],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_b7a2ac6288c53d99d90a781a70d76e7a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7b76bdbd8c27160076e7ab72c9b67791 = $(`<div id="html_7b76bdbd8c27160076e7ab72c9b67791" style="width: 100.0%; height: 100.0%;">[11358, 'Biała, Kmicica']</div>`)[0];
+                popup_b7a2ac6288c53d99d90a781a70d76e7a.setContent(html_7b76bdbd8c27160076e7ab72c9b67791);
+            
+        
+
+        marker_b997807b863b78d8161e50e51858ca1a.bindPopup(popup_b7a2ac6288c53d99d90a781a70d76e7a)
+        ;
+
+        
+    
+    
+            var marker_2a4ece3e70825988d08de687603144e7 = L.marker(
+                [52.082277, 21.124598],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_129e0096a68e781701b790d5aa8942f1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4c1a0bae0c6132be0539ea5d01504c27 = $(`<div id="html_4c1a0bae0c6132be0539ea5d01504c27" style="width: 100.0%; height: 100.0%;">[16271, 'Konstancin-Jeziorna, Żeromskiego']</div>`)[0];
+                popup_129e0096a68e781701b790d5aa8942f1.setContent(html_4c1a0bae0c6132be0539ea5d01504c27);
+            
+        
+
+        marker_2a4ece3e70825988d08de687603144e7.bindPopup(popup_129e0096a68e781701b790d5aa8942f1)
+        ;
+
+        
+    
+    
+            var marker_3b54d20c429f45403cec08562bc31744 = L.marker(
+                [52.703591, 21.072603],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_b56157344421f9fe6a855318b84df064 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_032ddfe076215dc3a5d3cfe0d7fa0c88 = $(`<div id="html_032ddfe076215dc3a5d3cfe0d7fa0c88" style="width: 100.0%; height: 100.0%;">[17160, 'Pułtusk, Adama Mickiewicza 36']</div>`)[0];
+                popup_b56157344421f9fe6a855318b84df064.setContent(html_032ddfe076215dc3a5d3cfe0d7fa0c88);
+            
+        
+
+        marker_3b54d20c429f45403cec08562bc31744.bindPopup(popup_b56157344421f9fe6a855318b84df064)
+        ;
+
+        
+    
+    
+            var marker_12246a669b5c740e42e93163985bd61c = L.marker(
+                [50.676856, 17.950278],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_5e321eab3f73a219a7566a0240e0aec5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f6e78e4bc206c903701e1c0cf0930d53 = $(`<div id="html_f6e78e4bc206c903701e1c0cf0930d53" style="width: 100.0%; height: 100.0%;">[590, 'Opole, os. Armii Krajowej']</div>`)[0];
+                popup_5e321eab3f73a219a7566a0240e0aec5.setContent(html_f6e78e4bc206c903701e1c0cf0930d53);
+            
+        
+
+        marker_12246a669b5c740e42e93163985bd61c.bindPopup(popup_5e321eab3f73a219a7566a0240e0aec5)
+        ;
+
+        
+    
+    
+            var marker_fa8bf3b9e093233c5a832b6800236341 = L.marker(
+                [50.349608, 18.236575],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_9977aa2e6231cc7ff80aba0e833cff84 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e557a036842603a063622709a4c850a7 = $(`<div id="html_e557a036842603a063622709a4c850a7" style="width: 100.0%; height: 100.0%;">[568, 'Kędzierzyn-Koźle, Śmiałego']</div>`)[0];
+                popup_9977aa2e6231cc7ff80aba0e833cff84.setContent(html_e557a036842603a063622709a4c850a7);
+            
+        
+
+        marker_fa8bf3b9e093233c5a832b6800236341.bindPopup(popup_9977aa2e6231cc7ff80aba0e833cff84)
+        ;
+
+        
+    
+    
+            var marker_f9ced5109a1a41c7337e617a0e68492d = L.marker(
+                [50.876983, 18.416878],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_a31fa4f02810a749b8f1bb5ac03e1c68 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_53a0ec8c4544bf9e5796d2c8b2897498 = $(`<div id="html_53a0ec8c4544bf9e5796d2c8b2897498" style="width: 100.0%; height: 100.0%;">[584, 'Olesno, Słowackiego']</div>`)[0];
+                popup_a31fa4f02810a749b8f1bb5ac03e1c68.setContent(html_53a0ec8c4544bf9e5796d2c8b2897498);
+            
+        
+
+        marker_f9ced5109a1a41c7337e617a0e68492d.bindPopup(popup_a31fa4f02810a749b8f1bb5ac03e1c68)
+        ;
+
+        
+    
+    
+            var marker_d6c31f29d5e6f7fb117f91e2293a70a8 = L.marker(
+                [50.423533, 18.120739],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_77bfe8cb77cfae8ebca3113c94fa6e56 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fc0d873db83ee90684a1cf66fcce4dce = $(`<div id="html_fc0d873db83ee90684a1cf66fcce4dce" style="width: 100.0%; height: 100.0%;">[600, 'Zdzieszowice, Piastów']</div>`)[0];
+                popup_77bfe8cb77cfae8ebca3113c94fa6e56.setContent(html_fc0d873db83ee90684a1cf66fcce4dce);
+            
+        
+
+        marker_d6c31f29d5e6f7fb117f91e2293a70a8.bindPopup(popup_77bfe8cb77cfae8ebca3113c94fa6e56)
+        ;
+
+        
+    
+    
+            var marker_8c403e6bb9e551f309f96dc8dc23c30a = L.marker(
+                [50.458989, 17.331906],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_8788c5c706bd0f9ca52720b072e7e0fd = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_603074de4d2baa352c29908981661769 = $(`<div id="html_603074de4d2baa352c29908981661769" style="width: 100.0%; height: 100.0%;">[8976, 'Nysa, Rodziewiczówny']</div>`)[0];
+                popup_8788c5c706bd0f9ca52720b072e7e0fd.setContent(html_603074de4d2baa352c29908981661769);
+            
+        
+
+        marker_8c403e6bb9e551f309f96dc8dc23c30a.bindPopup(popup_8788c5c706bd0f9ca52720b072e7e0fd)
+        ;
+
+        
+    
+    
+            var marker_5e674576ae97274797cbbf53dc08a9be = L.marker(
+                [50.200778, 17.83051],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_794fbd6fc58ff4c1ec39b102a95f9baf = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_080527b0e947c60cf542f8b661978d89 = $(`<div id="html_080527b0e947c60cf542f8b661978d89" style="width: 100.0%; height: 100.0%;">[10018, 'Głubczyce, Ratuszowa']</div>`)[0];
+                popup_794fbd6fc58ff4c1ec39b102a95f9baf.setContent(html_080527b0e947c60cf542f8b661978d89);
+            
+        
+
+        marker_5e674576ae97274797cbbf53dc08a9be.bindPopup(popup_794fbd6fc58ff4c1ec39b102a95f9baf)
+        ;
+
+        
+    
+    
+            var marker_26396c4b738f3f08876c4670497ec3cf = L.marker(
+                [50.849509, 17.462579],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_39a0f939072402354de5dd8e9ea5aa6a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9c17ca182431684232fbe00d045d1a6f = $(`<div id="html_9c17ca182431684232fbe00d045d1a6f" style="width: 100.0%; height: 100.0%;">[16413, 'Brzeg, Poprzeczna']</div>`)[0];
+                popup_39a0f939072402354de5dd8e9ea5aa6a.setContent(html_9c17ca182431684232fbe00d045d1a6f);
+            
+        
+
+        marker_26396c4b738f3f08876c4670497ec3cf.bindPopup(popup_39a0f939072402354de5dd8e9ea5aa6a)
+        ;
+
+        
+    
+    
+            var marker_64b162843ab17610c83474ecc1279623 = L.marker(
+                [50.486194, 17.97477],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_c832ca6e6f806fa95fe64a3e039cedc7 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f0a67f40bf2bf7d198666a343d392694 = $(`<div id="html_f0a67f40bf2bf7d198666a343d392694" style="width: 100.0%; height: 100.0%;">[16913, 'Krapkowice, 3 Maja']</div>`)[0];
+                popup_c832ca6e6f806fa95fe64a3e039cedc7.setContent(html_f0a67f40bf2bf7d198666a343d392694);
+            
+        
+
+        marker_64b162843ab17610c83474ecc1279623.bindPopup(popup_c832ca6e6f806fa95fe64a3e039cedc7)
+        ;
+
+        
+    
+    
+            var marker_0e88c82a162bab5124732f5aee6662f3 = L.marker(
+                [50.024242, 22.010575],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_123cd38c9632158756e350e57068c44f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_175826dc56fffdce74542e78ec17daa0 = $(`<div id="html_175826dc56fffdce74542e78ec17daa0" style="width: 100.0%; height: 100.0%;">[671, 'Rzeszów, Rejtana']</div>`)[0];
+                popup_123cd38c9632158756e350e57068c44f.setContent(html_175826dc56fffdce74542e78ec17daa0);
+            
+        
+
+        marker_0e88c82a162bab5124732f5aee6662f3.bindPopup(popup_123cd38c9632158756e350e57068c44f)
+        ;
+
+        
+    
+    
+            var marker_f29c96d25250a8854d08c33d4633ebfb = L.marker(
+                [50.040675, 22.004656],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_f3b83b929ac4b8e924fa8c244fbe19fe = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e31fac60e57d888c4bc3ecf577cf4ff8 = $(`<div id="html_e31fac60e57d888c4bc3ecf577cf4ff8" style="width: 100.0%; height: 100.0%;">[10125, 'Rzeszów, Piłsudskiego']</div>`)[0];
+                popup_f3b83b929ac4b8e924fa8c244fbe19fe.setContent(html_e31fac60e57d888c4bc3ecf577cf4ff8);
+            
+        
+
+        marker_f29c96d25250a8854d08c33d4633ebfb.bindPopup(popup_f3b83b929ac4b8e924fa8c244fbe19fe)
+        ;
+
+        
+    
+    
+            var marker_907f96a1aa22575947da231641526e74 = L.marker(
+                [50.024856, 22.047937],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_e06b438b40c44d4db5343b56a11ccf51 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f55df61c3e24b3757f278028151119f5 = $(`<div id="html_f55df61c3e24b3757f278028151119f5" style="width: 100.0%; height: 100.0%;">[17159, 'Rzeszów, Słocińska']</div>`)[0];
+                popup_e06b438b40c44d4db5343b56a11ccf51.setContent(html_f55df61c3e24b3757f278028151119f5);
+            
+        
+
+        marker_907f96a1aa22575947da231641526e74.bindPopup(popup_e06b438b40c44d4db5343b56a11ccf51)
+        ;
+
+        
+    
+    
+            var marker_89c3cf12dfd7a9440ef3a68dd6ca0d51 = L.marker(
+                [50.060381, 21.980511],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_b7d803360565311aec5e02516be54189 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3b8943b61163b4e405f780c155fc23ff = $(`<div id="html_3b8943b61163b4e405f780c155fc23ff" style="width: 100.0%; height: 100.0%;">[17179, 'Rzeszów, Starzyńskiego']</div>`)[0];
+                popup_b7d803360565311aec5e02516be54189.setContent(html_3b8943b61163b4e405f780c155fc23ff);
+            
+        
+
+        marker_89c3cf12dfd7a9440ef3a68dd6ca0d51.bindPopup(popup_b7d803360565311aec5e02516be54189)
+        ;
+
+        
+    
+    
+            var marker_66409b20d24cc7a94a11d7cfe7e5b8b6 = L.marker(
+                [50.012083, 22.674772],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_da1f511378592455663d84670ac87217 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f52c58de40ae20ce3179f11dc0502a51 = $(`<div id="html_f52c58de40ae20ce3179f11dc0502a51" style="width: 100.0%; height: 100.0%;">[631, 'Jarosław, Pruchnicka']</div>`)[0];
+                popup_da1f511378592455663d84670ac87217.setContent(html_f52c58de40ae20ce3179f11dc0502a51);
+            
+        
+
+        marker_66409b20d24cc7a94a11d7cfe7e5b8b6.bindPopup(popup_da1f511378592455663d84670ac87217)
+        ;
+
+        
+    
+    
+            var marker_c71209143eee9173c44964ea67b48573 = L.marker(
+                [49.744886, 21.454617],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_69e2aa8da23155e1239785626dd0ce1a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_bd5772a10ce93f218fc111783df81543 = $(`<div id="html_bd5772a10ce93f218fc111783df81543" style="width: 100.0%; height: 100.0%;">[638, 'Jaslo, Sikorskiego']</div>`)[0];
+                popup_69e2aa8da23155e1239785626dd0ce1a.setContent(html_bd5772a10ce93f218fc111783df81543);
+            
+        
+
+        marker_c71209143eee9173c44964ea67b48573.bindPopup(popup_69e2aa8da23155e1239785626dd0ce1a)
+        ;
+
+        
+    
+    
+            var marker_459037366c2c25b3be394f2435748920 = L.marker(
+                [49.690169, 21.7497],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_05a6779544c216ee12d85da9c951eca0 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_45d331690988457dd8f9f90583c0254a = $(`<div id="html_45d331690988457dd8f9f90583c0254a" style="width: 100.0%; height: 100.0%;">[646, 'Krosno, Kletówki']</div>`)[0];
+                popup_05a6779544c216ee12d85da9c951eca0.setContent(html_45d331690988457dd8f9f90583c0254a);
+            
+        
+
+        marker_459037366c2c25b3be394f2435748920.bindPopup(popup_05a6779544c216ee12d85da9c951eca0)
+        ;
+
+        
+    
+    
+            var marker_029a598505be13da60a62c8e565bd3ff = L.marker(
+                [50.529892, 22.112467],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_47d764d60d24b4aa7060a4e278db59d4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_cb711cffc2987b63ff0cabdf263abb5b = $(`<div id="html_cb711cffc2987b63ff0cabdf263abb5b" style="width: 100.0%; height: 100.0%;">[659, 'Nisko, Szklarniowa']</div>`)[0];
+                popup_47d764d60d24b4aa7060a4e278db59d4.setContent(html_cb711cffc2987b63ff0cabdf263abb5b);
+            
+        
+
+        marker_029a598505be13da60a62c8e565bd3ff.bindPopup(popup_47d764d60d24b4aa7060a4e278db59d4)
+        ;
+
+        
+    
+    
+            var marker_43116ae5f2697cec89b713e5a7fd462f = L.marker(
+                [49.784339, 22.756239],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_fc2c28386af0a28bedb2052f6f2527df = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9015b39d3c1653d7416fdc02908c6fa2 = $(`<div id="html_9015b39d3c1653d7416fdc02908c6fa2" style="width: 100.0%; height: 100.0%;">[665, 'Przemyśl, Grunwaldzka']</div>`)[0];
+                popup_fc2c28386af0a28bedb2052f6f2527df.setContent(html_9015b39d3c1653d7416fdc02908c6fa2);
+            
+        
+
+        marker_43116ae5f2697cec89b713e5a7fd462f.bindPopup(popup_fc2c28386af0a28bedb2052f6f2527df)
+        ;
+
+        
+    
+    
+            var marker_da11c623178c1eea3ed473955bac23ef = L.marker(
+                [49.571731, 22.195892],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_e28af216d2e1d8f72179588b90d4e5ef = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_dced5d5205b85f730caa9817501905a0 = $(`<div id="html_dced5d5205b85f730caa9817501905a0" style="width: 100.0%; height: 100.0%;">[678, 'Sanok, Sadowa']</div>`)[0];
+                popup_e28af216d2e1d8f72179588b90d4e5ef.setContent(html_dced5d5205b85f730caa9817501905a0);
+            
+        
+
+        marker_da11c623178c1eea3ed473955bac23ef.bindPopup(popup_e28af216d2e1d8f72179588b90d4e5ef)
+        ;
+
+        
+    
+    
+            var marker_83e07532a513ba49d4f31f3e63b59831 = L.marker(
+                [50.575742, 21.688367],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_fc02d0b0a58753ba7e579d4fda0e299a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b85e3962167ffc66cea5b7398951c292 = $(`<div id="html_b85e3962167ffc66cea5b7398951c292" style="width: 100.0%; height: 100.0%;">[684, 'Tarnobrzeg, Dąbrowskiej']</div>`)[0];
+                popup_fc02d0b0a58753ba7e579d4fda0e299a.setContent(html_b85e3962167ffc66cea5b7398951c292);
+            
+        
+
+        marker_83e07532a513ba49d4f31f3e63b59831.bindPopup(popup_fc02d0b0a58753ba7e579d4fda0e299a)
+        ;
+
+        
+    
+    
+            var marker_ec8424fe9cd143ca23fcfeb950e5cfad = L.marker(
+                [54.305908, 22.307681],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_cc82f649eea0f0d0c6216781ca40f0a5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f3bb7eade1ba92e0abe4a8eef0f9d093 = $(`<div id="html_f3bb7eade1ba92e0abe4a8eef0f9d093" style="width: 100.0%; height: 100.0%;">[870, ' Gołdap, Jaćwieska']</div>`)[0];
+                popup_cc82f649eea0f0d0c6216781ca40f0a5.setContent(html_f3bb7eade1ba92e0abe4a8eef0f9d093);
+            
+        
+
+        marker_ec8424fe9cd143ca23fcfeb950e5cfad.bindPopup(popup_cc82f649eea0f0d0c6216781ca40f0a5)
+        ;
+
+        
+    
+    
+            var marker_5a1c267f39e9d51a7b55acd8d2c23413 = L.marker(
+                [54.124819, 22.038056],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_3507d20062fc0941c4b63c6fa3af0558 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_64a0ea9cd81f179f9189c5c2c8c5d8fa = $(`<div id="html_64a0ea9cd81f179f9189c5c2c8c5d8fa" style="width: 100.0%; height: 100.0%;">[882, 'Diabla Góra, Puszcza Borecka']</div>`)[0];
+                popup_3507d20062fc0941c4b63c6fa3af0558.setContent(html_64a0ea9cd81f179f9189c5c2c8c5d8fa);
+            
+        
+
+        marker_5a1c267f39e9d51a7b55acd8d2c23413.bindPopup(popup_3507d20062fc0941c4b63c6fa3af0558)
+        ;
+
+        
+    
+    
+            var marker_c7e5ff76cf0df9d20b460706429b8b2f = L.marker(
+                [53.828389, 22.348338],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_b632a7d320b07f0cea000b295efdb9ad = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7174290dbe216317dcf9a67d94dfdfc1 = $(`<div id="html_7174290dbe216317dcf9a67d94dfdfc1" style="width: 100.0%; height: 100.0%;">[10005, 'Ełk, Piłsudskiego']</div>`)[0];
+                popup_b632a7d320b07f0cea000b295efdb9ad.setContent(html_7174290dbe216317dcf9a67d94dfdfc1);
+            
+        
+
+        marker_c7e5ff76cf0df9d20b460706429b8b2f.bindPopup(popup_b632a7d320b07f0cea000b295efdb9ad)
+        ;
+
+        
+    
+    
+            var marker_a496886d0b2a6e7e689e9c713fde245f = L.marker(
+                [53.694587, 19.969041],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_8eae2b6248e013901448a5588d04f945 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fe4057559be2219f7a62ff97596d0e30 = $(`<div id="html_fe4057559be2219f7a62ff97596d0e30" style="width: 100.0%; height: 100.0%;">[10030, 'Ostróda, Piłsudskiego']</div>`)[0];
+                popup_8eae2b6248e013901448a5588d04f945.setContent(html_fe4057559be2219f7a62ff97596d0e30);
+            
+        
+
+        marker_a496886d0b2a6e7e689e9c713fde245f.bindPopup(popup_8eae2b6248e013901448a5588d04f945)
+        ;
+
+        
+    
+    
+            var marker_f7a719f44fab3b1a16e002a3a2629d2b = L.marker(
+                [54.081439, 21.369823],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_14cf20ea59efe6e15f48ff347ff0e31c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_95531f133160b10aabb0de23984dfc70 = $(`<div id="html_95531f133160b10aabb0de23984dfc70" style="width: 100.0%; height: 100.0%;">[17182, 'Kętrzyn, Wojska Polskiego']</div>`)[0];
+                popup_14cf20ea59efe6e15f48ff347ff0e31c.setContent(html_95531f133160b10aabb0de23984dfc70);
+            
+        
+
+        marker_f7a719f44fab3b1a16e002a3a2629d2b.bindPopup(popup_14cf20ea59efe6e15f48ff347ff0e31c)
+        ;
+
+        
+    
+    
+            var marker_87c7470dcdd2d107d80a4ee4813d81cf = L.marker(
+                [52.420319, 16.877289],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_018cf5010e28758465d66fcfec810697 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_45fdab3c17f9bef4b26895667c08391f = $(`<div id="html_45fdab3c17f9bef4b26895667c08391f" style="width: 100.0%; height: 100.0%;">[944, 'Poznań, Dąbrowskiego']</div>`)[0];
+                popup_018cf5010e28758465d66fcfec810697.setContent(html_45fdab3c17f9bef4b26895667c08391f);
+            
+        
+
+        marker_87c7470dcdd2d107d80a4ee4813d81cf.bindPopup(popup_018cf5010e28758465d66fcfec810697)
+        ;
+
+        
+    
+    
+            var marker_012faceb712e854b4ac7b5c55ca12f6d = L.marker(
+                [52.390879, 16.998053],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_8f312ffbcaf6637ae4674c286ba7f64f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c88b25c5049a544527e7090275c89088 = $(`<div id="html_c88b25c5049a544527e7090275c89088" style="width: 100.0%; height: 100.0%;">[16493, 'Poznań Szwajcarska']</div>`)[0];
+                popup_8f312ffbcaf6637ae4674c286ba7f64f.setContent(html_c88b25c5049a544527e7090275c89088);
+            
+        
+
+        marker_012faceb712e854b4ac7b5c55ca12f6d.bindPopup(popup_8f312ffbcaf6637ae4674c286ba7f64f)
+        ;
+
+        
+    
+    
+            var marker_6ad43dc25c72cdd7d93b351ec979ad0b = L.marker(
+                [51.74795, 18.049063],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_0f9ecc0dc54a8fcffc5148ed87668f7d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_08ac08e4e2bb2adf7d57fbe3e701402c = $(`<div id="html_08ac08e4e2bb2adf7d57fbe3e701402c" style="width: 100.0%; height: 100.0%;">[952, 'Kalisz, Wyszyńskiego']</div>`)[0];
+                popup_0f9ecc0dc54a8fcffc5148ed87668f7d.setContent(html_08ac08e4e2bb2adf7d57fbe3e701402c);
+            
+        
+
+        marker_6ad43dc25c72cdd7d93b351ec979ad0b.bindPopup(popup_0f9ecc0dc54a8fcffc5148ed87668f7d)
+        ;
+
+        
+    
+    
+            var marker_8eecba4f2bf245fa2c2940c49af2594e = L.marker(
+                [52.22565, 18.268927],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_64284bfa70ba5bffe3cc066ddddd8cfd = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0c581990cadcd008fbba59ee8f075ced = $(`<div id="html_0c581990cadcd008fbba59ee8f075ced" style="width: 100.0%; height: 100.0%;">[902, 'Konin, Wyszyńskiego']</div>`)[0];
+                popup_64284bfa70ba5bffe3cc066ddddd8cfd.setContent(html_0c581990cadcd008fbba59ee8f075ced);
+            
+        
+
+        marker_8eecba4f2bf245fa2c2940c49af2594e.bindPopup(popup_64284bfa70ba5bffe3cc066ddddd8cfd)
+        ;
+
+        
+    
+    
+            var marker_443fe26f0fa9f4a7f66bfe3c21d4bb3f = L.marker(
+                [52.501318, 17.773175],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_f47a18c8ac7c8e803d413eb7347111b7 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f1620c50fa5092d51429c79e598bc850 = $(`<div id="html_f1620c50fa5092d51429c79e598bc850" style="width: 100.0%; height: 100.0%;">[946, 'Piaski, Krzyżówka']</div>`)[0];
+                popup_f47a18c8ac7c8e803d413eb7347111b7.setContent(html_f1620c50fa5092d51429c79e598bc850);
+            
+        
+
+        marker_443fe26f0fa9f4a7f66bfe3c21d4bb3f.bindPopup(popup_f47a18c8ac7c8e803d413eb7347111b7)
+        ;
+
+        
+    
+    
+            var marker_97a6d4187abadf693664b92399ca0731 = L.marker(
+                [52.27672, 17.074187],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_fa3ecc3444dfac4c5a2036584646dab0 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_44d3ae27dc4b6cb97d14e87574e39564 = $(`<div id="html_44d3ae27dc4b6cb97d14e87574e39564" style="width: 100.0%; height: 100.0%;">[950, 'Borówiec, Drapałka']</div>`)[0];
+                popup_fa3ecc3444dfac4c5a2036584646dab0.setContent(html_44d3ae27dc4b6cb97d14e87574e39564);
+            
+        
+
+        marker_97a6d4187abadf693664b92399ca0731.bindPopup(popup_fa3ecc3444dfac4c5a2036584646dab0)
+        ;
+
+        
+    
+    
+            var marker_6a892fa8a304b656d0423644b247fd5e = L.marker(
+                [51.884922, 17.791106],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_cce518da06a6c50ce76f8e574f34f1a0 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_75713f9c658250bcda3551194bc159bb = $(`<div id="html_75713f9c658250bcda3551194bc159bb" style="width: 100.0%; height: 100.0%;">[9218, 'Pleszew, Al. Mickiewicza']</div>`)[0];
+                popup_cce518da06a6c50ce76f8e574f34f1a0.setContent(html_75713f9c658250bcda3551194bc159bb);
+            
+        
+
+        marker_6a892fa8a304b656d0423644b247fd5e.bindPopup(popup_cce518da06a6c50ce76f8e574f34f1a0)
+        ;
+
+        
+    
+    
+            var marker_c060f723b8a650531e0987844a38250d = L.marker(
+                [52.449295, 16.999634],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_1e06eb1085f217a90c12756e0f87996b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2ac01bd5783e009e09dd5c7eb6ad025f = $(`<div id="html_2ac01bd5783e009e09dd5c7eb6ad025f" style="width: 100.0%; height: 100.0%;">[10834, 'Koziegłowy, os.Leśne']</div>`)[0];
+                popup_1e06eb1085f217a90c12756e0f87996b.setContent(html_2ac01bd5783e009e09dd5c7eb6ad025f);
+            
+        
+
+        marker_c060f723b8a650531e0987844a38250d.bindPopup(popup_1e06eb1085f217a90c12756e0f87996b)
+        ;
+
+        
+    
+    
+            var marker_bbe1913413a7d0d3e99ac5ec5572eae7 = L.marker(
+                [52.241497, 16.865125],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_282d96c97a123ab2972cc797ac7198eb = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_956313fbcf1cadca6f83d5261f7ed4b5 = $(`<div id="html_956313fbcf1cadca6f83d5261f7ed4b5" style="width: 100.0%; height: 100.0%;">[16495, 'Mosina, Czereśniowa']</div>`)[0];
+                popup_282d96c97a123ab2972cc797ac7198eb.setContent(html_956313fbcf1cadca6f83d5261f7ed4b5);
+            
+        
+
+        marker_bbe1913413a7d0d3e99ac5ec5572eae7.bindPopup(popup_282d96c97a123ab2972cc797ac7198eb)
+        ;
+
+        
+    
+    
+            var marker_ac13315dcf3501d772362e008652993d = L.marker(
+                [53.380975, 14.663347],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_d2554a73c6d8b1432e0cf3007c9ac759 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3d817fb889bd0bab8fd961ce0f74975e = $(`<div id="html_3d817fb889bd0bab8fd961ce0f74975e" style="width: 100.0%; height: 100.0%;">[986, 'Szczecin, Andrzejewskiego']</div>`)[0];
+                popup_d2554a73c6d8b1432e0cf3007c9ac759.setContent(html_3d817fb889bd0bab8fd961ce0f74975e);
+            
+        
+
+        marker_ac13315dcf3501d772362e008652993d.bindPopup(popup_d2554a73c6d8b1432e0cf3007c9ac759)
+        ;
+
+        
+    
+    
+            var marker_39134a9675e57afcfec7036b012d94d2 = L.marker(
+                [53.432169, 14.5539],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_1806b09c50e2e47677a6c4806563b234 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5c5f54e83119b781555c1d0a73b4b596 = $(`<div id="html_5c5f54e83119b781555c1d0a73b4b596" style="width: 100.0%; height: 100.0%;">[987, 'Szczecin, Piłsudskiego']</div>`)[0];
+                popup_1806b09c50e2e47677a6c4806563b234.setContent(html_5c5f54e83119b781555c1d0a73b4b596);
+            
+        
+
+        marker_39134a9675e57afcfec7036b012d94d2.bindPopup(popup_1806b09c50e2e47677a6c4806563b234)
+        ;
+
+        
+    
+    
+            var marker_cb42516a4137fba095b6497cd6c37bd4 = L.marker(
+                [54.582515, 16.873625],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_faf8f63fd8877436084e3d999694de97 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4cf175e0b9e400f09220927bb1728156 = $(`<div id="html_4cf175e0b9e400f09220927bb1728156" style="width: 100.0%; height: 100.0%;">[16265, 'Ustka, Rybacka']</div>`)[0];
+                popup_faf8f63fd8877436084e3d999694de97.setContent(html_4cf175e0b9e400f09220927bb1728156);
+            
+        
+
+        marker_cb42516a4137fba095b6497cd6c37bd4.bindPopup(popup_faf8f63fd8877436084e3d999694de97)
+        ;
+
+        
+    
+    
+            var marker_6f9ae13f5242441296dd31da9939d914 = L.marker(
+                [50.329111, 19.231222],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_4eb252d63044ea58529a414aa009766a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_185f6ace4f81e48db7b6d4e712bd1ed1 = $(`<div id="html_185f6ace4f81e48db7b6d4e712bd1ed1" style="width: 100.0%; height: 100.0%;">[805, 'Dąbrowa Górnicza, Tysiąclecia']</div>`)[0];
+                popup_4eb252d63044ea58529a414aa009766a.setContent(html_185f6ace4f81e48db7b6d4e712bd1ed1);
+            
+        
+
+        marker_6f9ae13f5242441296dd31da9939d914.bindPopup(popup_4eb252d63044ea58529a414aa009766a)
+        ;
+
+        
+    
+    
+            var marker_53a33a5e4b1f1d14ae57e64376adb29a = L.marker(
+                [50.279481, 18.655736],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_a8532dee1096b87a3e737cde486a08ce = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_74e211b2dee69deea75c2b112dacca26 = $(`<div id="html_74e211b2dee69deea75c2b112dacca26" style="width: 100.0%; height: 100.0%;">[809, 'Gliwice, Mewy']</div>`)[0];
+                popup_a8532dee1096b87a3e737cde486a08ce.setContent(html_74e211b2dee69deea75c2b112dacca26);
+            
+        
+
+        marker_53a33a5e4b1f1d14ae57e64376adb29a.bindPopup(popup_a8532dee1096b87a3e737cde486a08ce)
+        ;
+
+        
+    
+    
+            var marker_3b396ab40bdc86a5f65291a666228c46 = L.marker(
+                [50.246795, 19.019469],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_1d36bf0457e3107868337ef719ef2d18 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2638a7fa76dfd1dd63646051e12cf679 = $(`<div id="html_2638a7fa76dfd1dd63646051e12cf679" style="width: 100.0%; height: 100.0%;">[813, 'Katowice, Plebiscytowa/A4']</div>`)[0];
+                popup_1d36bf0457e3107868337ef719ef2d18.setContent(html_2638a7fa76dfd1dd63646051e12cf679);
+            
+        
+
+        marker_3b396ab40bdc86a5f65291a666228c46.bindPopup(popup_1d36bf0457e3107868337ef719ef2d18)
+        ;
+
+        
+    
+    
+            var marker_d80dcda1dec5d641e2c46e03b6aeae8b = L.marker(
+                [50.264611, 18.975028],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_30707f67cb427844ec15a9757ac1ee13 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f8b81f86932c61b1fffdc79ae3219059 = $(`<div id="html_f8b81f86932c61b1fffdc79ae3219059" style="width: 100.0%; height: 100.0%;">[814, 'Katowice, Kossutha']</div>`)[0];
+                popup_30707f67cb427844ec15a9757ac1ee13.setContent(html_f8b81f86932c61b1fffdc79ae3219059);
+            
+        
+
+        marker_d80dcda1dec5d641e2c46e03b6aeae8b.bindPopup(popup_30707f67cb427844ec15a9757ac1ee13)
+        ;
+
+        
+    
+    
+            var marker_21bcb0f8e6023a2775b33f5323ae8c83 = L.marker(
+                [50.285956, 19.184399],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_1bc8d5e70049d271c8e951eaaf52a053 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a9b6cec1cd290c1f0027c4abeada00d9 = $(`<div id="html_a9b6cec1cd290c1f0027c4abeada00d9" style="width: 100.0%; height: 100.0%;">[837, 'Sosnowiec, Lubelska']</div>`)[0];
+                popup_1bc8d5e70049d271c8e951eaaf52a053.setContent(html_a9b6cec1cd290c1f0027c4abeada00d9);
+            
+        
+
+        marker_21bcb0f8e6023a2775b33f5323ae8c83.bindPopup(popup_1bc8d5e70049d271c8e951eaaf52a053)
+        ;
+
+        
+    
+    
+            var marker_e8011db9843633f31ec3e4a3e7688d3b = L.marker(
+                [50.099903, 18.990236],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_1c58e46b81d272103b48aa792ec1326e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_83441c77a2a713bbf4ff92138a90afb7 = $(`<div id="html_83441c77a2a713bbf4ff92138a90afb7" style="width: 100.0%; height: 100.0%;">[841, 'Tychy, Tołstoja']</div>`)[0];
+                popup_1c58e46b81d272103b48aa792ec1326e.setContent(html_83441c77a2a713bbf4ff92138a90afb7);
+            
+        
+
+        marker_e8011db9843633f31ec3e4a3e7688d3b.bindPopup(popup_1c58e46b81d272103b48aa792ec1326e)
+        ;
+
+        
+    
+    
+            var marker_babbaace34ae154d3bf46a2c41f94c39 = L.marker(
+                [50.3165, 18.772375],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_e442c792ccc7d024c8e5b54577789d50 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0aa1a50eae0f18125c2a228d8191dd18 = $(`<div id="html_0aa1a50eae0f18125c2a228d8191dd18" style="width: 100.0%; height: 100.0%;">[848, 'Zabrze, M. Curie-Skłodowskiej']</div>`)[0];
+                popup_e442c792ccc7d024c8e5b54577789d50.setContent(html_0aa1a50eae0f18125c2a228d8191dd18);
+            
+        
+
+        marker_babbaace34ae154d3bf46a2c41f94c39.bindPopup(popup_e442c792ccc7d024c8e5b54577789d50)
+        ;
+
+        
+    
+    
+            var marker_690678d073beaf379b77e35a9f9e31b1 = L.marker(
+                [50.111181, 18.516139],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_dfb3d261569478e75be0c05d33af03f1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b1bbf76221f0a4d8b578f0fca049b1c5 = $(`<div id="html_b1bbf76221f0a4d8b578f0fca049b1c5" style="width: 100.0%; height: 100.0%;">[834, 'Rybnik, Borki']</div>`)[0];
+                popup_dfb3d261569478e75be0c05d33af03f1.setContent(html_b1bbf76221f0a4d8b578f0fca049b1c5);
+            
+        
+
+        marker_690678d073beaf379b77e35a9f9e31b1.bindPopup(popup_dfb3d261569478e75be0c05d33af03f1)
+        ;
+
+        
+    
+    
+            var marker_c361fcaa8febfcc69ff6b559915910d0 = L.marker(
+                [50.029416, 18.689527],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_ae1dc4feb955879b9408f975ba7701e2 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c278e09954ec8ac5ad552b852a083139 = $(`<div id="html_c278e09954ec8ac5ad552b852a083139" style="width: 100.0%; height: 100.0%;">[10554, 'Żory, Os. Gen. Władysława Sikorskiego']</div>`)[0];
+                popup_ae1dc4feb955879b9408f975ba7701e2.setContent(html_c278e09954ec8ac5ad552b852a083139);
+            
+        
+
+        marker_c361fcaa8febfcc69ff6b559915910d0.bindPopup(popup_ae1dc4feb955879b9408f975ba7701e2)
+        ;
+
+        
+    
+    
+            var marker_fd9ce0a130d9856c7dd55cff3865d0e6 = L.marker(
+                [49.952544, 18.607953],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_32906a63d73ebd9e60d21ab38c4e5a48 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5eabac0009d9f83831352a9c8f77f115 = $(`<div id="html_5eabac0009d9f83831352a9c8f77f115" style="width: 100.0%; height: 100.0%;">[11855, 'Jastrzębie-Zdrój, Al.J.Piłsudskiego/Harcerska']</div>`)[0];
+                popup_32906a63d73ebd9e60d21ab38c4e5a48.setContent(html_5eabac0009d9f83831352a9c8f77f115);
+            
+        
+
+        marker_fd9ce0a130d9856c7dd55cff3865d0e6.bindPopup(popup_32906a63d73ebd9e60d21ab38c4e5a48)
+        ;
+
+        
+    
+    
+            var marker_b0e5e49a604e7cf72c82f405d4b40c81 = L.marker(
+                [49.813464, 19.027318],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_d6434b272d4f0002070857786a2c8653 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e72db23d96aa8407e0437a73dff03bf3 = $(`<div id="html_e72db23d96aa8407e0437a73dff03bf3" style="width: 100.0%; height: 100.0%;">[789, 'Bielsko-Biała, Kossak-Szczuckiej']</div>`)[0];
+                popup_d6434b272d4f0002070857786a2c8653.setContent(html_e72db23d96aa8407e0437a73dff03bf3);
+            
+        
+
+        marker_b0e5e49a604e7cf72c82f405d4b40c81.bindPopup(popup_d6434b272d4f0002070857786a2c8653)
+        ;
+
+        
+    
+    
+            var marker_71f6dea921b3aafeff53e90be5193c15 = L.marker(
+                [49.802075, 19.04861],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_547e11c9ffbf7d637f1836b32cd30449 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3a41d766fcb210a668151cfb6d071b2b = $(`<div id="html_3a41d766fcb210a668151cfb6d071b2b" style="width: 100.0%; height: 100.0%;">[10158, 'Bielsko-Biała, ul.Partyzantów']</div>`)[0];
+                popup_547e11c9ffbf7d637f1836b32cd30449.setContent(html_3a41d766fcb210a668151cfb6d071b2b);
+            
+        
+
+        marker_71f6dea921b3aafeff53e90be5193c15.bindPopup(popup_547e11c9ffbf7d637f1836b32cd30449)
+        ;
+
+        
+    
+    
+            var marker_87f05813972d9a5f2b4dbde7a0e64649 = L.marker(
+                [50.817217, 19.118997],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_7ee97f9447ef1d6c80ff78b8ecfeff9b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_94b9a901b2c4eaf13aa241064891493d = $(`<div id="html_94b9a901b2c4eaf13aa241064891493d" style="width: 100.0%; height: 100.0%;">[798, 'Częstochowa, AK/Jana Pawła II']</div>`)[0];
+                popup_7ee97f9447ef1d6c80ff78b8ecfeff9b.setContent(html_94b9a901b2c4eaf13aa241064891493d);
+            
+        
+
+        marker_87f05813972d9a5f2b4dbde7a0e64649.bindPopup(popup_7ee97f9447ef1d6c80ff78b8ecfeff9b)
+        ;
+
+        
+    
+    
+            var marker_f0b18dc9bccd39fbd0d2885c8e97d062 = L.marker(
+                [50.836389, 19.130111],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_d124e3443124c0f69f4b459f9d9131fe = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ed275f73fc12903b8c6ad4a52c7c2509 = $(`<div id="html_ed275f73fc12903b8c6ad4a52c7c2509" style="width: 100.0%; height: 100.0%;">[800, 'Częstochowa, Baczyńskiego']</div>`)[0];
+                popup_d124e3443124c0f69f4b459f9d9131fe.setContent(html_ed275f73fc12903b8c6ad4a52c7c2509);
+            
+        
+
+        marker_f0b18dc9bccd39fbd0d2885c8e97d062.bindPopup(popup_d124e3443124c0f69f4b459f9d9131fe)
+        ;
+
+        
+    
+    
+            var marker_c32445373d49432319480f0775767e66 = L.marker(
+                [49.719731, 18.826722],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_34be13570ee4933d18212f3e7a4422f0 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8cba2add8ffa8b0dfb44b2202769405a = $(`<div id="html_8cba2add8ffa8b0dfb44b2202769405a" style="width: 100.0%; height: 100.0%;">[842, 'Ustroń, Sanatoryjna']</div>`)[0];
+                popup_34be13570ee4933d18212f3e7a4422f0.setContent(html_8cba2add8ffa8b0dfb44b2202769405a);
+            
+        
+
+        marker_c32445373d49432319480f0775767e66.bindPopup(popup_34be13570ee4933d18212f3e7a4422f0)
+        ;
+
+        
+    
+    
+            var marker_a266f34152f6014a1b0a3e073d0fae0d = L.marker(
+                [50.007629, 18.455548],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_9f686e0cfe4d3185f43128feafb0f9b0 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f52128c5b33fc7a6655c9f0cafd60a3e = $(`<div id="html_f52128c5b33fc7a6655c9f0cafd60a3e" style="width: 100.0%; height: 100.0%;">[845, 'Wodzisław Śląski, Gałczyńskiego']</div>`)[0];
+                popup_9f686e0cfe4d3185f43128feafb0f9b0.setContent(html_f52128c5b33fc7a6655c9f0cafd60a3e);
+            
+        
+
+        marker_a266f34152f6014a1b0a3e073d0fae0d.bindPopup(popup_9f686e0cfe4d3185f43128feafb0f9b0)
+        ;
+
+        
+    
+    
+            var marker_b7a6b9da2c7b87b0f49556812c21701d = L.marker(
+                [50.710889, 19.458797],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_9917c7fd249a7614b0d3517c6326c240 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_612be87e09e36e9ceebd1b604ef0ecf5 = $(`<div id="html_612be87e09e36e9ceebd1b604ef0ecf5" style="width: 100.0%; height: 100.0%;">[853, 'Złoty Potok, Leśniczówka']</div>`)[0];
+                popup_9917c7fd249a7614b0d3517c6326c240.setContent(html_612be87e09e36e9ceebd1b604ef0ecf5);
+            
+        
+
+        marker_b7a6b9da2c7b87b0f49556812c21701d.bindPopup(popup_9917c7fd249a7614b0d3517c6326c240)
+        ;
+
+        
+    
+    
+            var marker_2d58405fa2d4499424ed6995cb558e46 = L.marker(
+                [49.671602, 19.234446],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_a9c4bc6da344dfcbecd66b88cb6bd66f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7bcd7efcf1ce863bb71f36dd8b2dfbea = $(`<div id="html_7bcd7efcf1ce863bb71f36dd8b2dfbea" style="width: 100.0%; height: 100.0%;">[856, 'Żywiec, Kopernika']</div>`)[0];
+                popup_a9c4bc6da344dfcbecd66b88cb6bd66f.setContent(html_7bcd7efcf1ce863bb71f36dd8b2dfbea);
+            
+        
+
+        marker_2d58405fa2d4499424ed6995cb558e46.bindPopup(popup_a9c4bc6da344dfcbecd66b88cb6bd66f)
+        ;
+
+        
+    
+    
+            var marker_d0116e7e904719b0ef3bbf0211d5dea5 = L.marker(
+                [50.16385, 18.659977],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_8acc21301006d139d2ba7afaa702380f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ae5684b67c828317bb223453422812a4 = $(`<div id="html_ae5684b67c828317bb223453422812a4" style="width: 100.0%; height: 100.0%;">[9000, 'Czerwionka-Leszczyny, Kopalniana']</div>`)[0];
+                popup_8acc21301006d139d2ba7afaa702380f.setContent(html_ae5684b67c828317bb223453422812a4);
+            
+        
+
+        marker_d0116e7e904719b0ef3bbf0211d5dea5.bindPopup(popup_8acc21301006d139d2ba7afaa702380f)
+        ;
+
+        
+    
+    
+            var marker_6f26b35b585bd7c8784aff7474ea8b57 = L.marker(
+                [50.675693, 18.682065],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_4d1cf8afd354c6538953dfd72c86c7aa = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_af8b25b257d206ef435b823e978494a4 = $(`<div id="html_af8b25b257d206ef435b823e978494a4" style="width: 100.0%; height: 100.0%;">[11278, 'Lubliniec, ks. Szymały']</div>`)[0];
+                popup_4d1cf8afd354c6538953dfd72c86c7aa.setContent(html_af8b25b257d206ef435b823e978494a4);
+            
+        
+
+        marker_6f26b35b585bd7c8784aff7474ea8b57.bindPopup(popup_4d1cf8afd354c6538953dfd72c86c7aa)
+        ;
+
+        
+    
+    
+            var marker_1f17822e91a72be9c519c3f7196b59a2 = L.marker(
+                [50.493045, 19.439012],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_c406fc283bd1af14a598bdef29949a57 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_70a46fa71a5bc3815cc20810bdd6dabd = $(`<div id="html_70a46fa71a5bc3815cc20810bdd6dabd" style="width: 100.0%; height: 100.0%;">[11455, 'Zawiercie, K.I.Gałczyńskiego']</div>`)[0];
+                popup_c406fc283bd1af14a598bdef29949a57.setContent(html_70a46fa71a5bc3815cc20810bdd6dabd);
+            
+        
+
+        marker_1f17822e91a72be9c519c3f7196b59a2.bindPopup(popup_c406fc283bd1af14a598bdef29949a57)
+        ;
+
+        
+    
+    
+            var marker_f4a1f3916ddc90fa82358aa666d55099 = L.marker(
+                [49.93785, 18.975594],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_d1343b2658ffea1140d89574e783c406 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_728f2e8267a4a23ee084d0bcd0f870f7 = $(`<div id="html_728f2e8267a4a23ee084d0bcd0f870f7" style="width: 100.0%; height: 100.0%;">[11457, 'Goczałkowice Zdrój, Parkowa']</div>`)[0];
+                popup_d1343b2658ffea1140d89574e783c406.setContent(html_728f2e8267a4a23ee084d0bcd0f870f7);
+            
+        
+
+        marker_f4a1f3916ddc90fa82358aa666d55099.bindPopup(popup_d1343b2658ffea1140d89574e783c406)
+        ;
+
+        
+    
+    
+            var marker_24d2b6325ff69bcc0c7808480757c2a5 = L.marker(
+                [50.091142, 18.216261],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_ab734debe195eef7ff2e4d468659a6a7 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3c197c8153b6cb6e1fcd73db95d0ee7b = $(`<div id="html_3c197c8153b6cb6e1fcd73db95d0ee7b" style="width: 100.0%; height: 100.0%;">[11794, 'Racibórz, Wojska Polskiego']</div>`)[0];
+                popup_ab734debe195eef7ff2e4d468659a6a7.setContent(html_3c197c8153b6cb6e1fcd73db95d0ee7b);
+            
+        
+
+        marker_24d2b6325ff69bcc0c7808480757c2a5.bindPopup(popup_ab734debe195eef7ff2e4d468659a6a7)
+        ;
+
+        
+    
+    
+            var marker_7904f886b1cd8bdb86269a7352b1b1ec = L.marker(
+                [49.755989, 18.634075],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_2d0303368251f1dcb90287c02b73bc4e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c3693a97f67028ee0b6b97af93243534 = $(`<div id="html_c3693a97f67028ee0b6b97af93243534" style="width: 100.0%; height: 100.0%;">[16406, 'Cieszyn, Chopina']</div>`)[0];
+                popup_2d0303368251f1dcb90287c02b73bc4e.setContent(html_c3693a97f67028ee0b6b97af93243534);
+            
+        
+
+        marker_7904f886b1cd8bdb86269a7352b1b1ec.bindPopup(popup_2d0303368251f1dcb90287c02b73bc4e)
+        ;
+
+        
+    
+    
+            var marker_ff86cff0a7fd31beaa423e6b3ceb6147 = L.marker(
+                [50.878998, 20.633692],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_7e8f6ae8ccd90086e059b64394e073b5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_bb6817f64f3882156e3cf008306c8dc0 = $(`<div id="html_bb6817f64f3882156e3cf008306c8dc0" style="width: 100.0%; height: 100.0%;">[11195, 'Kielce, Targowa']</div>`)[0];
+                popup_7e8f6ae8ccd90086e059b64394e073b5.setContent(html_bb6817f64f3882156e3cf008306c8dc0);
+            
+        
+
+        marker_ff86cff0a7fd31beaa423e6b3ceb6147.bindPopup(popup_7e8f6ae8ccd90086e059b64394e073b5)
+        ;
+
+        
+    
+    
+            var marker_c199f5bdbcdad5f0a8fce49184d1b36b = L.marker(
+                [50.886014, 20.642858],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_66730751b15d253f3729eca139c4fbf3 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_99983ce6350d329b5698632f9f2fc083 = $(`<div id="html_99983ce6350d329b5698632f9f2fc083" style="width: 100.0%; height: 100.0%;">[16196, 'Kielce, Warszawska 108']</div>`)[0];
+                popup_66730751b15d253f3729eca139c4fbf3.setContent(html_99983ce6350d329b5698632f9f2fc083);
+            
+        
+
+        marker_c199f5bdbcdad5f0a8fce49184d1b36b.bindPopup(popup_66730751b15d253f3729eca139c4fbf3)
+        ;
+
+        
+    
+    
+            var marker_cf48e15a7a2986b4991524e294a8fd2f = L.marker(
+                [50.887606, 20.579965],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_158a07895893e027c97b3950e37be3ee = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4085e5ad6be8e71b15ca0136ba2a5930 = $(`<div id="html_4085e5ad6be8e71b15ca0136ba2a5930" style="width: 100.0%; height: 100.0%;">[16497, 'Kielce, Jurajska']</div>`)[0];
+                popup_158a07895893e027c97b3950e37be3ee.setContent(html_4085e5ad6be8e71b15ca0136ba2a5930);
+            
+        
+
+        marker_cf48e15a7a2986b4991524e294a8fd2f.bindPopup(popup_158a07895893e027c97b3950e37be3ee)
+        ;
+
+        
+    
+    
+            var marker_d1b532f5671ec3b0b1ce037069d29ba2 = L.marker(
+                [50.823108, 20.533506],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_9600455fa33eff3d212a374f821d72a8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f7cc102472d400b84dfaa9ffe27f38bc = $(`<div id="html_f7cc102472d400b84dfaa9ffe27f38bc" style="width: 100.0%; height: 100.0%;">[769, 'Nowiny, Parkowa']</div>`)[0];
+                popup_9600455fa33eff3d212a374f821d72a8.setContent(html_f7cc102472d400b84dfaa9ffe27f38bc);
+            
+        
+
+        marker_d1b532f5671ec3b0b1ce037069d29ba2.bindPopup(popup_9600455fa33eff3d212a374f821d72a8)
+        ;
+
+        
+    
+    
+            var marker_3f89b2ae67974197eb56a6ef5d44ef19 = L.marker(
+                [51.050611, 21.084175],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_4834ded2fe29942f0ce0c346974b198d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f08bf367f3ab27a9a04783da9c5b7c36 = $(`<div id="html_f08bf367f3ab27a9a04783da9c5b7c36" style="width: 100.0%; height: 100.0%;">[785, 'Starachowice, Złota']</div>`)[0];
+                popup_4834ded2fe29942f0ce0c346974b198d.setContent(html_f08bf367f3ab27a9a04783da9c5b7c36);
+            
+        
+
+        marker_3f89b2ae67974197eb56a6ef5d44ef19.bindPopup(popup_4834ded2fe29942f0ce0c346974b198d)
+        ;
+
+        
+    
+    
+            var marker_f84c5066171f9e7bf8f9e8899e959e1e = L.marker(
+                [50.80961, 20.266032],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_46b441748779d9cfbbe7d67f2820b6c6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e70100bfe693ff51155486bb40005a84 = $(`<div id="html_e70100bfe693ff51155486bb40005a84" style="width: 100.0%; height: 100.0%;">[10794, 'Małogoszcz, Słoneczna']</div>`)[0];
+                popup_46b441748779d9cfbbe7d67f2820b6c6.setContent(html_e70100bfe693ff51155486bb40005a84);
+            
+        
+
+        marker_f84c5066171f9e7bf8f9e8899e959e1e.bindPopup(popup_46b441748779d9cfbbe7d67f2820b6c6)
+        ;
+
+        
+    
+    
+            var marker_3e0c25091d103c2ed31a27b089cac2db = L.marker(
+                [50.621482, 20.614057],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_7393df642aeee0ea7e400aa1be205a0c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9d5ec8cbb00170dcf9dd685ce3d4e819 = $(`<div id="html_9d5ec8cbb00170dcf9dd685ce3d4e819" style="width: 100.0%; height: 100.0%;">[11754, 'Gołuchów, Ujęcie Wody']</div>`)[0];
+                popup_7393df642aeee0ea7e400aa1be205a0c.setContent(html_9d5ec8cbb00170dcf9dd685ce3d4e819);
+            
+        
+
+        marker_3e0c25091d103c2ed31a27b089cac2db.bindPopup(popup_7393df642aeee0ea7e400aa1be205a0c)
+        ;
+
+        
+    
+    
+            var marker_a6c163dc4dcf589087e1ad5b8b6d8096 = L.marker(
+                [50.850321, 19.97199],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_e085cee592c5f02a8d5b1611ebcb6886 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_92f81145a876fe329980c750253e71ca = $(`<div id="html_92f81145a876fe329980c750253e71ca" style="width: 100.0%; height: 100.0%;">[12016, 'Włoszczowa, Kilińskiego']</div>`)[0];
+                popup_e085cee592c5f02a8d5b1611ebcb6886.setContent(html_92f81145a876fe329980c750253e71ca);
+            
+        
+
+        marker_a6c163dc4dcf589087e1ad5b8b6d8096.bindPopup(popup_e085cee592c5f02a8d5b1611ebcb6886)
+        ;
+
+        
+    
+    
+            var marker_f21936923a6d9c3145ac2998a5494465 = L.marker(
+                [50.778479, 21.081224],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_712e86cc7e374f708c2310f753afdc98 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_897ff186c20a6a2dcf8534420910e909 = $(`<div id="html_897ff186c20a6a2dcf8534420910e909" style="width: 100.0%; height: 100.0%;">[12138, 'Łagów, Zapłotnia']</div>`)[0];
+                popup_712e86cc7e374f708c2310f753afdc98.setContent(html_897ff186c20a6a2dcf8534420910e909);
+            
+        
+
+        marker_f21936923a6d9c3145ac2998a5494465.bindPopup(popup_712e86cc7e374f708c2310f753afdc98)
+        ;
+
+        
+    
+    
+            var marker_934d3d0618a3931ac14b0409923a03d4 = L.marker(
+                [53.789233, 20.486075],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_9d7a4a9b153533b705c820d3e977e350 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_cada6e69fa7f5f658b80ef30ec512980 = $(`<div id="html_cada6e69fa7f5f658b80ef30ec512980" style="width: 100.0%; height: 100.0%;">[877, ' Olsztyn, Puszkina']</div>`)[0];
+                popup_9d7a4a9b153533b705c820d3e977e350.setContent(html_cada6e69fa7f5f658b80ef30ec512980);
+            
+        
+
+        marker_934d3d0618a3931ac14b0409923a03d4.bindPopup(popup_9d7a4a9b153533b705c820d3e977e350)
+        ;
+
+        
+    
+    
+            var marker_d4e74eebc900a7f6df1c8c534d197793 = L.marker(
+                [54.167847, 19.410942],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_f2c2c1879fe3908afb5a5b3153c8a928 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f60ec9b3e84287db663fa92f1036e8ee = $(`<div id="html_f60ec9b3e84287db663fa92f1036e8ee" style="width: 100.0%; height: 100.0%;">[861, 'Elbląg, Bażyńskiego']</div>`)[0];
+                popup_f2c2c1879fe3908afb5a5b3153c8a928.setContent(html_f60ec9b3e84287db663fa92f1036e8ee);
+            
+        
+
+        marker_d4e74eebc900a7f6df1c8c534d197793.bindPopup(popup_f2c2c1879fe3908afb5a5b3153c8a928)
+        ;
+
+        
+    
+    
+            var marker_545b30e0b4519c26799cd7173a11e54a = L.marker(
+                [51.589208, 19.131433],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_fc9e19dfb6e1ca000cedfcd9331ae9f7 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2e8933d72af817eca04d4c729158674e = $(`<div id="html_2e8933d72af817eca04d4c729158674e" style="width: 100.0%; height: 100.0%;">[11554, 'Łask, Narutowicza']</div>`)[0];
+                popup_fc9e19dfb6e1ca000cedfcd9331ae9f7.setContent(html_2e8933d72af817eca04d4c729158674e);
+            
+        
+
+        marker_545b30e0b4519c26799cd7173a11e54a.bindPopup(popup_fc9e19dfb6e1ca000cedfcd9331ae9f7)
+        ;
+
+        
+    
+    
+            var marker_aa20893ee25aa208b5d2e062515469d0 = L.marker(
+                [52.231908, 19.353689],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_ec26a53540402d77bbbde5b75e94765b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_687724b914877a31ef49ab69365287fa = $(`<div id="html_687724b914877a31ef49ab69365287fa" style="width: 100.0%; height: 100.0%;">[11616, 'Kutno, 1 Maja']</div>`)[0];
+                popup_ec26a53540402d77bbbde5b75e94765b.setContent(html_687724b914877a31ef49ab69365287fa);
+            
+        
+
+        marker_aa20893ee25aa208b5d2e062515469d0.bindPopup(popup_ec26a53540402d77bbbde5b75e94765b)
+        ;
+
+        
+    
+    
+            var marker_30cd02bc4d2fe395226afbfa9274725f = L.marker(
+                [50.057678, 19.926189],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_9517ebe2f2719dc7744a2ce99e399c24 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_169c8aec8280e901ca029557e3759f84 = $(`<div id="html_169c8aec8280e901ca029557e3759f84" style="width: 100.0%; height: 100.0%;">[400, 'Kraków, Aleja Krasińskiego']</div>`)[0];
+                popup_9517ebe2f2719dc7744a2ce99e399c24.setContent(html_169c8aec8280e901ca029557e3759f84);
+            
+        
+
+        marker_30cd02bc4d2fe395226afbfa9274725f.bindPopup(popup_9517ebe2f2719dc7744a2ce99e399c24)
+        ;
+
+        
+    
+    
+            var marker_b3f21e18975c56571fc399072d70f51d = L.marker(
+                [50.010575, 19.949189],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_28f1379945731aad85cb19c325920b89 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_de561a102fb8f89b47786a851a022878 = $(`<div id="html_de561a102fb8f89b47786a851a022878" style="width: 100.0%; height: 100.0%;">[401, 'Kraków, Bujaka']</div>`)[0];
+                popup_28f1379945731aad85cb19c325920b89.setContent(html_de561a102fb8f89b47786a851a022878);
+            
+        
+
+        marker_b3f21e18975c56571fc399072d70f51d.bindPopup(popup_28f1379945731aad85cb19c325920b89)
+        ;
+
+        
+    
+    
+            var marker_98ba4491168190a6b4be1d756e05b6af = L.marker(
+                [50.069308, 20.053492],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_484a962c50421e53e007ef82456fdb9a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7eb97731c2291fc546e50d3c0fbe75a4 = $(`<div id="html_7eb97731c2291fc546e50d3c0fbe75a4" style="width: 100.0%; height: 100.0%;">[402, 'Kraków, Bulwarowa']</div>`)[0];
+                popup_484a962c50421e53e007ef82456fdb9a.setContent(html_7eb97731c2291fc546e50d3c0fbe75a4);
+            
+        
+
+        marker_98ba4491168190a6b4be1d756e05b6af.bindPopup(popup_484a962c50421e53e007ef82456fdb9a)
+        ;
+
+        
+    
+    
+            var marker_1a7a5137d5e2f733c766ee6a0f597937 = L.marker(
+                [50.057447, 19.946008],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_4540c86a99ed2937af931bbb563f54e0 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7cf5c3881bc7075ee70c55ee4c155027 = $(`<div id="html_7cf5c3881bc7075ee70c55ee4c155027" style="width: 100.0%; height: 100.0%;">[10121, 'Kraków, Dietla']</div>`)[0];
+                popup_4540c86a99ed2937af931bbb563f54e0.setContent(html_7cf5c3881bc7075ee70c55ee4c155027);
+            
+        
+
+        marker_1a7a5137d5e2f733c766ee6a0f597937.bindPopup(popup_4540c86a99ed2937af931bbb563f54e0)
+        ;
+
+        
+    
+    
+            var marker_2debbbf9fffd6be27aa354376daeb255 = L.marker(
+                [50.081197, 19.895358],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_761ba442ae81a79c5ce0478fbc4a925f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a274c577b0731db485f3b39d9ad0620a = $(`<div id="html_a274c577b0731db485f3b39d9ad0620a" style="width: 100.0%; height: 100.0%;">[10123, 'Kraków, Złoty Róg']</div>`)[0];
+                popup_761ba442ae81a79c5ce0478fbc4a925f.setContent(html_a274c577b0731db485f3b39d9ad0620a);
+            
+        
+
+        marker_2debbbf9fffd6be27aa354376daeb255.bindPopup(popup_761ba442ae81a79c5ce0478fbc4a925f)
+        ;
+
+        
+    
+    
+            var marker_10e9bf2b7fa0879538a329db8b8111e1 = L.marker(
+                [50.098508, 20.018269],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_be1fc06d43f43ad4d52c499d8ee8083d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_69bd7bebb173cc4593a4cac586f3e456 = $(`<div id="html_69bd7bebb173cc4593a4cac586f3e456" style="width: 100.0%; height: 100.0%;">[10139, 'Kraków, os. Piastów']</div>`)[0];
+                popup_be1fc06d43f43ad4d52c499d8ee8083d.setContent(html_69bd7bebb173cc4593a4cac586f3e456);
+            
+        
+
+        marker_10e9bf2b7fa0879538a329db8b8111e1.bindPopup(popup_be1fc06d43f43ad4d52c499d8ee8083d)
+        ;
+
+        
+    
+    
+            var marker_590bbeb58c4be9e21faf4c60c22589b6 = L.marker(
+                [50.100569, 20.122561],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_3f14539c6b43c45651c84f7ebc5c06ba = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d9685082c8d40bf108c9aea388d86f3d = $(`<div id="html_d9685082c8d40bf108c9aea388d86f3d" style="width: 100.0%; height: 100.0%;">[10447, 'Kraków, os. Wadów']</div>`)[0];
+                popup_3f14539c6b43c45651c84f7ebc5c06ba.setContent(html_d9685082c8d40bf108c9aea388d86f3d);
+            
+        
+
+        marker_590bbeb58c4be9e21faf4c60c22589b6.bindPopup(popup_3f14539c6b43c45651c84f7ebc5c06ba)
+        ;
+
+        
+    
+    
+            var marker_549ad622ef4932eac70bad8a9eb66274 = L.marker(
+                [49.991442, 19.936792],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_e6e423dece0c4654e4d01cc624083793 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4809ba88f39065ab0ad78270a52514fe = $(`<div id="html_4809ba88f39065ab0ad78270a52514fe" style="width: 100.0%; height: 100.0%;">[11303, 'Kraków, os. Swoszowice']</div>`)[0];
+                popup_e6e423dece0c4654e4d01cc624083793.setContent(html_4809ba88f39065ab0ad78270a52514fe);
+            
+        
+
+        marker_549ad622ef4932eac70bad8a9eb66274.bindPopup(popup_e6e423dece0c4654e4d01cc624083793)
+        ;
+
+        
+    
+    
+            var marker_451b7abf5bcefa3f9c0cc60285f83f3e = L.marker(
+                [50.020169, 21.004167],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_fea9c183af79c0aafb6afecc6f193a28 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1d4ec82935f9f96ba2435d74c6063d01 = $(`<div id="html_1d4ec82935f9f96ba2435d74c6063d01" style="width: 100.0%; height: 100.0%;">[444, 'Tarnów, Bitwy pod Studziankami']</div>`)[0];
+                popup_fea9c183af79c0aafb6afecc6f193a28.setContent(html_1d4ec82935f9f96ba2435d74c6063d01);
+            
+        
+
+        marker_451b7abf5bcefa3f9c0cc60285f83f3e.bindPopup(popup_fea9c183af79c0aafb6afecc6f193a28)
+        ;
+
+        
+    
+    
+            var marker_d768b057ba94262afe3c4ca985e9fd73 = L.marker(
+                [50.018253, 20.992578],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_7a76dcb006fe3effe3231174aed5b88e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a59ce4aa54d2916c3df875bda538f454 = $(`<div id="html_a59ce4aa54d2916c3df875bda538f454" style="width: 100.0%; height: 100.0%;">[10120, 'Tarnów, Ks. Romana Sitko']</div>`)[0];
+                popup_7a76dcb006fe3effe3231174aed5b88e.setContent(html_a59ce4aa54d2916c3df875bda538f454);
+            
+        
+
+        marker_d768b057ba94262afe3c4ca985e9fd73.bindPopup(popup_7a76dcb006fe3effe3231174aed5b88e)
+        ;
+
+        
+    
+    
+            var marker_55bd3e5f9b234ac83bc5ce1839b36ea8 = L.marker(
+                [49.619281, 20.714403],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_a37548b0f0ddeb585767f1df565752dd = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6d60c4b567db884e20f95e5b54f12762 = $(`<div id="html_6d60c4b567db884e20f95e5b54f12762" style="width: 100.0%; height: 100.0%;">[426, 'Nowy Sącz, Nadbrzeżna']</div>`)[0];
+                popup_a37548b0f0ddeb585767f1df565752dd.setContent(html_6d60c4b567db884e20f95e5b54f12762);
+            
+        
+
+        marker_55bd3e5f9b234ac83bc5ce1839b36ea8.bindPopup(popup_a37548b0f0ddeb585767f1df565752dd)
+        ;
+
+        
+    
+    
+            var marker_2a4325ed5d0fdb68fe2a2807c1fb92f4 = L.marker(
+                [50.054786, 21.416256],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_ec7315a5da8f06d9fa003635bade0d2c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fd07ef3b67b396aececbee96e6b1d995 = $(`<div id="html_fd07ef3b67b396aececbee96e6b1d995" style="width: 100.0%; height: 100.0%;">[9173, 'Dębica, ul.Grottgera']</div>`)[0];
+                popup_ec7315a5da8f06d9fa003635bade0d2c.setContent(html_fd07ef3b67b396aececbee96e6b1d995);
+            
+        
+
+        marker_2a4325ed5d0fdb68fe2a2807c1fb92f4.bindPopup(popup_ec7315a5da8f06d9fa003635bade0d2c)
+        ;
+
+        
+    
+    
+            var marker_43eaa003023005550578d931578ead97 = L.marker(
+                [49.511297, 21.498606],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_b49779e7088cbe5c6e800b9ccd0d6ddb = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_96eb394778cceb057b0f1253b894f7a7 = $(`<div id="html_96eb394778cceb057b0f1253b894f7a7" style="width: 100.0%; height: 100.0%;">[9175, 'Krempna, Ośrodek edukacyjno-muzealny MPN']</div>`)[0];
+                popup_b49779e7088cbe5c6e800b9ccd0d6ddb.setContent(html_96eb394778cceb057b0f1253b894f7a7);
+            
+        
+
+        marker_43eaa003023005550578d931578ead97.bindPopup(popup_b49779e7088cbe5c6e800b9ccd0d6ddb)
+        ;
+
+        
+    
+    
+            var marker_3ea8e299ae20425e0019827ef99d8306 = L.marker(
+                [49.546539, 21.851006],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_54629299fa49864cb34d0e1df7587e27 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5d060cc1125811e938a982152617941d = $(`<div id="html_5d060cc1125811e938a982152617941d" style="width: 100.0%; height: 100.0%;">[10414, 'Rymanów Zdrój, Parkowa']</div>`)[0];
+                popup_54629299fa49864cb34d0e1df7587e27.setContent(html_5d060cc1125811e938a982152617941d);
+            
+        
+
+        marker_3ea8e299ae20425e0019827ef99d8306.bindPopup(popup_54629299fa49864cb34d0e1df7587e27)
+        ;
+
+        
+    
+    
+            var marker_bc2cb5fc5c76c2ede0d65653da58011d = L.marker(
+                [50.299128, 21.440942],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_6de211872709d7b468a7119ffac3dd4d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ec5a32ee146a9be4932efdc34312c146 = $(`<div id="html_ec5a32ee146a9be4932efdc34312c146" style="width: 100.0%; height: 100.0%;">[10438, 'Mielec, Biernackiego']</div>`)[0];
+                popup_6de211872709d7b468a7119ffac3dd4d.setContent(html_ec5a32ee146a9be4932efdc34312c146);
+            
+        
+
+        marker_bc2cb5fc5c76c2ede0d65653da58011d.bindPopup(popup_6de211872709d7b468a7119ffac3dd4d)
+        ;
+
+        
+    
+    
+            var marker_f0a090db94d19e90777a0dad83cc8c8f = L.marker(
+                [49.714025, 21.641508],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_aaf358a5040bf966f20a4eb66d312360 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fc6732c6dae945be2856d31bec220e58 = $(`<div id="html_fc6732c6dae945be2856d31bec220e58" style="width: 100.0%; height: 100.0%;">[16978, 'Jedlicze, Tokarskich']</div>`)[0];
+                popup_aaf358a5040bf966f20a4eb66d312360.setContent(html_fc6732c6dae945be2856d31bec220e58);
+            
+        
+
+        marker_f0a090db94d19e90777a0dad83cc8c8f.bindPopup(popup_aaf358a5040bf966f20a4eb66d312360)
+        ;
+
+        
+    
+    
+            var marker_939339fbce6a9ec6acc3e52ac17a01c0 = L.marker(
+                [53.126689, 23.155869],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_3826c59fdc975dcd283a59358754b68f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6a48af79efb037b28395d752a5536dea = $(`<div id="html_6a48af79efb037b28395d752a5536dea" style="width: 100.0%; height: 100.0%;">[605, 'Białystok, Waszyngtona']</div>`)[0];
+                popup_3826c59fdc975dcd283a59358754b68f.setContent(html_6a48af79efb037b28395d752a5536dea);
+            
+        
+
+        marker_939339fbce6a9ec6acc3e52ac17a01c0.bindPopup(popup_3826c59fdc975dcd283a59358754b68f)
+        ;
+
+        
+    
+    
+            var marker_f7bd7e1fd68daaa2b52dce9e9364071e = L.marker(
+                [53.129306, 23.181744],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_0d44180bb1962f83efaf427a8b821488 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_072d7be4a6efe9ab9a0c15d6f5f1c9eb = $(`<div id="html_072d7be4a6efe9ab9a0c15d6f5f1c9eb" style="width: 100.0%; height: 100.0%;">[609, 'Białystok, Warszawska']</div>`)[0];
+                popup_0d44180bb1962f83efaf427a8b821488.setContent(html_072d7be4a6efe9ab9a0c15d6f5f1c9eb);
+            
+        
+
+        marker_f7bd7e1fd68daaa2b52dce9e9364071e.bindPopup(popup_0d44180bb1962f83efaf427a8b821488)
+        ;
+
+        
+    
+    
+            var marker_82b223856e3e1d522af4b4a30702c6b0 = L.marker(
+                [53.144122, 23.216322],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_81d6a051560469747998a393ac49caa2 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ece0b7a0dddc0c3161975a5d030b313c = $(`<div id="html_ece0b7a0dddc0c3161975a5d030b313c" style="width: 100.0%; height: 100.0%;">[11174, 'Białystok, 42 Pułku Piechoty']</div>`)[0];
+                popup_81d6a051560469747998a393ac49caa2.setContent(html_ece0b7a0dddc0c3161975a5d030b313c);
+            
+        
+
+        marker_82b223856e3e1d522af4b4a30702c6b0.bindPopup(popup_81d6a051560469747998a393ac49caa2)
+        ;
+
+        
+    
+    
+            var marker_caf30e050e81e2f8793020053da0b495 = L.marker(
+                [53.135286, 23.161325],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_b0c5e7341aa40bc0eede597506c7bcdb = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2e588ff82090fd6d51accbbc4919de44 = $(`<div id="html_2e588ff82090fd6d51accbbc4919de44" style="width: 100.0%; height: 100.0%;">[11814, 'Białystok, al.Piłsudskiego']</div>`)[0];
+                popup_b0c5e7341aa40bc0eede597506c7bcdb.setContent(html_2e588ff82090fd6d51accbbc4919de44);
+            
+        
+
+        marker_caf30e050e81e2f8793020053da0b495.bindPopup(popup_b0c5e7341aa40bc0eede597506c7bcdb)
+        ;
+
+        
+    
+    
+            var marker_e91829b94189abfd4c65bd153fd7554d = L.marker(
+                [53.215492, 23.642153],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_2498873fbcad95cae8562c23386b02a9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_013f63f43a84c7613f10aea809fe78be = $(`<div id="html_013f63f43a84c7613f10aea809fe78be" style="width: 100.0%; height: 100.0%;">[612, 'Borsukowizna, Szkółka Leśna']</div>`)[0];
+                popup_2498873fbcad95cae8562c23386b02a9.setContent(html_013f63f43a84c7613f10aea809fe78be);
+            
+        
+
+        marker_e91829b94189abfd4c65bd153fd7554d.bindPopup(popup_2498873fbcad95cae8562c23386b02a9)
+        ;
+
+        
+    
+    
+            var marker_e3b03a964ee03252c44104f139db6388 = L.marker(
+                [53.181394, 22.054381],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_23ba22de08d3183bd1c3f9f0edb9696d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_524da03958a539292ac2b493be5a30b4 = $(`<div id="html_524da03958a539292ac2b493be5a30b4" style="width: 100.0%; height: 100.0%;">[618, 'Łomża, Sikorskiego']</div>`)[0];
+                popup_23ba22de08d3183bd1c3f9f0edb9696d.setContent(html_524da03958a539292ac2b493be5a30b4);
+            
+        
+
+        marker_e3b03a964ee03252c44104f139db6388.bindPopup(popup_23ba22de08d3183bd1c3f9f0edb9696d)
+        ;
+
+        
+    
+    
+            var marker_9bb7e938f9d046c6d93fbca0911daa20 = L.marker(
+                [53.639793, 22.470274],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_df591de58def888f392c48431a7a8e38 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0486a2c87b3ab6ee16e1a00f0bbe52f9 = $(`<div id="html_0486a2c87b3ab6ee16e1a00f0bbe52f9" style="width: 100.0%; height: 100.0%;">[9994, 'Grajewo, Wojska Polskiego']</div>`)[0];
+                popup_df591de58def888f392c48431a7a8e38.setContent(html_0486a2c87b3ab6ee16e1a00f0bbe52f9);
+            
+        
+
+        marker_9bb7e938f9d046c6d93fbca0911daa20.bindPopup(popup_df591de58def888f392c48431a7a8e38)
+        ;
+
+        
+    
+    
+            var marker_f2d8a6019ce14a27c9439941799f6359 = L.marker(
+                [54.115897, 22.938464],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_5d8eb106648344cc5827ab9ca87fcd28 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9d7f96ce4fae437a60216df7e937634e = $(`<div id="html_9d7f96ce4fae437a60216df7e937634e" style="width: 100.0%; height: 100.0%;">[11154, 'Suwałki, Pułaskiego 26']</div>`)[0];
+                popup_5d8eb106648344cc5827ab9ca87fcd28.setContent(html_9d7f96ce4fae437a60216df7e937634e);
+            
+        
+
+        marker_f2d8a6019ce14a27c9439941799f6359.bindPopup(popup_5d8eb106648344cc5827ab9ca87fcd28)
+        ;
+
+        
+    
+    
+            var marker_87f697c9c10112a95bd18f791c0a9d88 = L.marker(
+                [53.85255, 22.984686],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_1671688e45220f79c78ba2d8a2b6774d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_12abf1b87e509234489d23ece77a6e38 = $(`<div id="html_12abf1b87e509234489d23ece77a6e38" style="width: 100.0%; height: 100.0%;">[11916, 'Augustów, Uzdrowisko']</div>`)[0];
+                popup_1671688e45220f79c78ba2d8a2b6774d.setContent(html_12abf1b87e509234489d23ece77a6e38);
+            
+        
+
+        marker_87f697c9c10112a95bd18f791c0a9d88.bindPopup(popup_1671688e45220f79c78ba2d8a2b6774d)
+        ;
+
+        
+    
+    
+            var marker_dd5f97e39ddf54de6d6da67f7b18972a = L.marker(
+                [54.400833, 18.657497],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_8a761ce3e106c58a06b464f854ba5203 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9e5ddc3289aa3b2e1965ebd558c3707c = $(`<div id="html_9e5ddc3289aa3b2e1965ebd558c3707c" style="width: 100.0%; height: 100.0%;">[731, 'Gdańsk, Wyzwolenia']</div>`)[0];
+                popup_8a761ce3e106c58a06b464f854ba5203.setContent(html_9e5ddc3289aa3b2e1965ebd558c3707c);
+            
+        
+
+        marker_dd5f97e39ddf54de6d6da67f7b18972a.bindPopup(popup_8a761ce3e106c58a06b464f854ba5203)
+        ;
+
+        
+    
+    
+            var marker_906b6a4db6afc5216f80b8264e9df6eb = L.marker(
+                [54.560836, 18.493331],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_d4bd45f5806dfb34e8cac1ba6c5a7459 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_30a9852042c0b0e4303d034ecbd535ce = $(`<div id="html_30a9852042c0b0e4303d034ecbd535ce" style="width: 100.0%; height: 100.0%;">[732, 'Gdynia, Porębskiego']</div>`)[0];
+                popup_d4bd45f5806dfb34e8cac1ba6c5a7459.setContent(html_30a9852042c0b0e4303d034ecbd535ce);
+            
+        
+
+        marker_906b6a4db6afc5216f80b8264e9df6eb.bindPopup(popup_d4bd45f5806dfb34e8cac1ba6c5a7459)
+        ;
+
+        
+    
+    
+            var marker_2a39340d7f3217097ed209ee5a606ec4 = L.marker(
+                [54.380279, 18.620274],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_ca50527a1e655bad3bdd822301f17527 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_136fcefa678a6bbdb1b1109b4073a3fa = $(`<div id="html_136fcefa678a6bbdb1b1109b4073a3fa" style="width: 100.0%; height: 100.0%;">[736, 'Gdańsk, Leczkowa']</div>`)[0];
+                popup_ca50527a1e655bad3bdd822301f17527.setContent(html_136fcefa678a6bbdb1b1109b4073a3fa);
+            
+        
+
+        marker_2a39340d7f3217097ed209ee5a606ec4.bindPopup(popup_ca50527a1e655bad3bdd822301f17527)
+        ;
+
+        
+    
+    
+            var marker_5018dfdb7a09d6fec5e88daa1f18ee0f = L.marker(
+                [54.43451, 18.57884],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_83fe7057cb06894d30c5ec5e07a2133e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_956ad387f3de9cc91455d1fedf9ec488 = $(`<div id="html_956ad387f3de9cc91455d1fedf9ec488" style="width: 100.0%; height: 100.0%;">[16242, 'Sopot, Bitwy Pod Płowcami']</div>`)[0];
+                popup_83fe7057cb06894d30c5ec5e07a2133e.setContent(html_956ad387f3de9cc91455d1fedf9ec488);
+            
+        
+
+        marker_5018dfdb7a09d6fec5e88daa1f18ee0f.bindPopup(popup_83fe7057cb06894d30c5ec5e07a2133e)
+        ;
+
+        
+    
+    
+            var marker_b9ed131b2d3c77fdf3d9449ed8e2abde = L.marker(
+                [54.463611, 17.046722],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_131653f72d6c59d88098d1455fc3f164 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_484f0c666f2dcb89f32a6836d5cc68ba = $(`<div id="html_484f0c666f2dcb89f32a6836d5cc68ba" style="width: 100.0%; height: 100.0%;">[725, 'Słupsk, Kniaziewicza']</div>`)[0];
+                popup_131653f72d6c59d88098d1455fc3f164.setContent(html_484f0c666f2dcb89f32a6836d5cc68ba);
+            
+        
+
+        marker_b9ed131b2d3c77fdf3d9449ed8e2abde.bindPopup(popup_131653f72d6c59d88098d1455fc3f164)
+        ;
+
+        
+    
+    
+            var marker_74988c166fd942232dfbd34251dfeaa2 = L.marker(
+                [54.120694, 17.975861],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_d94393e2c52802b5dcedad388f781c3b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f19550763e6c9d7dfbc0729eea7821ee = $(`<div id="html_f19550763e6c9d7dfbc0729eea7821ee" style="width: 100.0%; height: 100.0%;">[740, 'Kościerzyna, Targowa']</div>`)[0];
+                popup_d94393e2c52802b5dcedad388f781c3b.setContent(html_f19550763e6c9d7dfbc0729eea7821ee);
+            
+        
+
+        marker_74988c166fd942232dfbd34251dfeaa2.bindPopup(popup_d94393e2c52802b5dcedad388f781c3b)
+        ;
+
+        
+    
+    
+            var marker_c0a7576e99a9df799922edd910ca5f44 = L.marker(
+                [54.031247, 19.032899],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_38733c0ad16e6b4a78e0bc805a83eed3 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_271848dc7e2cbb04e0f15180dcaf51bb = $(`<div id="html_271848dc7e2cbb04e0f15180dcaf51bb" style="width: 100.0%; height: 100.0%;">[741, 'Malbork, Mickiewicza']</div>`)[0];
+                popup_38733c0ad16e6b4a78e0bc805a83eed3.setContent(html_271848dc7e2cbb04e0f15180dcaf51bb);
+            
+        
+
+        marker_c0a7576e99a9df799922edd910ca5f44.bindPopup(popup_38733c0ad16e6b4a78e0bc805a83eed3)
+        ;
+
+        
+    
+    
+            var marker_0a5775a90756c069676389bba511408a = L.marker(
+                [54.546167, 17.746194],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_2304e057bd055e78b396f4c95fd9c36e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d775991fae9b716f74b159e1c4fb739a = $(`<div id="html_d775991fae9b716f74b159e1c4fb739a" style="width: 100.0%; height: 100.0%;">[742, 'Lębork, Malczewskiego']</div>`)[0];
+                popup_2304e057bd055e78b396f4c95fd9c36e.setContent(html_d775991fae9b716f74b159e1c4fb739a);
+            
+        
+
+        marker_0a5775a90756c069676389bba511408a.bindPopup(popup_2304e057bd055e78b396f4c95fd9c36e)
+        ;
+
+        
+    
+    
+            var marker_5c43d57ea03c7c2696afa71748138f32 = L.marker(
+                [54.104111, 18.182972],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_533405dfef4a183cabbaa356f4b226b1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2db2b089b24c0346dbe54b93d04664ed = $(`<div id="html_2db2b089b24c0346dbe54b93d04664ed" style="width: 100.0%; height: 100.0%;">[743, 'Liniewko Kościerskie']</div>`)[0];
+                popup_533405dfef4a183cabbaa356f4b226b1.setContent(html_2db2b089b24c0346dbe54b93d04664ed);
+            
+        
+
+        marker_5c43d57ea03c7c2696afa71748138f32.bindPopup(popup_533405dfef4a183cabbaa356f4b226b1)
+        ;
+
+        
+    
+    
+            var marker_030912de85c886b6133da4e5e7277bbd = L.marker(
+                [54.754139, 17.534528],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_4f429c1304836f4ad6245002a6494111 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_efecaf82e7e057d0eafe5bfc1c650512 = $(`<div id="html_efecaf82e7e057d0eafe5bfc1c650512" style="width: 100.0%; height: 100.0%;">[750, 'Łeba, IMGW']</div>`)[0];
+                popup_4f429c1304836f4ad6245002a6494111.setContent(html_efecaf82e7e057d0eafe5bfc1c650512);
+            
+        
+
+        marker_030912de85c886b6133da4e5e7277bbd.bindPopup(popup_4f429c1304836f4ad6245002a6494111)
+        ;
+
+        
+    
+    
+            var marker_8e68ce177d76e6a829a370754700306f = L.marker(
+                [49.971047, 19.830422],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_f1b116ad9ebe1caf93276ae97c653cca = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_71360e4c4464831150693f7586d3b00b = $(`<div id="html_71360e4c4464831150693f7586d3b00b" style="width: 100.0%; height: 100.0%;">[437, 'Skawina, os. Ogrody']</div>`)[0];
+                popup_f1b116ad9ebe1caf93276ae97c653cca.setContent(html_71360e4c4464831150693f7586d3b00b);
+            
+        
+
+        marker_8e68ce177d76e6a829a370754700306f.bindPopup(popup_f1b116ad9ebe1caf93276ae97c653cca)
+        ;
+
+        
+    
+    
+            var marker_f782fac58c28a1496ed5e348e02fa7e0 = L.marker(
+                [49.633714, 21.116833],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_6a4937653e56a10aa4ae372d49d9fbb0 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_88694b477fb5625ae7b3a2e096dbb949 = $(`<div id="html_88694b477fb5625ae7b3a2e096dbb949" style="width: 100.0%; height: 100.0%;">[443, 'Szymbark']</div>`)[0];
+                popup_6a4937653e56a10aa4ae372d49d9fbb0.setContent(html_88694b477fb5625ae7b3a2e096dbb949);
+            
+        
+
+        marker_f782fac58c28a1496ed5e348e02fa7e0.bindPopup(popup_6a4937653e56a10aa4ae372d49d9fbb0)
+        ;
+
+        
+    
+    
+            var marker_5ec2d996fcd535307e650f70d2b0bac7 = L.marker(
+                [50.159406, 19.477464],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_95f7a576a45d7c1169c45ed3f49df0d1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_17a25efb23ce590bfd932b124ee82b7b = $(`<div id="html_17a25efb23ce590bfd932b124ee82b7b" style="width: 100.0%; height: 100.0%;">[449, 'Trzebinia, os. Związku Walki Młodych']</div>`)[0];
+                popup_95f7a576a45d7c1169c45ed3f49df0d1.setContent(html_17a25efb23ce590bfd932b124ee82b7b);
+            
+        
+
+        marker_5ec2d996fcd535307e650f70d2b0bac7.bindPopup(popup_95f7a576a45d7c1169c45ed3f49df0d1)
+        ;
+
+        
+    
+    
+            var marker_524f317e0d8c9a26a3552d9f202779e1 = L.marker(
+                [50.035117, 20.212689],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_d94c6c075b15416048a41c4642545475 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6272492748615d457efc5488b139b901 = $(`<div id="html_6272492748615d457efc5488b139b901" style="width: 100.0%; height: 100.0%;">[455, 'Niepołomice, 3 Maja']</div>`)[0];
+                popup_d94c6c075b15416048a41c4642545475.setContent(html_6272492748615d457efc5488b139b901);
+            
+        
+
+        marker_524f317e0d8c9a26a3552d9f202779e1.bindPopup(popup_d94c6c075b15416048a41c4642545475)
+        ;
+
+        
+    
+    
+            var marker_ff7c7a3f4d32fb75541def6102c90825 = L.marker(
+                [49.293564, 19.960083],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_d32735a165eb0708af48e142421b6a06 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ae4f419890c5c1aabf54d1bad39b70b7 = $(`<div id="html_ae4f419890c5c1aabf54d1bad39b70b7" style="width: 100.0%; height: 100.0%;">[459, 'Zakopane, Sienkiewicza']</div>`)[0];
+                popup_d32735a165eb0708af48e142421b6a06.setContent(html_ae4f419890c5c1aabf54d1bad39b70b7);
+            
+        
+
+        marker_ff7c7a3f4d32fb75541def6102c90825.bindPopup(popup_d32735a165eb0708af48e142421b6a06)
+        ;
+
+        
+    
+    
+            var marker_fa9456810a6a7034029d3d394e688fe2 = L.marker(
+                [50.0075, 20.259167],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_cf02282614bf62713443a0fd0d7cb5b8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_231a7b8b3b347159d08867e54d0dffd4 = $(`<div id="html_231a7b8b3b347159d08867e54d0dffd4" style="width: 100.0%; height: 100.0%;">[9179, 'Szarów, Spokojna']</div>`)[0];
+                popup_cf02282614bf62713443a0fd0d7cb5b8.setContent(html_231a7b8b3b347159d08867e54d0dffd4);
+            
+        
+
+        marker_fa9456810a6a7034029d3d394e688fe2.bindPopup(popup_cf02282614bf62713443a0fd0d7cb5b8)
+        ;
+
+        
+    
+    
+            var marker_18ff7e871c5f8f75ca576cca897bc0da = L.marker(
+                [50.025028, 19.726833],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_cb4630865f1aa17764a007efd6d64257 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_bea1ab82834703c4a47682ec8509556b = $(`<div id="html_bea1ab82834703c4a47682ec8509556b" style="width: 100.0%; height: 100.0%;">[10119, 'Kaszów']</div>`)[0];
+                popup_cb4630865f1aa17764a007efd6d64257.setContent(html_bea1ab82834703c4a47682ec8509556b);
+            
+        
+
+        marker_18ff7e871c5f8f75ca576cca897bc0da.bindPopup(popup_cb4630865f1aa17764a007efd6d64257)
+        ;
+
+        
+    
+    
+            var marker_84a9325e9c7ab7c21324015f0abd6182 = L.marker(
+                [49.743131, 19.600339],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_8109f4aa57fd02253a1b13927767b634 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0eba3f6b3662eeb20ecaa265797754d5 = $(`<div id="html_0eba3f6b3662eeb20ecaa265797754d5" style="width: 100.0%; height: 100.0%;">[10124, 'Sucha Beskidzka, Nieszczyńskiej']</div>`)[0];
+                popup_8109f4aa57fd02253a1b13927767b634.setContent(html_0eba3f6b3662eeb20ecaa265797754d5);
+            
+        
+
+        marker_84a9325e9c7ab7c21324015f0abd6182.bindPopup(popup_8109f4aa57fd02253a1b13927767b634)
+        ;
+
+        
+    
+    
+            var marker_a56a3129006821f0a6897215e497b768 = L.marker(
+                [49.608647, 19.966008],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_a38da881c7945e1eb37e69b275c762de = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_16cf52e7fe0bf71a500440afab45d347 = $(`<div id="html_16cf52e7fe0bf71a500440afab45d347" style="width: 100.0%; height: 100.0%;">[10446, 'Rabka-Zdrój, Orkana']</div>`)[0];
+                popup_a38da881c7945e1eb37e69b275c762de.setContent(html_16cf52e7fe0bf71a500440afab45d347);
+            
+        
+
+        marker_a56a3129006821f0a6897215e497b768.bindPopup(popup_a38da881c7945e1eb37e69b275c762de)
+        ;
+
+        
+    
+    
+            var marker_a605bc90bda05ed6e752ada181c7dd0a = L.marker(
+                [50.033083, 19.245275],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_2522b2c80d176f839f5ab59045696f94 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7eeb354b41a2a6e5d3d43803782ae0c6 = $(`<div id="html_7eeb354b41a2a6e5d3d43803782ae0c6" style="width: 100.0%; height: 100.0%;">[10814, 'Oświęcim, J. Bema']</div>`)[0];
+                popup_2522b2c80d176f839f5ab59045696f94.setContent(html_7eeb354b41a2a6e5d3d43803782ae0c6);
+            
+        
+
+        marker_a605bc90bda05ed6e752ada181c7dd0a.bindPopup(popup_2522b2c80d176f839f5ab59045696f94)
+        ;
+
+        
+    
+    
+            var marker_0f70a58c667dc75ba9e25ad1a0d2192f = L.marker(
+                [50.284, 19.564044],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_c82bd9324dbfabeeebcb4b54636ddce5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b2c29919e14c44b07264c37f9ca20748 = $(`<div id="html_b2c29919e14c44b07264c37f9ca20748" style="width: 100.0%; height: 100.0%;">[11301, 'Olkusz, Cegielniana']</div>`)[0];
+                popup_c82bd9324dbfabeeebcb4b54636ddce5.setContent(html_b2c29919e14c44b07264c37f9ca20748);
+            
+        
+
+        marker_0f70a58c667dc75ba9e25ad1a0d2192f.bindPopup(popup_c82bd9324dbfabeeebcb4b54636ddce5)
+        ;
+
+        
+    
+    
+            var marker_dbd0a07848c92f64b5315dce92c0f993 = L.marker(
+                [50.116028, 19.800639],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_b3190ad332648205f96ad3b296b52ea0 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7b9a78d6d72aaee50af1de2221d55372 = $(`<div id="html_7b9a78d6d72aaee50af1de2221d55372" style="width: 100.0%; height: 100.0%;">[11434, 'Zabierzów, Wapienna']</div>`)[0];
+                popup_b3190ad332648205f96ad3b296b52ea0.setContent(html_7b9a78d6d72aaee50af1de2221d55372);
+            
+        
+
+        marker_dbd0a07848c92f64b5315dce92c0f993.bindPopup(popup_b3190ad332648205f96ad3b296b52ea0)
+        ;
+
+        
+    
+    
+            var marker_7387befbec9a49afb57e5be32121b56b = L.marker(
+                [49.872364, 19.497467],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_e9c778051eb59b596f98f248be5ead87 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_00ecc65d33d1deba8edf595a217a2a71 = $(`<div id="html_00ecc65d33d1deba8edf595a217a2a71" style="width: 100.0%; height: 100.0%;">[16473, 'Wadowice, Bałysa']</div>`)[0];
+                popup_e9c778051eb59b596f98f248be5ead87.setContent(html_00ecc65d33d1deba8edf595a217a2a71);
+            
+        
+
+        marker_7387befbec9a49afb57e5be32121b56b.bindPopup(popup_e9c778051eb59b596f98f248be5ead87)
+        ;
+
+        
+    
+    
+            var marker_08a5333ca7ed7fa06ab919b5b4d5e80d = L.marker(
+                [49.831237, 19.923591],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_f83f38c0bc77bf365092201a16291312 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_28d34881c1209fe16d4a55cf908804e2 = $(`<div id="html_28d34881c1209fe16d4a55cf908804e2" style="width: 100.0%; height: 100.0%;">[16753, 'Myślenice']</div>`)[0];
+                popup_f83f38c0bc77bf365092201a16291312.setContent(html_28d34881c1209fe16d4a55cf908804e2);
+            
+        
+
+        marker_08a5333ca7ed7fa06ab919b5b4d5e80d.bindPopup(popup_f83f38c0bc77bf365092201a16291312)
+        ;
+
+        
+    
+    
+            var marker_0853ed151ab368d98fab2c36a1ee826b = L.marker(
+                [49.476675, 20.034878],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_1cba7c1d976a76e6e03a281820ed2521 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e3b7ce7c6ecdb79b5570b31b247e24f7 = $(`<div id="html_e3b7ce7c6ecdb79b5570b31b247e24f7" style="width: 100.0%; height: 100.0%;">[16894, 'Nowy Targ, al. Tysiąclecia ']</div>`)[0];
+                popup_1cba7c1d976a76e6e03a281820ed2521.setContent(html_e3b7ce7c6ecdb79b5570b31b247e24f7);
+            
+        
+
+        marker_0853ed151ab368d98fab2c36a1ee826b.bindPopup(popup_1cba7c1d976a76e6e03a281820ed2521)
+        ;
+
+        
+    
+    
+            var marker_6a3eac528dfb48e0b30b5631bc7cec5c = L.marker(
+                [52.219298, 21.004724],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_136874daa75f8102da3d826cdb5fffc1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8edd54a67f2afcae4855ced7ac60f6ba = $(`<div id="html_8edd54a67f2afcae4855ced7ac60f6ba" style="width: 100.0%; height: 100.0%;">[530, 'Warszawa, al. Niepodległości']</div>`)[0];
+                popup_136874daa75f8102da3d826cdb5fffc1.setContent(html_8edd54a67f2afcae4855ced7ac60f6ba);
+            
+        
+
+        marker_6a3eac528dfb48e0b30b5631bc7cec5c.bindPopup(popup_136874daa75f8102da3d826cdb5fffc1)
+        ;
+
+        
+    
+    
+            var marker_1d807379276e77f15bd554bc034bcfd7 = L.marker(
+                [52.285073, 20.933018],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_0b9129262f4641c565ed72d924c55433 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f8def6af3298d99ad0fb37d541523695 = $(`<div id="html_f8def6af3298d99ad0fb37d541523695" style="width: 100.0%; height: 100.0%;">[538, 'Warszawa, Tołstoja']</div>`)[0];
+                popup_0b9129262f4641c565ed72d924c55433.setContent(html_f8def6af3298d99ad0fb37d541523695);
+            
+        
+
+        marker_1d807379276e77f15bd554bc034bcfd7.bindPopup(popup_0b9129262f4641c565ed72d924c55433)
+        ;
+
+        
+    
+    
+            var marker_2fe05f4388bf7914c2403657f9c81cc0 = L.marker(
+                [52.160772, 21.033819],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_7a150478ff4663ae22d20dea64d2f463 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4ecb99818f68d96e0d25736010dd61d3 = $(`<div id="html_4ecb99818f68d96e0d25736010dd61d3" style="width: 100.0%; height: 100.0%;">[550, 'Warszawa, Wokalna']</div>`)[0];
+                popup_7a150478ff4663ae22d20dea64d2f463.setContent(html_4ecb99818f68d96e0d25736010dd61d3);
+            
+        
+
+        marker_2fe05f4388bf7914c2403657f9c81cc0.bindPopup(popup_7a150478ff4663ae22d20dea64d2f463)
+        ;
+
+        
+    
+    
+            var marker_34b7df1dbcbe802757bef5817f2d13ad = L.marker(
+                [52.290864, 21.042458],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_bde7c19486d58e402a25f17d32b1c634 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a7959633db2c0e0a3addd0f9b21b0c7b = $(`<div id="html_a7959633db2c0e0a3addd0f9b21b0c7b" style="width: 100.0%; height: 100.0%;">[552, 'Warszawa, Kondratowicza']</div>`)[0];
+                popup_bde7c19486d58e402a25f17d32b1c634.setContent(html_a7959633db2c0e0a3addd0f9b21b0c7b);
+            
+        
+
+        marker_34b7df1dbcbe802757bef5817f2d13ad.bindPopup(popup_bde7c19486d58e402a25f17d32b1c634)
+        ;
+
+        
+    
+    
+            var marker_c82b98d8011b6ad7404c334d4dbbc936 = L.marker(
+                [52.207742, 20.906073],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_9eb6a28c383d2bee58c1c7597126b816 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_db55b451d15271eb45d37bbc38d1c17d = $(`<div id="html_db55b451d15271eb45d37bbc38d1c17d" style="width: 100.0%; height: 100.0%;">[10955, 'Warszawa, Chrościckiego']</div>`)[0];
+                popup_9eb6a28c383d2bee58c1c7597126b816.setContent(html_db55b451d15271eb45d37bbc38d1c17d);
+            
+        
+
+        marker_c82b98d8011b6ad7404c334d4dbbc936.bindPopup(popup_9eb6a28c383d2bee58c1c7597126b816)
+        ;
+
+        
+    
+    
+            var marker_b9ef06a19df11e7f14f7d3b492cd3c8a = L.marker(
+                [52.188474, 21.176233],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_3382a172acf93057bdac6f2a6f7f0aa2 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d2026fd34a859391f66d580367cd03e8 = $(`<div id="html_d2026fd34a859391f66d580367cd03e8" style="width: 100.0%; height: 100.0%;">[10956, 'Warszawa, Bajkowa']</div>`)[0];
+                popup_3382a172acf93057bdac6f2a6f7f0aa2.setContent(html_d2026fd34a859391f66d580367cd03e8);
+            
+        
+
+        marker_b9ef06a19df11e7f14f7d3b492cd3c8a.bindPopup(popup_3382a172acf93057bdac6f2a6f7f0aa2)
+        ;
+
+        
+    
+    
+            var marker_5238300b204b260d7d18c6308d66d3ff = L.marker(
+                [52.281304, 20.963383],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_c4093ca4f1bc7cc1bc96534b9c804349 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3e50a7343a2404d09993b2404d64ee6b = $(`<div id="html_3e50a7343a2404d09993b2404d64ee6b" style="width: 100.0%; height: 100.0%;">[16533, 'Warszawa, IMiGW']</div>`)[0];
+                popup_c4093ca4f1bc7cc1bc96534b9c804349.setContent(html_3e50a7343a2404d09993b2404d64ee6b);
+            
+        
+
+        marker_5238300b204b260d7d18c6308d66d3ff.bindPopup(popup_c4093ca4f1bc7cc1bc96534b9c804349)
+        ;
+
+        
+    
+    
+            var marker_e1ba4f4ca38a38484496870598b351c8 = L.marker(
+                [52.556279, 19.687672],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_604318817b4b28d28da95f59de2b040b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_65c92f4d224a9e487b40c90550500196 = $(`<div id="html_65c92f4d224a9e487b40c90550500196" style="width: 100.0%; height: 100.0%;">[497, 'Płock, Królowej Jadwigi']</div>`)[0];
+                popup_604318817b4b28d28da95f59de2b040b.setContent(html_65c92f4d224a9e487b40c90550500196);
+            
+        
+
+        marker_e1ba4f4ca38a38484496870598b351c8.bindPopup(popup_604318817b4b28d28da95f59de2b040b)
+        ;
+
+        
+    
+    
+            var marker_5aa006c76145a59152b17d77cd815f5f = L.marker(
+                [52.550938, 19.709791],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_e4d2e626cdea3bb7774aff1fdb2e9216 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0760893c045e8db5ea1bce59809fa131 = $(`<div id="html_0760893c045e8db5ea1bce59809fa131" style="width: 100.0%; height: 100.0%;">[501, 'Płock, Reja']</div>`)[0];
+                popup_e4d2e626cdea3bb7774aff1fdb2e9216.setContent(html_0760893c045e8db5ea1bce59809fa131);
+            
+        
+
+        marker_5aa006c76145a59152b17d77cd815f5f.bindPopup(popup_e4d2e626cdea3bb7774aff1fdb2e9216)
+        ;
+
+        
+    
+    
+            var marker_8393919045fdd89f0860af7153507a63 = L.marker(
+                [51.399084, 21.147474],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_12a37375a3c9b2affc0b02d29079e42f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9065f76ff7e3313bf9e6d46aad04bb31 = $(`<div id="html_9065f76ff7e3313bf9e6d46aad04bb31" style="width: 100.0%; height: 100.0%;">[515, 'Radom, Tochtermana']</div>`)[0];
+                popup_12a37375a3c9b2affc0b02d29079e42f.setContent(html_9065f76ff7e3313bf9e6d46aad04bb31);
+            
+        
+
+        marker_8393919045fdd89f0860af7153507a63.bindPopup(popup_12a37375a3c9b2affc0b02d29079e42f)
+        ;
+
+        
+    
+    
+            var marker_5a7e70376e6350b064b2ff7abb933186 = L.marker(
+                [51.835242, 20.791912],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_7fba7d4abc646295d40002f61b47b1aa = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2960b62ffa1cf2c790d794297f843a11 = $(`<div id="html_2960b62ffa1cf2c790d794297f843a11" style="width: 100.0%; height: 100.0%;">[460, 'Belsk Duży, IGF PAN']</div>`)[0];
+                popup_7fba7d4abc646295d40002f61b47b1aa.setContent(html_2960b62ffa1cf2c790d794297f843a11);
+            
+        
+
+        marker_5a7e70376e6350b064b2ff7abb933186.bindPopup(popup_7fba7d4abc646295d40002f61b47b1aa)
+        ;
+
+        
+    
+    
+            var marker_02a34c497d6d6d9487d3bf0075f19543 = L.marker(
+                [52.285858, 20.454653],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_a6801ae72267a47e25135066ccac29a5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9b5e0417fbf4a8b36a8cff697fcb9a3c = $(`<div id="html_9b5e0417fbf4a8b36a8cff697fcb9a3c" style="width: 100.0%; height: 100.0%;">[466, 'Granica, KPN']</div>`)[0];
+                popup_a6801ae72267a47e25135066ccac29a5.setContent(html_9b5e0417fbf4a8b36a8cff697fcb9a3c);
+            
+        
+
+        marker_02a34c497d6d6d9487d3bf0075f19543.bindPopup(popup_a6801ae72267a47e25135066ccac29a5)
+        ;
+
+        
+    
+    
+            var marker_39591c908966ad88e4f7a9b88ad121ce = L.marker(
+                [52.407578, 20.955928],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_88f2e33f74631c8a31aa826d0c0a1909 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_09514b4a8cb1801e687248c9d53e15cd = $(`<div id="html_09514b4a8cb1801e687248c9d53e15cd" style="width: 100.0%; height: 100.0%;">[471, 'Legionowo, Zegrzyńska']</div>`)[0];
+                popup_88f2e33f74631c8a31aa826d0c0a1909.setContent(html_09514b4a8cb1801e687248c9d53e15cd);
+            
+        
+
+        marker_39591c908966ad88e4f7a9b88ad121ce.bindPopup(popup_88f2e33f74631c8a31aa826d0c0a1909)
+        ;
+
+        
+    
+    
+            var marker_71f39b64069bdb5867bee04b0ce6dc61 = L.marker(
+                [52.115725, 21.237297],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_e17c78c9b14959e50c96bcd23236a7d6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d3bca3b99ca459a7ecd80c90f1a15d3a = $(`<div id="html_d3bca3b99ca459a7ecd80c90f1a15d3a" style="width: 100.0%; height: 100.0%;">[485, 'Otwock, Brzozowa']</div>`)[0];
+                popup_e17c78c9b14959e50c96bcd23236a7d6.setContent(html_d3bca3b99ca459a7ecd80c90f1a15d3a);
+            
+        
+
+        marker_71f39b64069bdb5867bee04b0ce6dc61.bindPopup(popup_e17c78c9b14959e50c96bcd23236a7d6)
+        ;
+
+        
+    
+    
+            var marker_88e4c0d1e47ae7f4185c0fa030131306 = L.marker(
+                [52.191728, 20.837489],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_9d31c6c9d03f243c01071bfa4c0f16aa = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fc8588cbd8925fe0113fd14d515e5b8c = $(`<div id="html_fc8588cbd8925fe0113fd14d515e5b8c" style="width: 100.0%; height: 100.0%;">[488, 'Piastów, Pułaskiego']</div>`)[0];
+                popup_9d31c6c9d03f243c01071bfa4c0f16aa.setContent(html_fc8588cbd8925fe0113fd14d515e5b8c);
+            
+        
+
+        marker_88e4c0d1e47ae7f4185c0fa030131306.bindPopup(popup_9d31c6c9d03f243c01071bfa4c0f16aa)
+        ;
+
+        
+    
+    
+            var marker_6e1133b9cef75a650d428782016f8f0e = L.marker(
+                [52.172145, 22.282001],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_f9d778eecbc07bee8fd22350185f32b9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3018382f3910021073737b75a72898ae = $(`<div id="html_3018382f3910021073737b75a72898ae" style="width: 100.0%; height: 100.0%;">[517, 'Siedlce, Konarskiego']</div>`)[0];
+                popup_f9d778eecbc07bee8fd22350185f32b9.setContent(html_3018382f3910021073737b75a72898ae);
+            
+        
+
+        marker_6e1133b9cef75a650d428782016f8f0e.bindPopup(popup_f9d778eecbc07bee8fd22350185f32b9)
+        ;
+
+        
+    
+    
+            var marker_30bc2b8dfe22f75497152a02405db05e = L.marker(
+                [53.136681, 17.591539],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_be4a6d60182a8880ab8828d6e4ca5aef = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_00e8838b55f7ed1af44f98d1211f0869 = $(`<div id="html_00e8838b55f7ed1af44f98d1211f0869" style="width: 100.0%; height: 100.0%;">[9798, 'Nakło nad Notecią, Św. Wawrzyńca']</div>`)[0];
+                popup_be4a6d60182a8880ab8828d6e4ca5aef.setContent(html_00e8838b55f7ed1af44f98d1211f0869);
+            
+        
+
+        marker_30bc2b8dfe22f75497152a02405db05e.bindPopup(popup_be4a6d60182a8880ab8828d6e4ca5aef)
+        ;
+
+        
+    
+    
+            var marker_0b76e4cc476afff61ef7ded0854dced4 = L.marker(
+                [53.40758, 18.428751],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_e0ea266948a14fcfb3a0c4c228c2ccf7 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_accd0a0683150a8067c7867b08518e01 = $(`<div id="html_accd0a0683150a8067c7867b08518e01" style="width: 100.0%; height: 100.0%;">[12038, 'Świecie, al. Jana Pawła II']</div>`)[0];
+                popup_e0ea266948a14fcfb3a0c4c228c2ccf7.setContent(html_accd0a0683150a8067c7867b08518e01);
+            
+        
+
+        marker_0b76e4cc476afff61ef7ded0854dced4.bindPopup(popup_e0ea266948a14fcfb3a0c4c228c2ccf7)
+        ;
+
+        
+    
+    
+            var marker_262aa9e2ff69ceba3edea29192a1c395 = L.marker(
+                [52.029194, 23.149389],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_dcdece340282df662a8504e2796432c6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_14cffe7555fb606209ebac71bb0fa197 = $(`<div id="html_14cffe7555fb606209ebac71bb0fa197" style="width: 100.0%; height: 100.0%;">[236, 'Biała Podlaska, Orzechowa']</div>`)[0];
+                popup_dcdece340282df662a8504e2796432c6.setContent(html_14cffe7555fb606209ebac71bb0fa197);
+            
+        
+
+        marker_262aa9e2ff69ceba3edea29192a1c395.bindPopup(popup_dcdece340282df662a8504e2796432c6)
+        ;
+
+        
+    
+    
+            var marker_1fdf4f5899c939367f2cf37fb51aee51 = L.marker(
+                [51.78, 22.625944],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_3784289c60283c0622dd8bee432f033b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_23d701ad7782b7de609aa999541fa209 = $(`<div id="html_23d701ad7782b7de609aa999541fa209" style="width: 100.0%; height: 100.0%;">[275, 'Radzyń Podlaski, Sitkowskiego']</div>`)[0];
+                popup_3784289c60283c0622dd8bee432f033b.setContent(html_23d701ad7782b7de609aa999541fa209);
+            
+        
+
+        marker_1fdf4f5899c939367f2cf37fb51aee51.bindPopup(popup_3784289c60283c0622dd8bee432f033b)
+        ;
+
+        
+    
+    
+            var marker_f668100ae6d4d19e24f514d03fbf7811 = L.marker(
+                [51.163542, 22.598608],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_9aedf7412f66f88ab1930d55b358a651 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e438f4b9dd6bb911f0e9c92ee588ed20 = $(`<div id="html_e438f4b9dd6bb911f0e9c92ee588ed20" style="width: 100.0%; height: 100.0%;">[282, 'Wilczopole']</div>`)[0];
+                popup_9aedf7412f66f88ab1930d55b358a651.setContent(html_e438f4b9dd6bb911f0e9c92ee588ed20);
+            
+        
+
+        marker_f668100ae6d4d19e24f514d03fbf7811.bindPopup(popup_9aedf7412f66f88ab1930d55b358a651)
+        ;
+
+        
+    
+    
+            var marker_9066ce1d8639e3c8567e8e4ff36b283c = L.marker(
+                [50.716628, 23.290247],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_c1e8941039ae60e461ec1b64cc348873 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_15b026441d3b30a40451bdd9367e250a = $(`<div id="html_15b026441d3b30a40451bdd9367e250a" style="width: 100.0%; height: 100.0%;">[285, 'Zamość, Hrubieszowska']</div>`)[0];
+                popup_c1e8941039ae60e461ec1b64cc348873.setContent(html_15b026441d3b30a40451bdd9367e250a);
+            
+        
+
+        marker_9066ce1d8639e3c8567e8e4ff36b283c.bindPopup(popup_c1e8941039ae60e461ec1b64cc348873)
+        ;
+
+        
+    
+    
+            var marker_417d5b3356f2f96f7c16faa80f366315 = L.marker(
+                [50.551894, 22.982861],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_ab25949cc8a9c94e757b5a5e0bc72779 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9e8c454d16ebf9d9a00ab4117d933fc4 = $(`<div id="html_9e8c454d16ebf9d9a00ab4117d933fc4" style="width: 100.0%; height: 100.0%;">[10874, 'Florianka, RPN']</div>`)[0];
+                popup_ab25949cc8a9c94e757b5a5e0bc72779.setContent(html_9e8c454d16ebf9d9a00ab4117d933fc4);
+            
+        
+
+        marker_417d5b3356f2f96f7c16faa80f366315.bindPopup(popup_ab25949cc8a9c94e757b5a5e0bc72779)
+        ;
+
+        
+    
+    
+            var marker_f008269d44a9f6f7382cf36b4a92ade1 = L.marker(
+                [51.122147, 23.473075],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_5dfa5a8f252c3e6899e1e46773b230b5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_46e6f4d5402b87acf3d4efaf5ea51d29 = $(`<div id="html_46e6f4d5402b87acf3d4efaf5ea51d29" style="width: 100.0%; height: 100.0%;">[11360, 'Chełm, Połaniecka']</div>`)[0];
+                popup_5dfa5a8f252c3e6899e1e46773b230b5.setContent(html_46e6f4d5402b87acf3d4efaf5ea51d29);
+            
+        
+
+        marker_f008269d44a9f6f7382cf36b4a92ade1.bindPopup(popup_5dfa5a8f252c3e6899e1e46773b230b5)
+        ;
+
+        
+    
+    
+            var marker_ec27437b45fd7a1548b7bd77c2ca174d = L.marker(
+                [51.930734, 22.372502],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_abed47b4082cc4860e68c1989359ca4f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5660e3f897bd1de2285f74306fa5012e = $(`<div id="html_5660e3f897bd1de2285f74306fa5012e" style="width: 100.0%; height: 100.0%;">[12100, 'Łuków, Bulwar 100-lecia Odzyskania Niepodległości ']</div>`)[0];
+                popup_abed47b4082cc4860e68c1989359ca4f.setContent(html_5660e3f897bd1de2285f74306fa5012e);
+            
+        
+
+        marker_ec27437b45fd7a1548b7bd77c2ca174d.bindPopup(popup_abed47b4082cc4860e68c1989359ca4f)
+        ;
+
+        
+    
+    
+            var marker_c0e7482ed0473ad20905e06b6071423c = L.marker(
+                [52.738214, 15.228667],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_02bb67067ab4f9561e45b7e58797971c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0af3f870fee5ffcb64185bf84ca84f21 = $(`<div id="html_0af3f870fee5ffcb64185bf84ca84f21" style="width: 100.0%; height: 100.0%;">[361, 'Gorzów Wlkp. Kosynierów Gdyńskich']</div>`)[0];
+                popup_02bb67067ab4f9561e45b7e58797971c.setContent(html_0af3f870fee5ffcb64185bf84ca84f21);
+            
+        
+
+        marker_c0e7482ed0473ad20905e06b6071423c.bindPopup(popup_02bb67067ab4f9561e45b7e58797971c)
+        ;
+
+        
+    
+    
+            var marker_05fe1a349a930c5d3662f0ec8f192f03 = L.marker(
+                [51.939783, 15.518861],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_52ce39c018e8b05a309a712201f70114 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c4ccb54cf18f268a1472de45f926ff7b = $(`<div id="html_c4ccb54cf18f268a1472de45f926ff7b" style="width: 100.0%; height: 100.0%;">[387, 'Zielona Góra Krótka']</div>`)[0];
+                popup_52ce39c018e8b05a309a712201f70114.setContent(html_c4ccb54cf18f268a1472de45f926ff7b);
+            
+        
+
+        marker_05fe1a349a930c5d3662f0ec8f192f03.bindPopup(popup_52ce39c018e8b05a309a712201f70114)
+        ;
+
+        
+    
+    
+            var marker_11e6dc8ad17e91e32caa8163af2f9d91 = L.marker(
+                [51.936249, 15.481077],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_27eb1410bad546ebfa62619080040cd7 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_dd54d29fe6d358e7a9ff521bf36709ba = $(`<div id="html_dd54d29fe6d358e7a9ff521bf36709ba" style="width: 100.0%; height: 100.0%;">[11294, 'Zielona Góra,ul.Wyszyńskiego']</div>`)[0];
+                popup_27eb1410bad546ebfa62619080040cd7.setContent(html_dd54d29fe6d358e7a9ff521bf36709ba);
+            
+        
+
+        marker_11e6dc8ad17e91e32caa8163af2f9d91.bindPopup(popup_27eb1410bad546ebfa62619080040cd7)
+        ;
+
+        
+    
+    
+            var marker_8a255e1b692bf388406ad19277dc494b = L.marker(
+                [52.172222, 15.206667],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_9a73cfce3d227eae094aac598a0a298e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_54fb05f74a8a5700185b108cb8e70208 = $(`<div id="html_54fb05f74a8a5700185b108cb8e70208" style="width: 100.0%; height: 100.0%;">[374, 'Smolary Bytnickie']</div>`)[0];
+                popup_9a73cfce3d227eae094aac598a0a298e.setContent(html_54fb05f74a8a5700185b108cb8e70208);
+            
+        
+
+        marker_8a255e1b692bf388406ad19277dc494b.bindPopup(popup_9a73cfce3d227eae094aac598a0a298e)
+        ;
+
+        
+    
+    
+            var marker_6829672f23c1990371e6d7cce9c4af62 = L.marker(
+                [52.437722, 15.122444],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_22eef56f10ac831148c20b362c35d0d6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_499f2b67ccd002447b7f7802de0ed632 = $(`<div id="html_499f2b67ccd002447b7f7802de0ed632" style="width: 100.0%; height: 100.0%;">[376, 'Sulęcin Dudka']</div>`)[0];
+                popup_22eef56f10ac831148c20b362c35d0d6.setContent(html_499f2b67ccd002447b7f7802de0ed632);
+            
+        
+
+        marker_6829672f23c1990371e6d7cce9c4af62.bindPopup(popup_22eef56f10ac831148c20b362c35d0d6)
+        ;
+
+        
+    
+    
+            var marker_06a6d1f01bc8eb0d6d673044aa38fc44 = L.marker(
+                [51.799722, 16.3175],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_e651ec53674f739c88a45492e0f9c1e8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f2b6f4cb879579256e549cd7c45f2b92 = $(`<div id="html_f2b6f4cb879579256e549cd7c45f2b92" style="width: 100.0%; height: 100.0%;">[379, 'Wschowa Kazimierza Wielkiego']</div>`)[0];
+                popup_e651ec53674f739c88a45492e0f9c1e8.setContent(html_f2b6f4cb879579256e549cd7c45f2b92);
+            
+        
+
+        marker_06a6d1f01bc8eb0d6d673044aa38fc44.bindPopup(popup_e651ec53674f739c88a45492e0f9c1e8)
+        ;
+
+        
+    
+    
+            var marker_bf8d5b72c5f563babd993479f9aec2df = L.marker(
+                [51.642656, 15.127808],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_91f58d48a84383befd20bb6a274d30a4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b9f66aa1909c867bdc088b990b83b4b3 = $(`<div id="html_b9f66aa1909c867bdc088b990b83b4b3" style="width: 100.0%; height: 100.0%;">[382, 'Żary, Szymanowskiego ']</div>`)[0];
+                popup_91f58d48a84383befd20bb6a274d30a4.setContent(html_b9f66aa1909c867bdc088b990b83b4b3);
+            
+        
+
+        marker_bf8d5b72c5f563babd993479f9aec2df.bindPopup(popup_91f58d48a84383befd20bb6a274d30a4)
+        ;
+
+        
+    
+    
+            var marker_94442156ab515f744d30666b89290f1e = L.marker(
+                [53.012475, 18.605681],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_d71416ef36b6cf1514a6b7eb039e0061 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b1e8b1123ae8a5139d7a0abb895cb401 = $(`<div id="html_b1e8b1123ae8a5139d7a0abb895cb401" style="width: 100.0%; height: 100.0%;">[145, 'Toruń, Wały gen. Sikorskiego']</div>`)[0];
+                popup_d71416ef36b6cf1514a6b7eb039e0061.setContent(html_b1e8b1123ae8a5139d7a0abb895cb401);
+            
+        
+
+        marker_94442156ab515f744d30666b89290f1e.bindPopup(popup_d71416ef36b6cf1514a6b7eb039e0061)
+        ;
+
+        
+    
+    
+            var marker_57afd11d01be078c8d457b1c3a65bc9c = L.marker(
+                [53.028647, 18.666103],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_06cb9d240bd441db2219a21c27e9f069 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4fb47c0c0c46f52fc3b911279817e999 = $(`<div id="html_4fb47c0c0c46f52fc3b911279817e999" style="width: 100.0%; height: 100.0%;">[206, 'Toruń, Dziewulskiego']</div>`)[0];
+                popup_06cb9d240bd441db2219a21c27e9f069.setContent(html_4fb47c0c0c46f52fc3b911279817e999);
+            
+        
+
+        marker_57afd11d01be078c8d457b1c3a65bc9c.bindPopup(popup_06cb9d240bd441db2219a21c27e9f069)
+        ;
+
+        
+    
+    
+            var marker_4754b4701efa0bb21f26f2bf505fc358 = L.marker(
+                [53.017628, 18.612808],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_e140a6eca82a5472b39df612bde714e5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_661cab5f09c6ec7357d20bafa8c33d99 = $(`<div id="html_661cab5f09c6ec7357d20bafa8c33d99" style="width: 100.0%; height: 100.0%;">[208, 'Toruń, Przy Kaszowniku']</div>`)[0];
+                popup_e140a6eca82a5472b39df612bde714e5.setContent(html_661cab5f09c6ec7357d20bafa8c33d99);
+            
+        
+
+        marker_4754b4701efa0bb21f26f2bf505fc358.bindPopup(popup_e140a6eca82a5472b39df612bde714e5)
+        ;
+
+        
+    
+    
+            var marker_7b75b31fdc7cf8cc8d2157838ae19a9c = L.marker(
+                [52.658467, 19.059314],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_11f649b3a4a146b273a7f5ca4e59f4b8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8154f02e9189984b6d186e1bbed0aa95 = $(`<div id="html_8154f02e9189984b6d186e1bbed0aa95" style="width: 100.0%; height: 100.0%;">[225, 'Włocławek, Okrzei']</div>`)[0];
+                popup_11f649b3a4a146b273a7f5ca4e59f4b8.setContent(html_8154f02e9189984b6d186e1bbed0aa95);
+            
+        
+
+        marker_7b75b31fdc7cf8cc8d2157838ae19a9c.bindPopup(popup_11f649b3a4a146b273a7f5ca4e59f4b8)
+        ;
+
+        
+    
+    
+            var marker_40be826149201bf7930d71613daabb31 = L.marker(
+                [52.637394, 19.044486],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_50f32ae7e75ca383e95983f26493352f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_10dd288a014c2e505cfd44be90c9c11a = $(`<div id="html_10dd288a014c2e505cfd44be90c9c11a" style="width: 100.0%; height: 100.0%;">[9791, 'Włocławek, Kaliska']</div>`)[0];
+                popup_50f32ae7e75ca383e95983f26493352f.setContent(html_10dd288a014c2e505cfd44be90c9c11a);
+            
+        
+
+        marker_40be826149201bf7930d71613daabb31.bindPopup(popup_50f32ae7e75ca383e95983f26493352f)
+        ;
+
+        
+    
+    
+            var marker_3652dad69dfc18842e5b3a69ba37d0e1 = L.marker(
+                [53.49355, 18.762139],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_d6937fb45cf17a0e96a80158ba515e06 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b577f20d96878edccdb6026a27ee0978 = $(`<div id="html_b577f20d96878edccdb6026a27ee0978" style="width: 100.0%; height: 100.0%;">[142, 'Grudziądz, Piłsudskiego']</div>`)[0];
+                popup_d6937fb45cf17a0e96a80158ba515e06.setContent(html_b577f20d96878edccdb6026a27ee0978);
+            
+        
+
+        marker_3652dad69dfc18842e5b3a69ba37d0e1.bindPopup(popup_d6937fb45cf17a0e96a80158ba515e06)
+        ;
+
+        
+    
+    
+            var marker_d1fa1cc4b2cd4019543ac69d9ba4f02b = L.marker(
+                [52.793122, 18.241044],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_25bdddf09abcc54a5fe6559b0cf7cf2d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_40b2952026123253c642fe092d1aab2a = $(`<div id="html_40b2952026123253c642fe092d1aab2a" style="width: 100.0%; height: 100.0%;">[143, 'Inowrocław, Solankowa']</div>`)[0];
+                popup_25bdddf09abcc54a5fe6559b0cf7cf2d.setContent(html_40b2952026123253c642fe092d1aab2a);
+            
+        
+
+        marker_d1fa1cc4b2cd4019543ac69d9ba4f02b.bindPopup(popup_25bdddf09abcc54a5fe6559b0cf7cf2d)
+        ;
+
+        
+    
+    
+            var marker_226c1b19bfa66b663a8d05e478f3d9d4 = L.marker(
+                [52.888422, 18.780908],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_87a570c46ee93e74a4b641b7f1faa11c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_89e113fec24ca0b260b351e6fdc0e5ed = $(`<div id="html_89e113fec24ca0b260b351e6fdc0e5ed" style="width: 100.0%; height: 100.0%;">[164, 'Ciechocinek, Tężniowa']</div>`)[0];
+                popup_87a570c46ee93e74a4b641b7f1faa11c.setContent(html_89e113fec24ca0b260b351e6fdc0e5ed);
+            
+        
+
+        marker_226c1b19bfa66b663a8d05e478f3d9d4.bindPopup(popup_87a570c46ee93e74a4b641b7f1faa11c)
+        ;
+
+        
+    
+    
+            var marker_d2f977da3997f99dfd2dee14b431506f = L.marker(
+                [53.080647, 18.684258],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_4e13b413162c4ae726a0d5e71adf7335 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_aec137f33bd178be7052c5b813be67a0 = $(`<div id="html_aec137f33bd178be7052c5b813be67a0" style="width: 100.0%; height: 100.0%;">[190, 'Koniczynka, Pojezierze Chełmińskie']</div>`)[0];
+                popup_4e13b413162c4ae726a0d5e71adf7335.setContent(html_aec137f33bd178be7052c5b813be67a0);
+            
+        
+
+        marker_d2f977da3997f99dfd2dee14b431506f.bindPopup(popup_4e13b413162c4ae726a0d5e71adf7335)
+        ;
+
+        
+    
+    
+            var marker_d880feeda3f898d569dead121331f58f = L.marker(
+                [53.662117, 17.934017],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_62aca82cfea0dc6e153154b59d96e80c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f002c64cc136e3d7a286c00727b619cf = $(`<div id="html_f002c64cc136e3d7a286c00727b619cf" style="width: 100.0%; height: 100.0%;">[232, 'Zielonka, Bory Tucholskie']</div>`)[0];
+                popup_62aca82cfea0dc6e153154b59d96e80c.setContent(html_f002c64cc136e3d7a286c00727b619cf);
+            
+        
+
+        marker_d880feeda3f898d569dead121331f58f.bindPopup(popup_62aca82cfea0dc6e153154b59d96e80c)
+        ;
+
+        
+    
+    
+            var marker_c10430254492854a53671a8d2b3c7b94 = L.marker(
+                [54.193986, 16.172544],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_7881138e7c10781c12b35245c1d17569 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e3dfb550a9c5a30804b44339a05bd503 = $(`<div id="html_e3dfb550a9c5a30804b44339a05bd503" style="width: 100.0%; height: 100.0%;">[966, 'Koszalin, Armii Krajowej']</div>`)[0];
+                popup_7881138e7c10781c12b35245c1d17569.setContent(html_e3dfb550a9c5a30804b44339a05bd503);
+            
+        
+
+        marker_c10430254492854a53671a8d2b3c7b94.bindPopup(popup_7881138e7c10781c12b35245c1d17569)
+        ;
+
+        
+    
+    
+            var marker_90553659d8a75e434d88a810170dc5e2 = L.marker(
+                [54.194114, 16.211672],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_7768727f37f182f88187ae298b6208c1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ce747932409be6c5c9c360cdf020eafc = $(`<div id="html_ce747932409be6c5c9c360cdf020eafc" style="width: 100.0%; height: 100.0%;">[11336, 'Koszalin, Chopina']</div>`)[0];
+                popup_7768727f37f182f88187ae298b6208c1.setContent(html_ce747932409be6c5c9c360cdf020eafc);
+            
+        
+
+        marker_90553659d8a75e434d88a810170dc5e2.bindPopup(popup_7768727f37f182f88187ae298b6208c1)
+        ;
+
+        
+    
+    
+            var marker_7291da6454d4ff1f16d0b7db2172ab3a = L.marker(
+                [53.122325, 14.382245],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_97a821f9979531cc9efd0706d5336858 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_48848c0679999794c7e8ee20cffcd1b4 = $(`<div id="html_48848c0679999794c7e8ee20cffcd1b4" style="width: 100.0%; height: 100.0%;">[961, 'Widuchowa']</div>`)[0];
+                popup_97a821f9979531cc9efd0706d5336858.setContent(html_48848c0679999794c7e8ee20cffcd1b4);
+            
+        
+
+        marker_7291da6454d4ff1f16d0b7db2172ab3a.bindPopup(popup_97a821f9979531cc9efd0706d5336858)
+        ;
+
+        
+    
+    
+            var marker_1fadf9889b8562a95118e0719d925328 = L.marker(
+                [53.698902, 16.704556],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_b2dda7bc3a7f88444d5cf46a2a453bef = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c4116cffb1bb59af6d64bf05fad69dcb = $(`<div id="html_c4116cffb1bb59af6d64bf05fad69dcb" style="width: 100.0%; height: 100.0%;">[983, 'Szczecinek, Przemysłowa']</div>`)[0];
+                popup_b2dda7bc3a7f88444d5cf46a2a453bef.setContent(html_c4116cffb1bb59af6d64bf05fad69dcb);
+            
+        
+
+        marker_1fadf9889b8562a95118e0719d925328.bindPopup(popup_b2dda7bc3a7f88444d5cf46a2a453bef)
+        ;
+
+        
+    
+    
+            var marker_8baa7e7a1556010604c20fa396ae4973 = L.marker(
+                [53.915675, 14.246575],
+                {}
+            ).addTo(map_0f457e6a6bd41333b57d06010f894db1);
+        
+    
+        var popup_84c91261003bb3bf1982285a92bfb0e6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d1d2cc46894bb28cbbec62c6507c6668 = $(`<div id="html_d1d2cc46894bb28cbbec62c6507c6668" style="width: 100.0%; height: 100.0%;">[16975, 'Świnoujście, J. Matejki ']</div>`)[0];
+                popup_84c91261003bb3bf1982285a92bfb0e6.setContent(html_d1d2cc46894bb28cbbec62c6507c6668);
+            
+        
+
+        marker_8baa7e7a1556010604c20fa396ae4973.bindPopup(popup_84c91261003bb3bf1982285a92bfb0e6)
+        ;
+
+        
+    
+</script>
+</html>

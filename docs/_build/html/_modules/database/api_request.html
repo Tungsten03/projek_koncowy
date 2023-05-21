@@ -1,0 +1,203 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>database.api_request &#8212; KRAQEN 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Source code for database.api_request</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">__base_url</span> <span class="o">=</span> <span class="s1">&#39;https://api.gios.gov.pl/pjp-api/rest/&#39;</span>
+
+
+<div class="viewcode-block" id="get_stations"><a class="viewcode-back" href="../../database.html#database.api_request.get_stations">[docs]</a><span class="k">def</span> <span class="nf">get_stations</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Request list of all stations</span>
+
+<span class="sd">    Function uses get method to request a list of stations from GIOS API and returns</span>
+<span class="sd">    the response in JSON format.</span>
+
+<span class="sd">    :return: JSON</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Set headers to json</span>
+    <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Accept&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">}</span>
+    <span class="c1"># Build URL to request all stations from API</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="n">__base_url</span> <span class="o">+</span> <span class="s1">&#39;station/findAll&#39;</span>
+    <span class="c1"># Send a GET request to API GIOS</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+    <span class="c1"># HTTP exceptions handling</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+    <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">HTTPError</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="get_station_sensors"><a class="viewcode-back" href="../../database.html#database.api_request.get_station_sensors">[docs]</a><span class="k">def</span> <span class="nf">get_station_sensors</span><span class="p">(</span><span class="n">station_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Request all sensors fora specific station</span>
+
+<span class="sd">    Function takes station ID as a parameterm, sends request do GIOS API and returns respond in JSON format</span>
+
+<span class="sd">    :param station_id: the ID of a station</span>
+<span class="sd">    :return: JSON response</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Set headers to json</span>
+    <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Accept&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">}</span>
+    <span class="c1"># Build URL to request all sensors from API</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">__base_url</span><span class="si">}</span><span class="s1">station/sensors/</span><span class="si">{</span><span class="n">station_id</span><span class="si">}</span><span class="s1">&#39;</span>
+    <span class="c1"># Send a GET request to API GIOS</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+    <span class="c1"># HTTP exceptions handling</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+    <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">HTTPError</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">():</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Station with id number: </span><span class="si">{</span><span class="n">station_id</span><span class="si">}</span><span class="s1"> does not exist.&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="get_sensor_values"><a class="viewcode-back" href="../../database.html#database.api_request.get_sensor_values">[docs]</a><span class="k">def</span> <span class="nf">get_sensor_values</span><span class="p">(</span><span class="n">sensor_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">      Request collected data values for a specific sensor ID.</span>
+
+<span class="sd">      This function sends a request to the GIOS API to retrieve collected data values for the specified sensor ID.</span>
+<span class="sd">      It returns the response in JSON format.</span>
+
+<span class="sd">      :param sensor_id: An integer representing the ID of the sensor.</span>
+<span class="sd">      :return: JSON response containing collected data values for the sensor.</span>
+<span class="sd">      &quot;&quot;&quot;</span>
+    <span class="c1"># Set headers to json</span>
+    <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Accept&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">}</span>
+    <span class="c1"># Build URL to request all measurements from API</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">__base_url</span><span class="si">}</span><span class="s1">data/getData/</span><span class="si">{</span><span class="n">sensor_id</span><span class="si">}</span><span class="s1">&#39;</span>
+    <span class="c1"># Send a GET request to API GIOS</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+    <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">HTTPError</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span></div>
+
+<span class="c1"># get_index() - trzeba popracować. Funkcja będzie pomocna przy graficznym odwzorowaniu jakosci</span>
+<span class="c1"># powietrza na mapie. WARTO PRZYSIASC!!!</span>
+<span class="c1"># def get_index(station_id: int, param_key: str):</span>
+<span class="c1">#     &#39;&#39;&#39;</span>
+<span class="c1">#     Retrieves sensor values from the GIOS API for a specific sensor.</span>
+<span class="c1">#</span>
+<span class="c1">#     This function takes a sensor ID as input and uses it to request sensor values from the GIOS API. The retrieved</span>
+<span class="c1">#     values are then returned.</span>
+<span class="c1">#</span>
+<span class="c1">#     :param sensor_id: An integer representing the ID of the sensor.</span>
+<span class="c1">#     :return: The sensor values retrieved from the API.</span>
+<span class="c1">#     &#39;&#39;&#39;</span>
+<span class="c1">#     headers = {&#39;Accept&#39;: &#39;application/json&#39;}</span>
+<span class="c1">#</span>
+<span class="c1">#     url = f&#39;{__base_url}aqindex/getIndex/{station_id}&#39;</span>
+<span class="c1">#     response = requests.get(url=url, headers=headers)</span>
+<span class="c1">#     try:</span>
+<span class="c1">#         response.raise_for_status()</span>
+<span class="c1">#     except requests.exceptions.HTTPError as error:</span>
+<span class="c1">#         print(error)</span>
+<span class="c1">#     else:</span>
+<span class="c1">#         if not response.json():</span>
+<span class="c1">#             print(f&#39;iii&#39;)</span>
+<span class="c1">#         else:</span>
+<span class="c1">#             try:</span>
+<span class="c1">#                 print(response.json()[f&#39;{param_key}IndexLevel&#39;][&#39;indexLevelName&#39;])</span>
+<span class="c1">#             except KeyError:</span>
+<span class="c1">#                 print(&#39;There is no such parameter&#39;)</span>
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">KRAQEN</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, Kacper Rajewski.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.2.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>
