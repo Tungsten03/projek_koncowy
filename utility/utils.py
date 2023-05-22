@@ -28,7 +28,7 @@ class EntryWithPlaceholder(tk.Entry):
     :param color: The color of the placeholder text.
     """
 
-    def __init__(self, master=None, placeholder="PLACEHOLDER", color='grey'):
+    def __init__(self, master=None, placeholder="PLACEHOLDER", color='grey', **kwargs):
         """
         Initialize the EntryWithPlaceholder widget.
 
@@ -36,7 +36,7 @@ class EntryWithPlaceholder(tk.Entry):
         :param placeholder: The placeholder text to display when the widget is empty.
         :param color: The color of the placeholder text.
         """
-        super().__init__(master)
+        super().__init__(master, **kwargs)
 
         self.placeholder = placeholder
         self.placeholder_color = color

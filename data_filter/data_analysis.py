@@ -36,7 +36,7 @@ def highest_measurement(sensor: int) -> str:
     try:
         # Setup query and sort values descending
         query = sdb.Measurement.select().order_by(sdb.Measurement.value.desc()).where(
-            sdb.Measurement.sensorId == sensor).get()
+            sdb.Measurement.sensorId == sensor).first()
 
         max_result = f'{query.value} d:{query.date}'
         return max_result
@@ -58,7 +58,7 @@ def lowest_measurement(sensor: int) -> str:
     try:
         # Setup query and sort values descending
         query = sdb.Measurement.select().order_by(sdb.Measurement.value.asc()).where(
-            (sdb.Measurement.value.is_null(False)) & (sdb.Measurement.sensorId == sensor)).get()
+            (sdb.Measurement.value.is_null(False)) & (sdb.Measurement.sensorId == sensor)).first()
         min_result = f'{query.value} d:{query.date}'
         return min_result
     except sdb.Sensor.DoesNotExist:
@@ -80,9 +80,12 @@ def avg_measurement(sensor: int) -> float:
 
     measurements = [measurement.value for measurement in query]
 
-    total = sum(measurements)
-    average = total / len(measurements)
-    return round(average, 3)
+    if measurements:
+        total = sum(measurements)
+        average = total / len(measurements)
+        return round(average, 3)
+    else:
+        return 0.0
 
 
 @utils.log_exec_time
@@ -154,11 +157,3 @@ def plot_values(sensor_id: int) -> None:
         plt.show()
     except (sdb.Station.DoesNotExist, sdb.Sensor.DoesNotExist):
         print('podano niepoprawny id')
-
-
-if __name__ == '__main__':
-    from peewee import *
-
-    db = SqliteDatabase('database/stations.db')
-    db.connect()
-    avg_measurement(744)

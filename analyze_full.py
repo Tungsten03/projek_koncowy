@@ -56,8 +56,10 @@ def analyze_full():
         selected_item = listbox.get(listbox.curselection())
         if selected_item:
             selected_id = selected_item.split()[0]
+            listbox_entry.config(state='normal')
             listbox_entry.delete(0, tk.END)
             listbox_entry.insert(tk.END, selected_id)
+            listbox_entry.config(state='readonly')
         else:
             pass
 
@@ -216,7 +218,9 @@ def analyze_full():
     entry_range = utils.EntryWithPlaceholder(root, 'Promień [km]')
     plot_data = tk.Button(root, text='Wykres', command=make_plot, width=20)
     plot_data.configure(state='disabled')
-    listbox_entry = utils.EntryWithPlaceholder(root, 'Aktywny wybór', 'red')
+    # Make an entry to show position chosen from listbox and block it to readonly
+    listbox_entry = utils.EntryWithPlaceholder(root, 'Aktywny wybór', 'red', state='readonly')
+
 
     # Setup listbox
     listbox = tk.Listbox(root, width=400, font='Courier')

@@ -57,6 +57,10 @@ def start_database_full() -> None:
         start.configure(bg='blue', state='disabled')
         status.configure(text=lbl.status_history, bg='blue', fg='white')
         root.update()
+    # Enable buttons
+    show_map.configure(state='normal')
+    analyze.configure(state='normal')
+
 
 
 def quit_app() -> None:
@@ -91,7 +95,9 @@ instruction = tk.Label(root, text=lbl.start_menu, justify="center")
 # Create buttons
 start = tk.Button(root, text='START', command=start_database_full, bg='red', width=20)
 show_map = tk.Button(root, text=lbl.show_map, command=show_stations_on_map, width=20)
+show_map.configure(state='disabled')
 analyze = tk.Button(root, text='Analiza danych', command=analyze_full, width=20)
+analyze.configure(state='disabled')
 kill = tk.Button(root, text='WYJŚCIE', command=quit_app)
 
 # Grid layout

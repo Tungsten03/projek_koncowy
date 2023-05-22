@@ -18,7 +18,6 @@ import requests
 from peewee import *
 from . import start_database as sdb, api_request as r
 from utility import utils
-from tqdm import tqdm
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime
 
@@ -51,7 +50,7 @@ def db_add_stations() -> bool:
         db.create_tables([sdb.Station])
 
         # Add data into db
-        for station in tqdm(stations):
+        for station in stations:
             record = sdb.Station.create(id=station['id'],
                                         stationName=station['stationName'].replace('ul. ', ''),
                                         gegrLat=station['gegrLat'],
@@ -121,7 +120,7 @@ def db_add_sensors(conection_flag: bool) -> None:
             }
 
             # iterate through dictionary and save records in database
-            for station_id, future in tqdm(station_sensors.items()):
+            for station_id, future in station_sensors.items():
                 # Wait fot sensor data
                 request_sensor = future.result()
                 # Create and save a sensor record in database
@@ -177,7 +176,7 @@ def db_add_measurements(conection_flag: bool) -> None:
             measurements = []
             # Iterate through futures dictionary and add them into database
             # Bulk create is used for further optimalization
-            for future in tqdm(as_completed(futures), total=len(sdb.Sensor.select())):
+            for future in as_completed(futures):
                 values = future.result()
                 sensor = futures[future]
                 for i in values['values']:
