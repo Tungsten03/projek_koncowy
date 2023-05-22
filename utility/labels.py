@@ -22,6 +22,11 @@ Upewnij się, że oba pola zawierają poprawnie wprowadzone dane np.:
 Opis lokacji: Poznań, Naramowicka || W zasięgu: 25
 """
 
+popup_connect = """ Brak dostępu do serwera openstreetmap 
+Sprawdź połączenie z siecią lub status serwera pod adresem:
+https://nominatim.openstreetmap.org/status.php
+"""
+
 gui_help = """ Witaj w module analizy danych.
 Jest to główny moduł aplikacji, który pozwala na pełną analizę i prezentację graficzną danych z bazy.
 1. Wybierz stację z listy dostępnej na dole okna (stacje poszeregowane wg. nazwy)

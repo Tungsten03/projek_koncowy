@@ -55,7 +55,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#module-data_filter.localize">data_filter.localize module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#data_filter.localize.get_coords"><code class="docutils literal notranslate"><span class="pre">get_coords()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#data_filter.localize.check_server"><code class="docutils literal notranslate"><span class="pre">check_server()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#data_filter.localize.show_stations_on_map"><code class="docutils literal notranslate"><span class="pre">show_stations_on_map()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#data_filter.localize.stations_in_city"><code class="docutils literal notranslate"><span class="pre">stations_in_city()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#data_filter.localize.stations_in_range"><code class="docutils literal notranslate"><span class="pre">stations_in_range()</span></code></a></li>
@@ -102,30 +102,74 @@
 </section>
 <section id="module-data_filter.data_analysis">
 <span id="data-filter-data-analysis-module"></span><h2>data_filter.data_analysis module<a class="headerlink" href="#module-data_filter.data_analysis" title="Permalink to this heading"></a></h2>
+<p>Module for Data Analysis of Measurement Values.</p>
+<p>This module provides functions for analyzing measurement values stored in the database. It includes functions to
+retrieve the highest and lowest measurement values, calculate the average measurement value, and plot the measurement
+values with a linear regression line.</p>
+<p>Functions:</p>
+<blockquote>
+<div><p>highest_measurement(sensor: int) -&gt; str: Retrieves the highest measurement value saved in the database for a given sensor ID.
+lowest_measurement(sensor: int) -&gt; str: Retrieves the lowest measurement value saved in the database for a given sensor ID.
+avg_measurement(sensor: int) -&gt; float: Calculates the average measurement value for a given sensor ID.
+plot_values(sensor_id: int): Plots the measurement values with a linear regression line for a given sensor ID.</p>
+</div></blockquote>
 <dl class="py function">
 <dt class="sig sig-object py" id="data_filter.data_analysis.avg_measurement">
-<span class="sig-prename descclassname"><span class="pre">data_filter.data_analysis.</span></span><span class="sig-name descname"><span class="pre">avg_measurement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sensor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/data_filter/data_analysis.html#avg_measurement"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#data_filter.data_analysis.avg_measurement" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<span class="sig-prename descclassname"><span class="pre">data_filter.data_analysis.</span></span><span class="sig-name descname"><span class="pre">avg_measurement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sensor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="reference internal" href="_modules/data_filter/data_analysis.html#avg_measurement"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#data_filter.data_analysis.avg_measurement" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate the average measurement value for a given sensor ID.</p>
+<p>This function takes a sensor ID as input and calculates the average measurement value for that sensor.
+It retrieves the measurements from the database, filters out the null values, and calculates the average.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sensor</strong> – The ID of the sensor.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The average measurement value rounded to 3 decimal places.</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="data_filter.data_analysis.highest_measurement">
-<span class="sig-prename descclassname"><span class="pre">data_filter.data_analysis.</span></span><span class="sig-name descname"><span class="pre">highest_measurement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sensor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/data_filter/data_analysis.html#highest_measurement"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#data_filter.data_analysis.highest_measurement" title="Permalink to this definition"></a></dt>
-<dd><p>Function takes sensor ID and print out highest value saved in database.
-:param sensor:
-:return: str</p>
+<span class="sig-prename descclassname"><span class="pre">data_filter.data_analysis.</span></span><span class="sig-name descname"><span class="pre">highest_measurement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sensor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/data_filter/data_analysis.html#highest_measurement"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#data_filter.data_analysis.highest_measurement" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieve the highest value saved in the database for a given sensor ID.</p>
+<p>This function takes a sensor ID as input and retrieves the highest value stored in the database for that sensor.
+It sorts the values in descending order and returns the result as a string in the format “{value} d:{date}”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sensor</strong> – The ID of the sensor.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The highest value as a string in the format “{value} d:{date}”.</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sdb.Sensor.DoesNotExist</strong> – If the sensor ID does not exist in the database.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="data_filter.data_analysis.lowest_measurement">
-<span class="sig-prename descclassname"><span class="pre">data_filter.data_analysis.</span></span><span class="sig-name descname"><span class="pre">lowest_measurement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sensor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/data_filter/data_analysis.html#lowest_measurement"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#data_filter.data_analysis.lowest_measurement" title="Permalink to this definition"></a></dt>
-<dd><p>Function takes sensor ID and print out the highest value saved in database.
-:param sensor:
-:return: str</p>
+<span class="sig-prename descclassname"><span class="pre">data_filter.data_analysis.</span></span><span class="sig-name descname"><span class="pre">lowest_measurement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sensor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/data_filter/data_analysis.html#lowest_measurement"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#data_filter.data_analysis.lowest_measurement" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieve the lowest value saved in the database for a given sensor ID.</p>
+<p>This function takes a sensor ID as input and retrieves the lowest value stored in the database for that sensor.
+It sorts the values in ascending order and returns the result as a string in the format “{value} d:{date}”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sensor</strong> – The ID of the sensor.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The lowest value as a string in the format “{value} d:{date}”.</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sdb.Sensor.DoesNotExist</strong> – If the sensor ID does not exist in the database.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="data_filter.data_analysis.plot_values">
-<span class="sig-prename descclassname"><span class="pre">data_filter.data_analysis.</span></span><span class="sig-name descname"><span class="pre">plot_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sensor_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/data_filter/data_analysis.html#plot_values"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#data_filter.data_analysis.plot_values" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">data_filter.data_analysis.</span></span><span class="sig-name descname"><span class="pre">plot_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sensor_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/data_filter/data_analysis.html#plot_values"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#data_filter.data_analysis.plot_values" title="Permalink to this definition"></a></dt>
 <dd><p>Plots the values measured by sensor of a sensor with a linear regression line.</p>
 <p>Retrieves the sensor measured data from the database and filters them. Function plots calculated regression
 on a scatter plot of measured parameter values in time.</p>
@@ -142,14 +186,27 @@ on a scatter plot of measured parameter values in time.</p>
 </section>
 <section id="module-data_filter.localize">
 <span id="data-filter-localize-module"></span><h2>data_filter.localize module<a class="headerlink" href="#module-data_filter.localize" title="Permalink to this heading"></a></h2>
+<p>Module for Geographic Operations and Visualization.</p>
+<p>This module provides functions for geolocation operations and visualization of station data on a map.</p>
+<p>Functions:</p>
+<blockquote>
+<div><p>check server() -&gt; bool: Check openstreetmap server status.
+of a given location description.
+stations_in_range(user_place: str, range: int) -&gt; List: Retrieves a list of stations within
+a given range (in km) from a user-defined location.
+stations_in_city(): Asks the user for a city name and prints a list of stations in that city.
+show_stations_on_map(): Retrieves station data from the database and displays them on a map.</p>
+</div></blockquote>
 <dl class="py function">
-<dt class="sig sig-object py" id="data_filter.localize.get_coords">
-<span class="sig-prename descclassname"><span class="pre">data_filter.localize.</span></span><span class="sig-name descname"><span class="pre">get_coords</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">descritpion</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/data_filter/localize.html#get_coords"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#data_filter.localize.get_coords" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dt class="sig sig-object py" id="data_filter.localize.check_server">
+<span class="sig-prename descclassname"><span class="pre">data_filter.localize.</span></span><span class="sig-name descname"><span class="pre">check_server</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/data_filter/localize.html#check_server"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#data_filter.localize.check_server" title="Permalink to this definition"></a></dt>
+<dd><p>Check nominatim server status
+:return: Bool</p>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="data_filter.localize.show_stations_on_map">
-<span class="sig-prename descclassname"><span class="pre">data_filter.localize.</span></span><span class="sig-name descname"><span class="pre">show_stations_on_map</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/data_filter/localize.html#show_stations_on_map"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#data_filter.localize.show_stations_on_map" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">data_filter.localize.</span></span><span class="sig-name descname"><span class="pre">show_stations_on_map</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/data_filter/localize.html#show_stations_on_map"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#data_filter.localize.show_stations_on_map" title="Permalink to this definition"></a></dt>
 <dd><p>Function retrieves data from the database and displays them on map.</p>
 <p>Function transforms stations data fetched from SQLite database into
 a pandas dataframe. Folium library is used to create an interactive
@@ -165,7 +222,7 @@ and opens a map saved in HTML file in default web browser.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="data_filter.localize.stations_in_city">
-<span class="sig-prename descclassname"><span class="pre">data_filter.localize.</span></span><span class="sig-name descname"><span class="pre">stations_in_city</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/data_filter/localize.html#stations_in_city"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#data_filter.localize.stations_in_city" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">data_filter.localize.</span></span><span class="sig-name descname"><span class="pre">stations_in_city</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/data_filter/localize.html#stations_in_city"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#data_filter.localize.stations_in_city" title="Permalink to this definition"></a></dt>
 <dd><p>Asks the user for a city name and prints a list of stations in that city.</p>
 <p>This function asks user to enter a city name and then retrieves a list of stations in that city from the
 database. It filters the stations based on the provided city name and prints the names of the stations.</p>
@@ -178,18 +235,21 @@ database. It filters the stations based on the provided city name and prints the
 
 <dl class="py function">
 <dt class="sig sig-object py" id="data_filter.localize.stations_in_range">
-<span class="sig-prename descclassname"><span class="pre">data_filter.localize.</span></span><span class="sig-name descname"><span class="pre">stations_in_range</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_place</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">range</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/data_filter/localize.html#stations_in_range"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#data_filter.localize.stations_in_range" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">data_filter.localize.</span></span><span class="sig-name descname"><span class="pre">stations_in_range</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_place</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">range</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/data_filter/localize.html#stations_in_range"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#data_filter.localize.stations_in_range" title="Permalink to this definition"></a></dt>
 <dd><p>Function takes description of user location (City, street) / (place name e.g. “Uniwersytet Adama Mickiewicza”) and prints a list of stations
 in given range (50km by default).</p>
+<p>At start function check_server() will check openstreetmap server status. In case of any connection issues a popup
+window with warning is displayed.</p>
 <dl class="field-list simple">
 <dt class="field-odd">User_place<span class="colon">:</span></dt>
 <dd class="field-odd"><p>A description of localization given by user</p>
 </dd>
 <dt class="field-even">Range<span class="colon">:</span></dt>
-<dd class="field-even"><p>Search radius in km</p>
+<dd class="field-even"><p>Search radius in kilometers</p>
 </dd>
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Station in given radius list</p>
+<dd class="field-odd"><p>A list of tuples representing the stations within the specified range. Each tuple contains the station ID
+and station name.</p>
 </dd>
 </dl>
 </dd></dl>

@@ -1,0 +1,14 @@
+2023-05-22 16:53:53,284:INFO:fuction stations_in_range executed in 0.7567 seconds
+2023-05-22 16:53:53,284:INFO:Function stations_in_range called with args: ('Lusówko', 50.0) and kwargs: {}
+2023-05-22 16:54:02,826:WARNING:Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='nominatim.openstreetmap.org', port=443): Read timed out. (read timeout=1)")': /search?q=Lus%C3%B3wko&format=json&limit=1
+2023-05-22 16:54:02,827:WARNING:Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000002126F8FB7D0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed')': /search?q=Lus%C3%B3wko&format=json&limit=1
+2023-05-22 16:54:02,828:ERROR:Function stations_in_range raised exception GeocoderUnavailable: HTTPSConnectionPool(host='nominatim.openstreetmap.org', port=443): Max retries exceeded with url: /search?q=Lus%C3%B3wko&format=json&limit=1 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000002126F8FA790>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+2023-05-22 16:54:15,865:WARNING:Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000002126F963590>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed')': /search?q=Lus%C3%B3wko&format=json&limit=1
+2023-05-22 16:54:15,866:WARNING:Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000002126F9633D0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed')': /search?q=Lus%C3%B3wko&format=json&limit=1
+2023-05-22 16:54:15,866:ERROR:Function stations_in_range raised exception GeocoderUnavailable: HTTPSConnectionPool(host='nominatim.openstreetmap.org', port=443): Max retries exceeded with url: /search?q=Lus%C3%B3wko&format=json&limit=1 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000002126F63E510>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+2023-05-22 16:54:35,669:INFO:fuction stations_in_range executed in 0.7509 seconds
+2023-05-22 16:54:35,669:INFO:Function stations_in_range called with args: ('Lusówko', 50.0) and kwargs: {}
+2023-05-22 16:54:38,651:INFO:fuction show_sensors executed in 0.0007242 seconds
+2023-05-22 16:54:38,651:INFO:Function show_sensors called with args: () and kwargs: {}
+2023-05-22 16:54:41,332:INFO:fuction plot_values executed in 1.464 seconds
+2023-05-22 16:54:41,332:INFO:Function plot_values called with args: (17958,) and kwargs: {}

@@ -5,7 +5,7 @@ This module provides functions for geolocation operations and visualization of s
 
 Functions:
 
-    get_coords(description: str) -> Tuple: Retrieves the latitude and longitude coordinates
+    check server() -> bool: Check openstreetmap server status.
     of a given location description.
     stations_in_range(user_place: str, range: int) -> List: Retrieves a list of stations within
     a given range (in km) from a user-defined location.
@@ -20,18 +20,37 @@ from utility import utils
 import pandas as pd
 import webbrowser
 import folium
+import requests
+import tkinter as tk
+from utility import labels as lbl
 
 
 #Set the geolocator
 geolocator = geocoders.Nominatim(user_agent='lokacja')
 
+def check_server() -> bool:
+    """
+    Check nominatim server status
+    :return: Bool
+    """
+    server_url = 'https://nominatim.openstreetmap.org/status.php'
 
-def get_coords(descritpion):
-    if not descritpion:
-        print(descritpion)
-    else:
-        location = geolocator.geocode(descritpion)
-        return (location.latitude, location.longitude)
+    try:
+        response = requests.head(server_url)
+        if response.status_code == 200:
+            return True
+        else:
+            return False
+    except requests.ConnectionError:
+        return False
+
+
+# def get_coords(descritpion):
+#     if not descritpion:
+#         print(descritpion)
+#     else:
+#         location = geolocator.geocode(descritpion)
+#         return (location.latitude, location.longitude)
 
 
 
@@ -41,24 +60,39 @@ def stations_in_range(user_place: str, range: int) -> list[tuple[int, str]]:
     Function takes description of user location (City, street) / (place name e.g. "Uniwersytet Adama Mickiewicza") and prints a list of stations
     in given range (50km by default).
 
+    At start function check_server() will check openstreetmap server status. In case of any connection issues a popup
+    window with warning is displayed.
+
     :user_place: A description of localization given by user
     :range: Search radius in kilometers
     :return: A list of tuples representing the stations within the specified range. Each tuple contains the station ID
              and station name.
     """
-    #get user location
-    user_location = geolocator.geocode(user_place)
-    user_coords = (user_location.latitude, user_location.longitude)
+    # Check openstreetmap server status
+    if not check_server():
+        # Display a popup window if server is down
+        popup = tk.Toplevel()
+        popup.title('Uwaga!')
 
-    station_list = []
+        label = tk.Label(popup, text=lbl.popup_connect)
+        label.pack(padx=20, pady=20)
 
-    #search station in range and save in list
-    for station in sdb.Station.select():
-        station_location = (station.gegrLat, station.gegrLon)
-        user_distance = geopy.distance.distance(user_coords, station_location)
-        if user_distance <= range:
-            station_list.append((station.id, station.stationName))
-    return station_list
+        button = tk.Button(popup, text="Zamknij", command=popup.destroy)
+        button.pack(pady=10)
+    else:
+        # Get user location
+        user_location = geolocator.geocode(user_place)
+        user_coords = (user_location.latitude, user_location.longitude)
+
+        station_list = []
+
+        # Search station in range and save in list
+        for station in sdb.Station.select():
+            station_location = (station.gegrLat, station.gegrLon)
+            user_distance = geopy.distance.distance(user_coords, station_location)
+            if user_distance <= range:
+                station_list.append((station.id, station.stationName))
+        return station_list
 
 @utils.log_exec_time
 def stations_in_city() -> None:
