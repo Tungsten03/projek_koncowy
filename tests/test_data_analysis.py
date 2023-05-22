@@ -14,10 +14,6 @@ class TestHighestMeasurement(unittest.TestCase):
         mock_measurement.value = 100
         mock_measurement.date = '2023-01-01'
 
-        mock_measurement2 = Mock()
-        mock_measurement2.value = 100
-        mock_measurement2.date = '2023-01-01'
-
         mock_select.return_value.order_by.return_value.where.return_value.first.return_value = mock_measurement
 
         # Test the function
