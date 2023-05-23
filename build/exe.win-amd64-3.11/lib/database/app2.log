@@ -1,3 +1,0 @@
-2023-05-11 13:23:14,286:INFO:fuction:"db_add_stations" executed in: 1.125650800007861 seconds
-2023-05-11 13:24:05,294:INFO:fuction:"db_add_sensors" executed in: 51.00791059999028 seconds
-2023-05-11 13:28:23,615:INFO:fuction:"db_add_measurements" executed in: 258.3206537000369 seconds

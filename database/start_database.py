@@ -5,14 +5,14 @@ This module defines the database models for SQLite using the Peewee ORM.
 
 Classes:
 
-    BaseModel: Base model class for Peewee models.
-    Station: Represents a station in the database.
-    Sensor: Represents a sensor in the database.
-    Measurement: Represents a measurement in the database.
+- BaseModel: Base model class for Peewee models.
+- Station: Represents a station in the database.
+- Sensor: Represents a sensor in the database.
+- Measurement: Represents a measurement in the database.
 
 Dependencies:
 
-    Peewee: Python ORM for SQLite.
+- Peewee: Python ORM for SQLite.
 """
 
 from peewee import *

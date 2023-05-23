@@ -5,12 +5,11 @@ This module provides functions for geolocation operations and visualization of s
 
 Functions:
 
-    check server() -> bool: Check openstreetmap server status.
-    of a given location description.
-    stations_in_range(user_place: str, range: int) -> List: Retrieves a list of stations within
+- check server() -> bool: Check openstreetmap server status of a given location description.
+- stations_in_range(user_place: str, range: int) -> List: Retrieves a list of stations within
     a given range (in km) from a user-defined location.
-    stations_in_city(): Asks the user for a city name and prints a list of stations in that city.
-    show_stations_on_map(): Retrieves station data from the database and displays them on a map.
+- stations_in_city(): Asks the user for a city name and prints a list of stations in that city.
+- show_stations_on_map(): Retrieves station data from the database and displays them on a map.
 """
 
 import geopy.distance
@@ -34,24 +33,16 @@ def check_server() -> bool:
     :return: Bool
     """
     server_url = 'https://nominatim.openstreetmap.org/status.php'
-
+    # Check server status
     try:
         response = requests.head(server_url)
         if response.status_code == 200:
             return True
         else:
             return False
+    # Except internet issues.
     except requests.ConnectionError:
         return False
-
-
-# def get_coords(descritpion):
-#     if not descritpion:
-#         print(descritpion)
-#     else:
-#         location = geolocator.geocode(descritpion)
-#         return (location.latitude, location.longitude)
-
 
 
 @utils.log_exec_time

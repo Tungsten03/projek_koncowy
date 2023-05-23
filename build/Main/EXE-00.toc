@@ -65,7 +65,7 @@
  [],
  False,
  False,
- 1684781172,
+ 1684857495,
  [('run.exe',
    'C:\\Users\\kacpe\\OneDrive\\Dokumenty\\Python projekty\\Akademia '
    'Python\\projek_koncowy\\Lib\\site-packages\\PyInstaller\\bootloader\\Windows-64bit-intel\\run.exe',

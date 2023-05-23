@@ -6,12 +6,12 @@ and measurements to the database.
 
 Functions:
 
-    db_add_stations(): Function that adds station records to the database.
-    get_sensor_values(sensor_id): Retrieves sensor values from the GIOS API for a specific sensor.
-    db_add_sensors(conection_flag): Requests station sensors from an API and adds them to the database.
-    db_add_measurements(conection_flag): Adds measurements from the GIOS API to the database for all sensors.
-    list_stations(): Prints out all stations saved in the database.
-    sensors_in_station(station): Prints out all sensors for a given station ID.
+- db_add_stations(): Function that adds station records to the database.
+- get_sensor_values(sensor_id): Retrieves sensor values from the GIOS API for a specific sensor.
+- db_add_sensors(conection_flag): Requests station sensors from an API and adds them to the database.
+- db_add_measurements(conection_flag): Adds measurements from the GIOS API to the database for all sensors.
+- list_stations(): Prints out all stations saved in the database.
+- sensors_in_station(station): Prints out all sensors for a given station ID.
 """
 
 import requests
