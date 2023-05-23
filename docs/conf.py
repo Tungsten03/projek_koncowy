@@ -5,6 +5,11 @@
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
+import os
+import sys
+
+sys.path.insert(0, os.path.abspath(".."))
+
 
 project = 'KRAQEN'
 copyright = '2023, Kacper Rajewski'
@@ -13,10 +18,6 @@ release = '1.0.0'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
-import os
-import sys
-
-sys.path.insert(0, os.path.abspath(".."))
 
 extensions = ['sphinx.ext.todo',
               'sphinx.ext.viewcode',

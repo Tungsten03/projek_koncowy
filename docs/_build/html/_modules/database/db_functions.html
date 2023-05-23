@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>database.db_functions &mdash; KRAQEN 1.0.0 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            KRAQEN
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"></div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">KRAQEN</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">database.db_functions</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for database.db_functions</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">SQLite Database Functions for Setting up the Database.</span>
+
+<span class="sd">This module contains functions to set up the SQLite database. It includes functions to add stations, sensors,</span>
+<span class="sd">and measurements to the database.</span>
+
+<span class="sd">Functions:</span>
+
+<span class="sd">- db_add_stations(): Function that adds station records to the database.</span>
+<span class="sd">- get_sensor_values(sensor_id): Retrieves sensor values from the GIOS API for a specific sensor.</span>
+<span class="sd">- db_add_sensors(conection_flag): Requests station sensors from an API and adds them to the database.</span>
+<span class="sd">- db_add_measurements(conection_flag): Adds measurements from the GIOS API to the database for all sensors.</span>
+<span class="sd">- list_stations(): Prints out all stations saved in the database.</span>
+<span class="sd">- sensors_in_station(station): Prints out all sensors for a given station ID.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">peewee</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">start_database</span> <span class="k">as</span> <span class="n">sdb</span><span class="p">,</span> <span class="n">api_request</span> <span class="k">as</span> <span class="n">r</span>
+<span class="kn">from</span> <span class="nn">utility</span> <span class="kn">import</span> <span class="n">utils</span>
+<span class="kn">from</span> <span class="nn">concurrent.futures</span> <span class="kn">import</span> <span class="n">ThreadPoolExecutor</span><span class="p">,</span> <span class="n">as_completed</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+
+
+<span class="n">db</span> <span class="o">=</span> <span class="n">SqliteDatabase</span><span class="p">(</span><span class="s1">&#39;stations.db&#39;</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="db_add_stations"><a class="viewcode-back" href="../../database.html#database.db_functions.db_add_stations">[docs]</a><span class="nd">@utils</span><span class="o">.</span><span class="n">log_exec_time</span>
+<span class="k">def</span> <span class="nf">db_add_stations</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Function that adds station records to the database.</span>
+
+<span class="sd">    The function, sets the connection to sqlite3 database &#39;stations.db&#39;,</span>
+<span class="sd">    retrieves station data from an external API  using the `get_stations()` function from `request` module,</span>
+<span class="sd">    then creates a table for the `Station` model and inserts the station records into the table.</span>
+
+<span class="sd">    In case of connection exceptions it connects to database without dropping tables,</span>
+<span class="sd">    assuming that historical data will be available</span>
+
+<span class="sd">    :return: A boolean flag indicating the success of adding stations to the database.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Adding stations to db...&#39;</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Request station list</span>
+        <span class="n">stations</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">get_stations</span><span class="p">()</span>
+        <span class="c1"># Conect to database</span>
+        <span class="n">db</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+        <span class="c1"># Reset Station Table in database</span>
+        <span class="n">db</span><span class="o">.</span><span class="n">drop_tables</span><span class="p">([</span><span class="n">sdb</span><span class="o">.</span><span class="n">Station</span><span class="p">])</span>
+        <span class="n">db</span><span class="o">.</span><span class="n">create_tables</span><span class="p">([</span><span class="n">sdb</span><span class="o">.</span><span class="n">Station</span><span class="p">])</span>
+
+        <span class="c1"># Add data into db</span>
+        <span class="k">for</span> <span class="n">station</span> <span class="ow">in</span> <span class="n">stations</span><span class="p">:</span>
+            <span class="n">record</span> <span class="o">=</span> <span class="n">sdb</span><span class="o">.</span><span class="n">Station</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">station</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">],</span>
+                                        <span class="n">stationName</span><span class="o">=</span><span class="n">station</span><span class="p">[</span><span class="s1">&#39;stationName&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;ul. &#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+                                        <span class="n">gegrLat</span><span class="o">=</span><span class="n">station</span><span class="p">[</span><span class="s1">&#39;gegrLat&#39;</span><span class="p">],</span>
+                                        <span class="n">gegrLon</span><span class="o">=</span><span class="n">station</span><span class="p">[</span><span class="s1">&#39;gegrLon&#39;</span><span class="p">],</span>
+                                        <span class="n">cityId</span><span class="o">=</span><span class="n">station</span><span class="p">[</span><span class="s1">&#39;city&#39;</span><span class="p">][</span><span class="s1">&#39;id&#39;</span><span class="p">],</span>
+                                        <span class="n">cityName</span><span class="o">=</span><span class="n">station</span><span class="p">[</span><span class="s1">&#39;city&#39;</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">],</span>
+                                        <span class="n">communeName</span><span class="o">=</span><span class="n">station</span><span class="p">[</span><span class="s1">&#39;city&#39;</span><span class="p">][</span><span class="s1">&#39;commune&#39;</span><span class="p">][</span><span class="s1">&#39;communeName&#39;</span><span class="p">],</span>
+                                        <span class="n">districtName</span><span class="o">=</span><span class="n">station</span><span class="p">[</span><span class="s1">&#39;city&#39;</span><span class="p">][</span><span class="s1">&#39;commune&#39;</span><span class="p">][</span><span class="s1">&#39;districtName&#39;</span><span class="p">],</span>
+                                        <span class="n">provinceName</span><span class="o">=</span><span class="n">station</span><span class="p">[</span><span class="s1">&#39;city&#39;</span><span class="p">][</span><span class="s1">&#39;commune&#39;</span><span class="p">][</span><span class="s1">&#39;provinceName&#39;</span><span class="p">],</span>
+                                        <span class="n">addressStreet</span><span class="o">=</span><span class="n">station</span><span class="p">[</span><span class="s1">&#39;addressStreet&#39;</span><span class="p">])</span>
+            <span class="n">record</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+        <span class="n">conection_flag</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;All stations added!&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">conection_flag</span>
+    <span class="c1"># Exeption - use the historical data - DO NOT DROP TABLES!</span>
+    <span class="k">except</span> <span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">HTTPError</span><span class="p">,</span> <span class="n">requests</span><span class="o">.</span><span class="n">ConnectionError</span><span class="p">):</span>
+        <span class="n">db</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Wystąpił problem z połączenien. Wczytywanie danych historycznych&#39;</span><span class="p">)</span>
+        <span class="n">conection_flag</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">return</span> <span class="n">conection_flag</span></div>
+
+
+<div class="viewcode-block" id="get_sensor_values"><a class="viewcode-back" href="../../database.html#database.db_functions.get_sensor_values">[docs]</a><span class="k">def</span> <span class="nf">get_sensor_values</span><span class="p">(</span><span class="n">sensor_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Retrieves sensor values from the GIOS API for a specific sensor.</span>
+
+<span class="sd">        This function takes a sensor ID as input and uses it to request sensor values from the GIOS API. The retrieved</span>
+<span class="sd">        values are then returned.</span>
+
+<span class="sd">        Function used in dictionary comprehension in  multithread approach</span>
+<span class="sd">        for &#39;db_add_sensor&#39; and &#39;db_add_measurements&#39; functions.</span>
+
+<span class="sd">        :param sensor_id: An integer representing the ID of the sensor.</span>
+<span class="sd">        :return: The sensor values retrieved from the API.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">r</span><span class="o">.</span><span class="n">get_sensor_values</span><span class="p">(</span><span class="n">sensor_id</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="db_add_sensors"><a class="viewcode-back" href="../../database.html#database.db_functions.db_add_sensors">[docs]</a><span class="nd">@utils</span><span class="o">.</span><span class="n">log_exec_time</span>
+<span class="k">def</span> <span class="nf">db_add_sensors</span><span class="p">(</span><span class="n">conection_flag</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Requests station sensors from an API and adds them to the database.</span>
+
+<span class="sd">    This function retrieves sensor data for each station in the database using a multithreaded approach. It makes</span>
+<span class="sd">    concurrent API requests to fetch the sensor data and then saves the records in the database.</span>
+
+<span class="sd">    If the `connection_flag` is True, the function will retrieve sensors from the API and update the database.</span>
+<span class="sd">    It resets the `Sensors` table in the database before adding new sensors.</span>
+
+<span class="sd">    If the `connection_flag` is False, it means there is no connection to the API. Function will skip the sensors</span>
+<span class="sd">    retrieval process and will not reset the database to make the historical data available.</span>
+
+<span class="sd">    :return: None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">conection_flag</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;adding sensors...&#39;</span><span class="p">)</span>
+        <span class="c1"># Reset Sensor table in database</span>
+        <span class="n">db</span><span class="o">.</span><span class="n">drop_tables</span><span class="p">([</span><span class="n">sdb</span><span class="o">.</span><span class="n">Sensor</span><span class="p">])</span>
+        <span class="n">db</span><span class="o">.</span><span class="n">create_tables</span><span class="p">([</span><span class="n">sdb</span><span class="o">.</span><span class="n">Sensor</span><span class="p">])</span>
+        <span class="c1"># Setup multithreading and save result in dictionary</span>
+        <span class="k">with</span> <span class="n">ThreadPoolExecutor</span><span class="p">()</span> <span class="k">as</span> <span class="n">executor</span><span class="p">:</span>
+            <span class="c1"># Retrieve station sensrors using API for each station in database</span>
+            <span class="n">station_sensors</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="n">station</span><span class="o">.</span><span class="n">id</span><span class="p">:</span> <span class="n">executor</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">get_station_sensors</span><span class="p">,</span> <span class="n">station</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">station</span> <span class="ow">in</span> <span class="n">sdb</span><span class="o">.</span><span class="n">Station</span><span class="o">.</span><span class="n">select</span><span class="p">()</span>
+            <span class="p">}</span>
+
+            <span class="c1"># iterate through dictionary and save records in database</span>
+            <span class="k">for</span> <span class="n">station_id</span><span class="p">,</span> <span class="n">future</span> <span class="ow">in</span> <span class="n">station_sensors</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="c1"># Wait fot sensor data</span>
+                <span class="n">request_sensor</span> <span class="o">=</span> <span class="n">future</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
+                <span class="c1"># Create and save a sensor record in database</span>
+                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">request_sensor</span><span class="p">:</span>
+                    <span class="n">sensor</span> <span class="o">=</span> <span class="n">sdb</span><span class="o">.</span><span class="n">Sensor</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">i</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">],</span>
+                                               <span class="n">stationId</span><span class="o">=</span><span class="n">i</span><span class="p">[</span><span class="s1">&#39;stationId&#39;</span><span class="p">],</span>
+                                               <span class="n">paramName</span><span class="o">=</span><span class="n">i</span><span class="p">[</span><span class="s1">&#39;param&#39;</span><span class="p">][</span><span class="s1">&#39;paramName&#39;</span><span class="p">],</span>
+                                               <span class="n">paramFormula</span><span class="o">=</span><span class="n">i</span><span class="p">[</span><span class="s1">&#39;param&#39;</span><span class="p">][</span><span class="s1">&#39;paramFormula&#39;</span><span class="p">],</span>
+                                               <span class="n">paramCode</span><span class="o">=</span><span class="n">i</span><span class="p">[</span><span class="s1">&#39;param&#39;</span><span class="p">][</span><span class="s1">&#39;paramCode&#39;</span><span class="p">],</span>
+                                               <span class="n">idParam</span><span class="o">=</span><span class="n">i</span><span class="p">[</span><span class="s1">&#39;param&#39;</span><span class="p">][</span><span class="s1">&#39;idParam&#39;</span><span class="p">])</span>
+                    <span class="n">sensor</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;sensors added!&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Wczytywanie historycznych danych sensorów&#39;</span><span class="p">)</span></div>
+
+
+<span class="c1">#</span>
+
+<div class="viewcode-block" id="db_add_measurements"><a class="viewcode-back" href="../../database.html#database.db_functions.db_add_measurements">[docs]</a><span class="nd">@utils</span><span class="o">.</span><span class="n">log_exec_time</span>
+<span class="k">def</span> <span class="nf">db_add_measurements</span><span class="p">(</span><span class="n">conection_flag</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Adds measurements from the GIOS API to the database for all sensors.</span>
+
+<span class="sd">    This function retrieves sensor values from the GIOS API for each sensor in the database using a multithreaded</span>
+<span class="sd">    approach. It then saves the measurements in the database using bulk create for optimal performance.</span>
+
+<span class="sd">    If the `connection_flag` is True, the function will retrieve measurements from the API and update the database.</span>
+<span class="sd">    It resets the `Measurement` table in the database before adding new measurements. If an exception occurs during</span>
+<span class="sd">    the process, the `Measurement` table will not be reset.</span>
+
+<span class="sd">    If the `connection_flag` is False, it means there is no connection to the API. Function will skip the measurement</span>
+<span class="sd">    retrieval process and will not drop the table.</span>
+
+<span class="sd">    :param conection_flag: A boolean indicating whether to connect to the API and retrieve measurements.</span>
+<span class="sd">    :return: None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Check the conection</span>
+    <span class="k">if</span> <span class="n">conection_flag</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;taking measurements...&#39;</span><span class="p">)</span>
+
+        <span class="c1"># Setup multithreading and save result in dictionary</span>
+        <span class="k">with</span> <span class="n">ThreadPoolExecutor</span><span class="p">()</span> <span class="k">as</span> <span class="n">executor</span><span class="p">:</span>
+            <span class="n">futures</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="n">executor</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span><span class="n">get_sensor_values</span><span class="p">,</span> <span class="n">sensor</span><span class="o">.</span><span class="n">id</span><span class="p">):</span> <span class="n">sensor</span>
+                <span class="k">for</span> <span class="n">sensor</span> <span class="ow">in</span> <span class="n">sdb</span><span class="o">.</span><span class="n">Sensor</span><span class="o">.</span><span class="n">select</span><span class="p">()</span>
+            <span class="p">}</span>
+            <span class="c1"># Reset Sensor table in database</span>
+            <span class="n">db</span><span class="o">.</span><span class="n">drop_tables</span><span class="p">([</span><span class="n">sdb</span><span class="o">.</span><span class="n">Measurement</span><span class="p">])</span>
+            <span class="n">db</span><span class="o">.</span><span class="n">create_tables</span><span class="p">([</span><span class="n">sdb</span><span class="o">.</span><span class="n">Measurement</span><span class="p">])</span>
+
+            <span class="c1"># Setup bulk saving</span>
+            <span class="n">measurements</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="c1"># Iterate through futures dictionary and add them into database</span>
+            <span class="c1"># Bulk create is used for further optimalization</span>
+            <span class="k">for</span> <span class="n">future</span> <span class="ow">in</span> <span class="n">as_completed</span><span class="p">(</span><span class="n">futures</span><span class="p">):</span>
+                <span class="n">values</span> <span class="o">=</span> <span class="n">future</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
+                <span class="n">sensor</span> <span class="o">=</span> <span class="n">futures</span><span class="p">[</span><span class="n">future</span><span class="p">]</span>
+                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">values</span><span class="p">[</span><span class="s1">&#39;values&#39;</span><span class="p">]:</span>
+                    <span class="c1"># Make date object and format date for clearence</span>
+                    <span class="n">date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">],</span> <span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S&quot;</span><span class="p">)</span>
+                    <span class="n">formatted_date</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%d</span><span class="s2">.%m.%y %H:%M&quot;</span><span class="p">)</span>
+
+                    <span class="n">measurement</span> <span class="o">=</span> <span class="n">sdb</span><span class="o">.</span><span class="n">Measurement</span><span class="p">(</span><span class="n">sensorId</span><span class="o">=</span><span class="n">sensor</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">date</span><span class="o">=</span><span class="n">formatted_date</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="n">i</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">])</span>
+                    <span class="n">measurements</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">measurement</span><span class="p">)</span>
+
+            <span class="c1"># batch_size = 200 is 3s faster than default (50)</span>
+            <span class="n">sdb</span><span class="o">.</span><span class="n">Measurement</span><span class="o">.</span><span class="n">bulk_create</span><span class="p">(</span><span class="n">measurements</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Baza danych gotowa!&#39;</span><span class="p">)</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Baza danych gotowa!&#39;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="list_stations"><a class="viewcode-back" href="../../database.html#database.db_functions.list_stations">[docs]</a><span class="nd">@utils</span><span class="o">.</span><span class="n">log_exec_time</span>
+<span class="k">def</span> <span class="nf">list_stations</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Prints out all stations saved in the database.</span>
+
+<span class="sd">    This function retrieves all stations from the database and prints their IDs and names in ascending order</span>
+<span class="sd">    based on the city name.</span>
+
+<span class="sd">    :return: None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">station</span> <span class="ow">in</span> <span class="n">sdb</span><span class="o">.</span><span class="n">Station</span><span class="o">.</span><span class="n">select</span><span class="p">()</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="n">sdb</span><span class="o">.</span><span class="n">Station</span><span class="o">.</span><span class="n">cityName</span><span class="o">.</span><span class="n">asc</span><span class="p">()):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">station</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s1">: </span><span class="si">{</span><span class="n">station</span><span class="o">.</span><span class="n">stationName</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="sensors_in_station"><a class="viewcode-back" href="../../database.html#database.db_functions.sensors_in_station">[docs]</a><span class="nd">@utils</span><span class="o">.</span><span class="n">log_exec_time</span>
+<span class="k">def</span> <span class="nf">sensors_in_station</span><span class="p">(</span><span class="n">station</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Prints out all sensors for a given station ID.</span>
+
+<span class="sd">    This function retrieves all sensors associated with the provided station ID from the database</span>
+<span class="sd">    and prints their IDs and parameter codes.</span>
+
+<span class="sd">    :param station: An integer representing the station ID.</span>
+<span class="sd">    :return: None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">query</span> <span class="o">=</span> <span class="n">sdb</span><span class="o">.</span><span class="n">Sensor</span><span class="o">.</span><span class="n">select</span><span class="p">()</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">sdb</span><span class="o">.</span><span class="n">Sensor</span><span class="o">.</span><span class="n">stationId</span> <span class="o">==</span> <span class="n">station</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">sensor</span> <span class="ow">in</span> <span class="n">query</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">sensor</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s1">: </span><span class="si">{</span><span class="n">sensor</span><span class="o">.</span><span class="n">paramCode</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Kacper Rajewski.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
