@@ -1,4 +1,4 @@
-('C:\\Python\\Akademia\\Repos\\projek_koncowy\\build\\Main\\Main.exe',
+('C:\\Python\\Akademia\\Repos\\projek_koncowy\\build\\Main\\main.exe',
  True,
  False,
  True,
@@ -14,7 +14,7 @@
  None,
  None,
  None,
- 'C:\\Python\\Akademia\\Repos\\projek_koncowy\\build\\Main\\Main.pkg',
+ 'C:\\Python\\Akademia\\Repos\\projek_koncowy\\build\\Main\\main.pkg',
  [('PYZ-00.pyz',
    'C:\\Python\\Akademia\\Repos\\projek_koncowy\\build\\Main\\PYZ-00.pyz',
    'PYZ'),
@@ -37,13 +37,13 @@
    'C:\\Users\\kacpe\\OneDrive\\Dokumenty\\Python projekty\\Akademia '
    'Python\\projek_koncowy\\Lib\\site-packages\\PyInstaller\\loader\\pyiboot01_bootstrap.py',
    'PYSOURCE'),
-  ('pyi_rth_inspect',
-   'C:\\Users\\kacpe\\OneDrive\\Dokumenty\\Python projekty\\Akademia '
-   'Python\\projek_koncowy\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_inspect.py',
-   'PYSOURCE'),
   ('pyi_rth_pkgutil',
    'C:\\Users\\kacpe\\OneDrive\\Dokumenty\\Python projekty\\Akademia '
    'Python\\projek_koncowy\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_pkgutil.py',
+   'PYSOURCE'),
+  ('pyi_rth_inspect',
+   'C:\\Users\\kacpe\\OneDrive\\Dokumenty\\Python projekty\\Akademia '
+   'Python\\projek_koncowy\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_inspect.py',
    'PYSOURCE'),
   ('pyi_rth_multiprocessing',
    'C:\\Users\\kacpe\\OneDrive\\Dokumenty\\Python projekty\\Akademia '
@@ -65,7 +65,7 @@
  [],
  False,
  False,
- 1684857495,
+ 1684877596,
  [('run.exe',
    'C:\\Users\\kacpe\\OneDrive\\Dokumenty\\Python projekty\\Akademia '
    'Python\\projek_koncowy\\Lib\\site-packages\\PyInstaller\\bootloader\\Windows-64bit-intel\\run.exe',

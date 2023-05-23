@@ -1,1 +1,19 @@
-2023-05-23 18:03:51,842:INFO:generated new fontManager
+2023-05-23 23:33:31,334:INFO:generated new fontManager
+2023-05-23 23:33:38,220:INFO:fuction db_add_stations executed in 1.021 seconds
+2023-05-23 23:33:38,220:INFO:Function db_add_stations called with args: () and kwargs: {}
+2023-05-23 23:33:40,693:INFO:fuction db_add_sensors executed in 2.473 seconds
+2023-05-23 23:33:40,694:INFO:Function db_add_sensors called with args: (True,) and kwargs: {}
+2023-05-23 23:33:49,126:INFO:fuction db_add_measurements executed in 8.433 seconds
+2023-05-23 23:33:49,126:INFO:Function db_add_measurements called with args: (True,) and kwargs: {}
+2023-05-23 23:33:52,043:INFO:fuction show_stations_on_map executed in 0.1457 seconds
+2023-05-23 23:33:52,043:INFO:Function show_stations_on_map called with args: () and kwargs: {}
+2023-05-23 23:33:59,621:INFO:fuction show_sensors executed in 0.002942 seconds
+2023-05-23 23:33:59,621:INFO:Function show_sensors called with args: () and kwargs: {}
+2023-05-23 23:34:03,500:INFO:fuction plot_values executed in 1.714 seconds
+2023-05-23 23:34:03,500:INFO:Function plot_values called with args: (744,) and kwargs: {}
+2023-05-23 23:34:15,381:INFO:fuction stations_in_range executed in 0.8232 seconds
+2023-05-23 23:34:15,382:INFO:Function stations_in_range called with args: ('Lusówko', 50.0) and kwargs: {}
+2023-05-23 23:34:16,768:INFO:fuction show_sensors executed in 0.0006949 seconds
+2023-05-23 23:34:16,768:INFO:Function show_sensors called with args: () and kwargs: {}
+2023-05-23 23:34:25,114:INFO:fuction plot_values executed in 3.404 seconds
+2023-05-23 23:34:25,114:INFO:Function plot_values called with args: (17956,) and kwargs: {}

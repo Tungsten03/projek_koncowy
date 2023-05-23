@@ -26,7 +26,7 @@ from analyze_full import analyze_full
 from data_filter.localize import show_stations_on_map
 from tkinter import messagebox
 import unittest
-import webbrowser
+
 
 
 
