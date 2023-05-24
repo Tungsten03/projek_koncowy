@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>tests package &mdash; KRAQEN 1.0.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            KRAQEN
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">tests package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-tests.test_data_analysis">tests.test_data_analysis module</a><ul>
+<li><a class="reference internal" href="#tests.test_data_analysis.TestAvgMeasurement"><code class="docutils literal notranslate"><span class="pre">TestAvgMeasurement</span></code></a><ul>
+<li><a class="reference internal" href="#tests.test_data_analysis.TestAvgMeasurement.test_avg_measurement"><code class="docutils literal notranslate"><span class="pre">TestAvgMeasurement.test_avg_measurement()</span></code></a></li>
+<li><a class="reference internal" href="#tests.test_data_analysis.TestAvgMeasurement.test_avg_measurement_empty"><code class="docutils literal notranslate"><span class="pre">TestAvgMeasurement.test_avg_measurement_empty()</span></code></a></li>
+<li><a class="reference internal" href="#tests.test_data_analysis.TestAvgMeasurement.test_avg_measurement_single_measurement"><code class="docutils literal notranslate"><span class="pre">TestAvgMeasurement.test_avg_measurement_single_measurement()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#tests.test_data_analysis.TestHighestMeasurement"><code class="docutils literal notranslate"><span class="pre">TestHighestMeasurement</span></code></a><ul>
+<li><a class="reference internal" href="#tests.test_data_analysis.TestHighestMeasurement.test_highest_measurement"><code class="docutils literal notranslate"><span class="pre">TestHighestMeasurement.test_highest_measurement()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#tests.test_data_analysis.TestLowestMeasurement"><code class="docutils literal notranslate"><span class="pre">TestLowestMeasurement</span></code></a><ul>
+<li><a class="reference internal" href="#tests.test_data_analysis.TestLowestMeasurement.test_lowest_measurement"><code class="docutils literal notranslate"><span class="pre">TestLowestMeasurement.test_lowest_measurement()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-tests.test_localize">tests.test_localize module</a><ul>
+<li><a class="reference internal" href="#tests.test_localize.TestCheckServer"><code class="docutils literal notranslate"><span class="pre">TestCheckServer</span></code></a><ul>
+<li><a class="reference internal" href="#tests.test_localize.TestCheckServer.test_connection_error"><code class="docutils literal notranslate"><span class="pre">TestCheckServer.test_connection_error()</span></code></a></li>
+<li><a class="reference internal" href="#tests.test_localize.TestCheckServer.test_server_available"><code class="docutils literal notranslate"><span class="pre">TestCheckServer.test_server_available()</span></code></a></li>
+<li><a class="reference internal" href="#tests.test_localize.TestCheckServer.test_server_unavailable"><code class="docutils literal notranslate"><span class="pre">TestCheckServer.test_server_unavailable()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-tests">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">KRAQEN</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">tests package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/tests.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="tests-package">
+<h1>tests package<a class="headerlink" href="#tests-package" title="Permalink to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-tests.test_data_analysis">
+<span id="tests-test-data-analysis-module"></span><h2>tests.test_data_analysis module<a class="headerlink" href="#module-tests.test_data_analysis" title="Permalink to this heading"></a></h2>
+<p>Unit tests for the data_analysis module.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="tests.test_data_analysis.TestAvgMeasurement">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tests.test_data_analysis.</span></span><span class="sig-name descname"><span class="pre">TestAvgMeasurement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_data_analysis.html#TestAvgMeasurement"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_data_analysis.TestAvgMeasurement" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TestCase</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="tests.test_data_analysis.TestAvgMeasurement.test_avg_measurement">
+<span class="sig-name descname"><span class="pre">test_avg_measurement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mock_measurement</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_data_analysis.html#TestAvgMeasurement.test_avg_measurement"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_data_analysis.TestAvgMeasurement.test_avg_measurement" title="Permalink to this definition"></a></dt>
+<dd><p>Test for the avg_measurement function.</p>
+<p>Verifies a simple case by mocking a Measurement model and select method. It mocks a list of measurements
+with specific values. The function is called with a station ID, and the expected result is compared
+with the actual result.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tests.test_data_analysis.TestAvgMeasurement.test_avg_measurement_empty">
+<span class="sig-name descname"><span class="pre">test_avg_measurement_empty</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mock_measurement</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_data_analysis.html#TestAvgMeasurement.test_avg_measurement_empty"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_data_analysis.TestAvgMeasurement.test_avg_measurement_empty" title="Permalink to this definition"></a></dt>
+<dd><p>Test the ‘avg_measurement’ function when there are no measurements.</p>
+<p>This test case verifies that the ‘avg_measurement’ function returns 0.0 when there are no measurements available.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mock_measurement</strong> – Mock object representing the patched ‘Measurement.select’ method.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tests.test_data_analysis.TestAvgMeasurement.test_avg_measurement_single_measurement">
+<span class="sig-name descname"><span class="pre">test_avg_measurement_single_measurement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mock_measurement</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_data_analysis.html#TestAvgMeasurement.test_avg_measurement_single_measurement"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_data_analysis.TestAvgMeasurement.test_avg_measurement_single_measurement" title="Permalink to this definition"></a></dt>
+<dd><p>Test the ‘avg_measurement’ function with a single measurement.</p>
+<p>This test case verifies that the ‘avg_measurement’ function returns the correct average value
+when there is only one measurement available.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mock_measurement</strong> – Mock object representing the patched ‘Measurement.select’ method.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="tests.test_data_analysis.TestHighestMeasurement">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tests.test_data_analysis.</span></span><span class="sig-name descname"><span class="pre">TestHighestMeasurement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_data_analysis.html#TestHighestMeasurement"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_data_analysis.TestHighestMeasurement" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TestCase</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="tests.test_data_analysis.TestHighestMeasurement.test_highest_measurement">
+<span class="sig-name descname"><span class="pre">test_highest_measurement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mock_select</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_data_analysis.html#TestHighestMeasurement.test_highest_measurement"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_data_analysis.TestHighestMeasurement.test_highest_measurement" title="Permalink to this definition"></a></dt>
+<dd><p>Test for the highest_measurement function.</p>
+<p>Verifies a simple case by mocking a Measurement model and select method. It defines a mock
+measurement with specific value and date. Function is called with a station ID and results are compared.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="tests.test_data_analysis.TestLowestMeasurement">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tests.test_data_analysis.</span></span><span class="sig-name descname"><span class="pre">TestLowestMeasurement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_data_analysis.html#TestLowestMeasurement"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_data_analysis.TestLowestMeasurement" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TestCase</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="tests.test_data_analysis.TestLowestMeasurement.test_lowest_measurement">
+<span class="sig-name descname"><span class="pre">test_lowest_measurement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mock_select</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_data_analysis.html#TestLowestMeasurement.test_lowest_measurement"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_data_analysis.TestLowestMeasurement.test_lowest_measurement" title="Permalink to this definition"></a></dt>
+<dd><p>Test for the lowest_measurement function.</p>
+<p>Verifies a simple case by mocking a Measurement model and select method. It defines a mock
+measurement with specific value and date. Function is called with a station ID and results are compared.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-tests.test_localize">
+<span id="tests-test-localize-module"></span><h2>tests.test_localize module<a class="headerlink" href="#module-tests.test_localize" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="tests.test_localize.TestCheckServer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tests.test_localize.</span></span><span class="sig-name descname"><span class="pre">TestCheckServer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_localize.html#TestCheckServer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_localize.TestCheckServer" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TestCase</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="tests.test_localize.TestCheckServer.test_connection_error">
+<span class="sig-name descname"><span class="pre">test_connection_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mock_head</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_localize.html#TestCheckServer.test_connection_error"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_localize.TestCheckServer.test_connection_error" title="Permalink to this definition"></a></dt>
+<dd><p>Test the ‘check_server’ function when a ConnectionError occurs.</p>
+<p>This test case verifies that the ‘check_server’ function returns False when a ConnectionError is raised.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mock_head</strong> – Mock object representing the patched ‘requests.head’ function.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tests.test_localize.TestCheckServer.test_server_available">
+<span class="sig-name descname"><span class="pre">test_server_available</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mock_head</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_localize.html#TestCheckServer.test_server_available"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_localize.TestCheckServer.test_server_available" title="Permalink to this definition"></a></dt>
+<dd><p>Test the ‘check_server’ function when the server is available.</p>
+<p>This test case verifies that the ‘check_server’ function returns True when the server
+responds status code 200.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mock_head</strong> – Mock object representing the patched ‘requests.head’ function.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tests.test_localize.TestCheckServer.test_server_unavailable">
+<span class="sig-name descname"><span class="pre">test_server_unavailable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mock_head</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tests/test_localize.html#TestCheckServer.test_server_unavailable"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_localize.TestCheckServer.test_server_unavailable" title="Permalink to this definition"></a></dt>
+<dd><p>Test the ‘check_server’ function when the server is unavailable.</p>
+<p>This test case verifies that the ‘check_server’ function returns False when the server responds
+status code other than 200.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mock_head</strong> – Mock object representing the patched ‘requests.head’ function.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-tests">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-tests" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Kacper Rajewski.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

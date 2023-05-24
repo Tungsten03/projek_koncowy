@@ -4,13 +4,13 @@ It allows users to view stations, retrieve sensor data, calculate statistics, an
 
 Functions:
 
-    refresh_stations: Lists stations in the listbox.
-    update_entry: Updates the entry widget with the selected ID from the listbox.
-    calculate_data: Calculates and displays data based on the selected sensor ID.
-    show_sensors: Displays the sensors for the selected station.
-    make_plot: Displays a plot for the selected sensor ID.
-    show_in_range: Displays stations within a specified range from a user-defined place.
-    show_help: Displays a help popup window with instructions.
+- refresh_stations: Lists stations in the listbox.
+- update_entry: Updates the entry widget with the selected ID from the listbox.
+- calculate_data: Calculates and displays data based on the selected sensor ID.
+- show_sensors: Displays the sensors for the selected station.
+- make_plot: Displays a plot for the selected sensor ID.
+- show_in_range: Displays stations within a specified range from a user-defined place.
+- show_help: Displays a help popup window with instructions.
 """
 
 from utility import labels as lbl
@@ -56,8 +56,10 @@ def analyze_full():
         selected_item = listbox.get(listbox.curselection())
         if selected_item:
             selected_id = selected_item.split()[0]
+            listbox_entry.config(state='normal')
             listbox_entry.delete(0, tk.END)
             listbox_entry.insert(tk.END, selected_id)
+            listbox_entry.config(state='readonly')
         else:
             pass
 
@@ -179,7 +181,7 @@ def analyze_full():
         popup.title('Pomoc')
 
         # Create a label with help text
-        label = tk.Label(popup, text=lbl.gui_help)
+        label = tk.Label(popup, text=lbl.gui_help, justify='left')
         label.pack(padx=20, pady=20)
 
         # Create a close button
@@ -216,7 +218,9 @@ def analyze_full():
     entry_range = utils.EntryWithPlaceholder(root, 'Promień [km]')
     plot_data = tk.Button(root, text='Wykres', command=make_plot, width=20)
     plot_data.configure(state='disabled')
-    listbox_entry = utils.EntryWithPlaceholder(root, 'Aktywny wybór', 'red')
+    # Make an entry to show position chosen from listbox and block it to readonly
+    listbox_entry = utils.EntryWithPlaceholder(root, 'Aktywny wybór', 'red', state='readonly')
+
 
     # Setup listbox
     listbox = tk.Listbox(root, width=400, font='Courier')

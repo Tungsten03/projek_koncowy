@@ -28,7 +28,6 @@ database.start\_database module
    :undoc-members:
    :show-inheritance:
 
-
 Module contents
 ---------------
 

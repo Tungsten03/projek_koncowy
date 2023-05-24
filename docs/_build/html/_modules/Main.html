@@ -1,42 +1,88 @@
-
 <!DOCTYPE html>
-
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Main &#8212; KRAQEN 1.0.0 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Main &mdash; KRAQEN 1.0.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-   
-  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
 
-  </head><body>
-  
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
           
+          
+          <a href="../index.html" class="icon icon-home">
+            KRAQEN
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"></div>
+        </div>
+      </div>
+    </nav>
 
-          <div class="body" role="main">
-            
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">KRAQEN</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Module code</a></li>
+      <li class="breadcrumb-item active">Main</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
   <h1>Source code for Main</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;----------------------------------KRAQEN-----------------------------------</span>
-<span class="sd">-------------------------Kacper Rajewski Air Quality Environment-----------------------</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Main application for requesting air quality data from the GIOS API and saving it to an SQLite database.</span>
+<span class="sd">The user can analyze the data and view it on a map.</span>
 
-<span class="c1"># Application requests air quality data from GIOS Api</span>
-<span class="c1"># Requested data is saved in sqlite3 database</span>
-<span class="c1"># User can analyze data blablablabla</span>
+<span class="sd">Functionality:</span>
+
+<span class="sd">- Populating the database with stations, sensors, and measurements from the GIOS API.</span>
+<span class="sd">- Analyzing the air quality data in new window using the analyze_full() function.</span>
+<span class="sd">- Displaying the stations on a map of Poland using the show_stations_on_map() function.</span>
+
+<span class="sd">Usage:</span>
+
+<span class="sd">- Click the &quot;START&quot; button to populate the database with stations, sensors, and measurements.</span>
+<span class="sd">- Click the &quot;Mapa stacji&quot; button to display the stations on a map of Poland.</span>
+<span class="sd">- Click the &quot;Analiza danych&quot; button to analyze the air quality data.</span>
+<span class="sd">- Click the &quot;WYJŚCIE&quot; button to exit the application.</span>
+<span class="sd">- Click the &#39;TESTY&#39; button to run unittest</span>
+<span class="sd">Author: Kacper Rajewski</span>
+<span class="sd">&quot;&quot;&quot;</span>
 
 <span class="kn">from</span> <span class="nn">utility</span> <span class="kn">import</span> <span class="n">labels</span> <span class="k">as</span> <span class="n">lbl</span>
 <span class="kn">from</span> <span class="nn">peewee</span> <span class="kn">import</span> <span class="o">*</span>
@@ -44,10 +90,13 @@
 <span class="kn">from</span> <span class="nn">database</span> <span class="kn">import</span> <span class="n">db_functions</span>
 <span class="kn">from</span> <span class="nn">analyze_full</span> <span class="kn">import</span> <span class="n">analyze_full</span>
 <span class="kn">from</span> <span class="nn">data_filter.localize</span> <span class="kn">import</span> <span class="n">show_stations_on_map</span>
+<span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="n">messagebox</span>
+<span class="kn">import</span> <span class="nn">unittest</span>
+<span class="kn">import</span> <span class="nn">webbrowser</span>
 
 
 
-<div class="viewcode-block" id="start_database_full"><a class="viewcode-back" href="../Main.html#Main.start_database_full">[docs]</a><span class="k">def</span> <span class="nf">start_database_full</span><span class="p">():</span>
+<div class="viewcode-block" id="start_database_full"><a class="viewcode-back" href="../Main.html#Main.start_database_full">[docs]</a><span class="k">def</span> <span class="nf">start_database_full</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">     Start the process of populating the database with stations, sensors, and measurements.</span>
 
@@ -76,10 +125,14 @@
         <span class="c1"># If connection fails, update status to historical and disable the button</span>
         <span class="n">start</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="n">bg</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">state</span><span class="o">=</span><span class="s1">&#39;disabled&#39;</span><span class="p">)</span>
         <span class="n">status</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">lbl</span><span class="o">.</span><span class="n">status_history</span><span class="p">,</span> <span class="n">bg</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">fg</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
-        <span class="n">root</span><span class="o">.</span><span class="n">update</span><span class="p">()</span></div>
+        <span class="n">root</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+    <span class="c1"># Enable buttons</span>
+    <span class="n">show_map</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="n">state</span><span class="o">=</span><span class="s1">&#39;normal&#39;</span><span class="p">)</span>
+    <span class="n">analyze</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="n">state</span><span class="o">=</span><span class="s1">&#39;normal&#39;</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="quit_app"><a class="viewcode-back" href="../Main.html#Main.quit_app">[docs]</a><span class="k">def</span> <span class="nf">quit_app</span><span class="p">():</span>
+
+<div class="viewcode-block" id="quit_app"><a class="viewcode-back" href="../Main.html#Main.quit_app">[docs]</a><span class="k">def</span> <span class="nf">quit_app</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Quit the application by closing the database connection and destroying the root window.</span>
 
@@ -91,6 +144,27 @@
     <span class="n">db</span> <span class="o">=</span> <span class="n">SqliteDatabase</span><span class="p">(</span><span class="s1">&#39;database/stations.db&#39;</span><span class="p">)</span>
     <span class="n">db</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
     <span class="n">root</span><span class="o">.</span><span class="n">destroy</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="run_tests"><a class="viewcode-back" href="../Main.html#Main.run_tests">[docs]</a><span class="k">def</span> <span class="nf">run_tests</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Run unit tests.</span>
+
+<span class="sd">    Function runs all unit tests in &#39;tests&#39; directory using &#39;unittest&#39; framework.</span>
+<span class="sd">    After tests it displays a popup window with success/failure message</span>
+
+<span class="sd">    :return: None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Load the tests</span>
+    <span class="n">loader</span> <span class="o">=</span> <span class="n">unittest</span><span class="o">.</span><span class="n">TestLoader</span><span class="p">()</span>
+    <span class="n">suite</span> <span class="o">=</span> <span class="n">loader</span><span class="o">.</span><span class="n">discover</span><span class="p">(</span><span class="s1">&#39;tests&#39;</span><span class="p">,</span> <span class="n">pattern</span><span class="o">=</span><span class="s1">&#39;test_*.py&#39;</span><span class="p">)</span>
+    <span class="c1"># Run tests</span>
+    <span class="n">runner</span> <span class="o">=</span> <span class="n">unittest</span><span class="o">.</span><span class="n">TextTestRunner</span><span class="p">()</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">runner</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">suite</span><span class="p">)</span>
+    <span class="c1"># Show result</span>
+    <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">wasSuccessful</span><span class="p">():</span>
+        <span class="n">messagebox</span><span class="o">.</span><span class="n">showinfo</span><span class="p">(</span><span class="n">lbl</span><span class="o">.</span><span class="n">test_popup</span><span class="p">,</span> <span class="n">lbl</span><span class="o">.</span><span class="n">test_success</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">messagebox</span><span class="o">.</span><span class="n">showerror</span><span class="p">(</span><span class="n">lbl</span><span class="o">.</span><span class="n">test_popup</span><span class="p">,</span> <span class="n">lbl</span><span class="o">.</span><span class="n">test_fail</span><span class="p">)</span></div>
 
 
 <span class="n">root</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
@@ -106,13 +180,17 @@
 <span class="n">status</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">lbl</span><span class="o">.</span><span class="n">status_start</span><span class="p">)</span>
 <span class="n">show_map_info</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">lbl</span><span class="o">.</span><span class="n">show_map_info</span><span class="p">)</span>
 <span class="n">analyze_info</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">lbl</span><span class="o">.</span><span class="n">analyze_info</span><span class="p">)</span>
-<span class="n">instruction</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">lbl</span><span class="o">.</span><span class="n">start_menu</span><span class="p">,</span> <span class="n">justify</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">)</span>
+<span class="n">instruction</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">lbl</span><span class="o">.</span><span class="n">start_menu</span><span class="p">,</span> <span class="n">justify</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
 
 <span class="c1"># Create buttons</span>
 <span class="n">start</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s1">&#39;START&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">start_database_full</span><span class="p">,</span> <span class="n">bg</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 <span class="n">show_map</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">lbl</span><span class="o">.</span><span class="n">show_map</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">show_stations_on_map</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">show_map</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="n">state</span><span class="o">=</span><span class="s1">&#39;disabled&#39;</span><span class="p">)</span>
 <span class="n">analyze</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s1">&#39;Analiza danych&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">analyze_full</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">analyze</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="n">state</span><span class="o">=</span><span class="s1">&#39;disabled&#39;</span><span class="p">)</span>
 <span class="n">kill</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s1">&#39;WYJŚCIE&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">quit_app</span><span class="p">)</span>
+<span class="n">testing</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s1">&#39;TESTY&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">run_tests</span><span class="p">)</span>
+
 
 <span class="c1"># Grid layout</span>
 <span class="n">app_name</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">columnspan</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -136,8 +214,12 @@
 <span class="n">analyze</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">pady</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">analyze_info</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">pady</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 
-<span class="n">kill</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">columnspan</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">pady</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">testing</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">pady</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+
+<span class="n">kill</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">pady</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
 <span class="n">kill</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="n">anchor</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+
+
 
 <span class="c1"># Configuire column weights</span>
 <span class="n">root</span><span class="o">.</span><span class="n">columnconfigure</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -146,65 +228,31 @@
 <span class="n">root</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
 </pre></div>
 
+           </div>
           </div>
-          
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Kacper Rajewski.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="../index.html">KRAQEN</a></h1>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
 
-
-
-
-
-
-
-
-<h3>Navigation</h3>
-
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="../index.html">Documentation overview</a><ul>
-  <li><a href="index.html">Module code</a><ul>
-  </ul></li>
-  </ul></li>
-</ul>
-</div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
-      <input type="submit" value="Go" />
-    </form>
-    </div>
-</div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
-
-
-
-
-
-
-
-
-        </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="footer">
-      &copy;2023, Kacper Rajewski.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.2.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
-      
-    </div>
-
-    
-
-    
-  </body>
+</body>
 </html>

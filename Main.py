@@ -4,17 +4,17 @@ The user can analyze the data and view it on a map.
 
 Functionality:
 
-    Populating the database with stations, sensors, and measurements from the GIOS API.
-    Analyzing the air quality data in new window using the analyze_full() function.
-    Displaying the stations on a map of Poland using the show_stations_on_map() function.
+- Populating the database with stations, sensors, and measurements from the GIOS API.
+- Analyzing the air quality data in new window using the analyze_full() function.
+- Displaying the stations on a map of Poland using the show_stations_on_map() function.
 
 Usage:
 
-    Click the "START" button to populate the database with stations, sensors, and measurements.
-    Click the "Mapa stacji" button to display the stations on a map of Poland.
-    Click the "Analiza danych" button to analyze the air quality data.
-    Click the "WYJŚCIE" button to exit the application.
-
+- Click the "START" button to populate the database with stations, sensors, and measurements.
+- Click the "Mapa stacji" button to display the stations on a map of Poland.
+- Click the "Analiza danych" button to analyze the air quality data.
+- Click the "WYJŚCIE" button to exit the application.
+- Click the 'TESTY' button to run unittest
 Author: Kacper Rajewski
 """
 
@@ -24,6 +24,9 @@ import tkinter as tk
 from database import db_functions
 from analyze_full import analyze_full
 from data_filter.localize import show_stations_on_map
+from tkinter import messagebox
+import unittest
+
 
 
 
@@ -57,6 +60,10 @@ def start_database_full() -> None:
         start.configure(bg='blue', state='disabled')
         status.configure(text=lbl.status_history, bg='blue', fg='white')
         root.update()
+    # Enable buttons
+    show_map.configure(state='normal')
+    analyze.configure(state='normal')
+
 
 
 def quit_app() -> None:
@@ -72,6 +79,27 @@ def quit_app() -> None:
     db.close()
     root.destroy()
 
+def run_tests():
+    """
+    Run unit tests.
+
+    Function runs all unit tests in 'tests' directory using 'unittest' framework.
+    After tests it displays a popup window with success/failure message
+
+    :return: None
+    """
+    # Load the tests
+    loader = unittest.TestLoader()
+    suite = loader.discover('tests', pattern='test_*.py')
+    # Run tests
+    runner = unittest.TextTestRunner()
+    result = runner.run(suite)
+    # Show result
+    if result.wasSuccessful():
+        messagebox.showinfo(lbl.test_popup, lbl.test_success)
+    else:
+        messagebox.showerror(lbl.test_popup, lbl.test_fail)
+
 
 root = tk.Tk()
 
@@ -86,13 +114,17 @@ status_start = tk.Label(root, text=lbl.status_start)
 status = tk.Label(root, text=lbl.status_start)
 show_map_info = tk.Label(root, text=lbl.show_map_info)
 analyze_info = tk.Label(root, text=lbl.analyze_info)
-instruction = tk.Label(root, text=lbl.start_menu, justify="center")
+instruction = tk.Label(root, text=lbl.start_menu, justify='center')
 
 # Create buttons
 start = tk.Button(root, text='START', command=start_database_full, bg='red', width=20)
 show_map = tk.Button(root, text=lbl.show_map, command=show_stations_on_map, width=20)
+show_map.configure(state='disabled')
 analyze = tk.Button(root, text='Analiza danych', command=analyze_full, width=20)
+analyze.configure(state='disabled')
 kill = tk.Button(root, text='WYJŚCIE', command=quit_app)
+testing = tk.Button(root, text='TESTY', command=run_tests)
+
 
 # Grid layout
 app_name.grid(column=0, columnspan=2, row=0)
@@ -116,8 +148,12 @@ show_map_info.grid(column=1, row=6, pady=10)
 analyze.grid(column=0, row=7, pady=10)
 analyze_info.grid(column=1, row=7, pady=10)
 
-kill.grid(column=0, columnspan=2, row=8, pady=30)
+testing.grid(column=0, row=8, pady=30)
+
+kill.grid(column=1, row=8, pady=30)
 kill.configure(anchor='center')
+
+
 
 # Configuire column weights
 root.columnconfigure(0, weight=1)

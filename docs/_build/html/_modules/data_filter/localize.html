@@ -37,11 +37,8 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../modules.html">projek_koncowy</a></li>
-</ul>
-
+              <!-- Local TOC -->
+              <div class="local-toc"></div>
         </div>
       </div>
     </nav>
@@ -74,12 +71,11 @@
 
 <span class="sd">Functions:</span>
 
-<span class="sd">    check server() -&gt; bool: Check openstreetmap server status.</span>
-<span class="sd">    of a given location description.</span>
-<span class="sd">    stations_in_range(user_place: str, range: int) -&gt; List: Retrieves a list of stations within</span>
+<span class="sd">- check server() -&gt; bool: Check openstreetmap server status of a given location description.</span>
+<span class="sd">- stations_in_range(user_place: str, range: int) -&gt; List: Retrieves a list of stations within</span>
 <span class="sd">    a given range (in km) from a user-defined location.</span>
-<span class="sd">    stations_in_city(): Asks the user for a city name and prints a list of stations in that city.</span>
-<span class="sd">    show_stations_on_map(): Retrieves station data from the database and displays them on a map.</span>
+<span class="sd">- stations_in_city(): Asks the user for a city name and prints a list of stations in that city.</span>
+<span class="sd">- show_stations_on_map(): Retrieves station data from the database and displays them on a map.</span>
 <span class="sd">&quot;&quot;&quot;</span>
 
 <span class="kn">import</span> <span class="nn">geopy.distance</span>
@@ -103,24 +99,16 @@
 <span class="sd">    :return: Bool</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">server_url</span> <span class="o">=</span> <span class="s1">&#39;https://nominatim.openstreetmap.org/status.php&#39;</span>
-
+    <span class="c1"># Check server status</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">server_url</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">True</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">False</span>
+    <span class="c1"># Except internet issues.</span>
     <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">ConnectionError</span><span class="p">:</span>
         <span class="k">return</span> <span class="kc">False</span></div>
-
-
-<span class="c1"># def get_coords(descritpion):</span>
-<span class="c1">#     if not descritpion:</span>
-<span class="c1">#         print(descritpion)</span>
-<span class="c1">#     else:</span>
-<span class="c1">#         location = geolocator.geocode(descritpion)</span>
-<span class="c1">#         return (location.latitude, location.longitude)</span>
-
 
 
 <div class="viewcode-block" id="stations_in_range"><a class="viewcode-back" href="../../data_filter.html#data_filter.localize.stations_in_range">[docs]</a><span class="nd">@utils</span><span class="o">.</span><span class="n">log_exec_time</span>

@@ -16,9 +16,7 @@
         <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="database package" href="database.html" />
-    <link rel="prev" title="analyze_full module" href="analyze_full.html" /> 
+    <link rel="search" title="Search" href="search.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -40,36 +38,29 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="modules.html">projek_koncowy</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="Main.html">Main module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="analyze_full.html">analyze_full module</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">data_filter package</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-data_filter.data_analysis">data_filter.data_analysis module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#data_filter.data_analysis.avg_measurement"><code class="docutils literal notranslate"><span class="pre">avg_measurement()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#data_filter.data_analysis.highest_measurement"><code class="docutils literal notranslate"><span class="pre">highest_measurement()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#data_filter.data_analysis.lowest_measurement"><code class="docutils literal notranslate"><span class="pre">lowest_measurement()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#data_filter.data_analysis.plot_values"><code class="docutils literal notranslate"><span class="pre">plot_values()</span></code></a></li>
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">data_filter package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-data_filter.data_analysis">data_filter.data_analysis module</a><ul>
+<li><a class="reference internal" href="#data_filter.data_analysis.avg_measurement"><code class="docutils literal notranslate"><span class="pre">avg_measurement()</span></code></a></li>
+<li><a class="reference internal" href="#data_filter.data_analysis.highest_measurement"><code class="docutils literal notranslate"><span class="pre">highest_measurement()</span></code></a></li>
+<li><a class="reference internal" href="#data_filter.data_analysis.lowest_measurement"><code class="docutils literal notranslate"><span class="pre">lowest_measurement()</span></code></a></li>
+<li><a class="reference internal" href="#data_filter.data_analysis.plot_values"><code class="docutils literal notranslate"><span class="pre">plot_values()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#module-data_filter.localize">data_filter.localize module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#data_filter.localize.check_server"><code class="docutils literal notranslate"><span class="pre">check_server()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#data_filter.localize.show_stations_on_map"><code class="docutils literal notranslate"><span class="pre">show_stations_on_map()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#data_filter.localize.stations_in_city"><code class="docutils literal notranslate"><span class="pre">stations_in_city()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#data_filter.localize.stations_in_range"><code class="docutils literal notranslate"><span class="pre">stations_in_range()</span></code></a></li>
+<li><a class="reference internal" href="#module-data_filter.localize">data_filter.localize module</a><ul>
+<li><a class="reference internal" href="#data_filter.localize.check_server"><code class="docutils literal notranslate"><span class="pre">check_server()</span></code></a></li>
+<li><a class="reference internal" href="#data_filter.localize.show_stations_on_map"><code class="docutils literal notranslate"><span class="pre">show_stations_on_map()</span></code></a></li>
+<li><a class="reference internal" href="#data_filter.localize.stations_in_city"><code class="docutils literal notranslate"><span class="pre">stations_in_city()</span></code></a></li>
+<li><a class="reference internal" href="#data_filter.localize.stations_in_range"><code class="docutils literal notranslate"><span class="pre">stations_in_range()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#module-data_filter">Module contents</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="database.html">database package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="utility.html">utility package</a></li>
+<li><a class="reference internal" href="#module-data_filter">Module contents</a></li>
 </ul>
 </li>
 </ul>
-
+</div>
         </div>
       </div>
     </nav>
@@ -84,7 +75,6 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="modules.html">projek_koncowy</a></li>
       <li class="breadcrumb-item active">data_filter package</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/data_filter.rst.txt" rel="nofollow"> View page source</a>
@@ -107,12 +97,12 @@
 retrieve the highest and lowest measurement values, calculate the average measurement value, and plot the measurement
 values with a linear regression line.</p>
 <p>Functions:</p>
-<blockquote>
-<div><p>highest_measurement(sensor: int) -&gt; str: Retrieves the highest measurement value saved in the database for a given sensor ID.
-lowest_measurement(sensor: int) -&gt; str: Retrieves the lowest measurement value saved in the database for a given sensor ID.
-avg_measurement(sensor: int) -&gt; float: Calculates the average measurement value for a given sensor ID.
-plot_values(sensor_id: int): Plots the measurement values with a linear regression line for a given sensor ID.</p>
-</div></blockquote>
+<ul class="simple">
+<li><p>highest_measurement(sensor: int) -&gt; str: Retrieves the highest measurement value saved in the database for a given sensor ID.</p></li>
+<li><p>lowest_measurement(sensor: int) -&gt; str: Retrieves the lowest measurement value saved in the database for a given sensor ID.</p></li>
+<li><p>avg_measurement(sensor: int) -&gt; float: Calculates the average measurement value for a given sensor ID.</p></li>
+<li><p>plot_values(sensor_id: int): Plots the measurement values with a linear regression line for a given sensor ID.</p></li>
+</ul>
 <dl class="py function">
 <dt class="sig sig-object py" id="data_filter.data_analysis.avg_measurement">
 <span class="sig-prename descclassname"><span class="pre">data_filter.data_analysis.</span></span><span class="sig-name descname"><span class="pre">avg_measurement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sensor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="reference internal" href="_modules/data_filter/data_analysis.html#avg_measurement"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#data_filter.data_analysis.avg_measurement" title="Permalink to this definition"></a></dt>
@@ -189,14 +179,16 @@ on a scatter plot of measured parameter values in time.</p>
 <p>Module for Geographic Operations and Visualization.</p>
 <p>This module provides functions for geolocation operations and visualization of station data on a map.</p>
 <p>Functions:</p>
-<blockquote>
-<div><p>check server() -&gt; bool: Check openstreetmap server status.
-of a given location description.
-stations_in_range(user_place: str, range: int) -&gt; List: Retrieves a list of stations within
-a given range (in km) from a user-defined location.
-stations_in_city(): Asks the user for a city name and prints a list of stations in that city.
-show_stations_on_map(): Retrieves station data from the database and displays them on a map.</p>
-</div></blockquote>
+<ul class="simple">
+<li><p>check server() -&gt; bool: Check openstreetmap server status of a given location description.</p></li>
+<li><dl class="simple">
+<dt>stations_in_range(user_place: str, range: int) -&gt; List: Retrieves a list of stations within</dt><dd><p>a given range (in km) from a user-defined location.</p>
+</dd>
+</dl>
+</li>
+<li><p>stations_in_city(): Asks the user for a city name and prints a list of stations in that city.</p></li>
+<li><p>show_stations_on_map(): Retrieves station data from the database and displays them on a map.</p></li>
+</ul>
 <dl class="py function">
 <dt class="sig sig-object py" id="data_filter.localize.check_server">
 <span class="sig-prename descclassname"><span class="pre">data_filter.localize.</span></span><span class="sig-name descname"><span class="pre">check_server</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/data_filter/localize.html#check_server"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#data_filter.localize.check_server" title="Permalink to this definition"></a></dt>
@@ -263,10 +255,7 @@ and station name.</p>
 
            </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="analyze_full.html" class="btn btn-neutral float-left" title="analyze_full module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="database.html" class="btn btn-neutral float-right" title="database package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
+          <footer>
 
   <hr/>
 

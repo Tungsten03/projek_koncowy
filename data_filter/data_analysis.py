@@ -7,10 +7,10 @@ values with a linear regression line.
 
 Functions:
 
-    highest_measurement(sensor: int) -> str: Retrieves the highest measurement value saved in the database for a given sensor ID.
-    lowest_measurement(sensor: int) -> str: Retrieves the lowest measurement value saved in the database for a given sensor ID.
-    avg_measurement(sensor: int) -> float: Calculates the average measurement value for a given sensor ID.
-    plot_values(sensor_id: int): Plots the measurement values with a linear regression line for a given sensor ID.
+- highest_measurement(sensor: int) -> str: Retrieves the highest measurement value saved in the database for a given sensor ID.
+- lowest_measurement(sensor: int) -> str: Retrieves the lowest measurement value saved in the database for a given sensor ID.
+- avg_measurement(sensor: int) -> float: Calculates the average measurement value for a given sensor ID.
+- plot_values(sensor_id: int): Plots the measurement values with a linear regression line for a given sensor ID.
 """
 
 from database import start_database as sdb
@@ -18,6 +18,7 @@ from utility import utils
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy import stats
+from tkinter import messagebox
 
 query = sdb.Measurement.select()
 
@@ -36,7 +37,7 @@ def highest_measurement(sensor: int) -> str:
     try:
         # Setup query and sort values descending
         query = sdb.Measurement.select().order_by(sdb.Measurement.value.desc()).where(
-            sdb.Measurement.sensorId == sensor).get()
+            sdb.Measurement.sensorId == sensor).first()
 
         max_result = f'{query.value} d:{query.date}'
         return max_result
@@ -58,11 +59,14 @@ def lowest_measurement(sensor: int) -> str:
     try:
         # Setup query and sort values descending
         query = sdb.Measurement.select().order_by(sdb.Measurement.value.asc()).where(
-            (sdb.Measurement.value.is_null(False)) & (sdb.Measurement.sensorId == sensor)).get()
-        min_result = f'{query.value} d:{query.date}'
-        return min_result
+            (sdb.Measurement.value.is_null(False)) & (sdb.Measurement.sensorId == sensor)).first()
+        if query is None:
+            messagebox.showerror('Błąd', 'Nie wybrano sensora')
+        else:
+            min_result = f'{query.value} d:{query.date}'
+            return min_result
     except sdb.Sensor.DoesNotExist:
-        print('podano niepoprawny id')
+        messagebox.showerror('Błąd', 'Podano niepoproawny ID')
 
 
 def avg_measurement(sensor: int) -> float:
@@ -80,9 +84,12 @@ def avg_measurement(sensor: int) -> float:
 
     measurements = [measurement.value for measurement in query]
 
-    total = sum(measurements)
-    average = total / len(measurements)
-    return round(average, 3)
+    if measurements:
+        total = sum(measurements)
+        average = total / len(measurements)
+        return round(average, 3)
+    else:
+        return 0.0
 
 
 @utils.log_exec_time
@@ -154,11 +161,3 @@ def plot_values(sensor_id: int) -> None:
         plt.show()
     except (sdb.Station.DoesNotExist, sdb.Sensor.DoesNotExist):
         print('podano niepoprawny id')
-
-
-if __name__ == '__main__':
-    from peewee import *
-
-    db = SqliteDatabase('database/stations.db')
-    db.connect()
-    avg_measurement(744)

@@ -8,4 +8,6 @@ projek_koncowy
    analyze_full
    data_filter
    database
+   setup
+   tests
    utility

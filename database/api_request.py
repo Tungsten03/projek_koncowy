@@ -5,9 +5,9 @@ This module contains functions to request data from the GIOS API and return resp
 
 Functions:
 
-    get_stations(): Requests a list of all stations from the GIOS API.
-    get_station_sensors(station_id): Requests all sensors for a specific station from the GIOS API.
-    get_sensor_values(sensor_id): Requests collected data values for a specific sensor ID from the GIOS API.
+- get_stations(): Requests a list of all stations from the GIOS API.
+- get_station_sensors(station_id): Requests all sensors for a specific station from the GIOS API.
+- get_sensor_values(sensor_id): Requests collected data values for a specific sensor ID from the GIOS API.
 """
 
 import requests

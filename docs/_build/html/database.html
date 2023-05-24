@@ -16,9 +16,7 @@
         <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="utility package" href="utility.html" />
-    <link rel="prev" title="data_filter package" href="data_filter.html" /> 
+    <link rel="search" title="Search" href="search.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -40,44 +38,73 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="modules.html">projek_koncowy</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="Main.html">Main module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="analyze_full.html">analyze_full module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data_filter.html">data_filter package</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">database package</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-database.api_request">database.api_request module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#database.api_request.get_sensor_values"><code class="docutils literal notranslate"><span class="pre">get_sensor_values()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#database.api_request.get_station_sensors"><code class="docutils literal notranslate"><span class="pre">get_station_sensors()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#database.api_request.get_stations"><code class="docutils literal notranslate"><span class="pre">get_stations()</span></code></a></li>
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">database package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-database.api_request">database.api_request module</a><ul>
+<li><a class="reference internal" href="#database.api_request.get_sensor_values"><code class="docutils literal notranslate"><span class="pre">get_sensor_values()</span></code></a></li>
+<li><a class="reference internal" href="#database.api_request.get_station_sensors"><code class="docutils literal notranslate"><span class="pre">get_station_sensors()</span></code></a></li>
+<li><a class="reference internal" href="#database.api_request.get_stations"><code class="docutils literal notranslate"><span class="pre">get_stations()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#module-database.db_functions">database.db_functions module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#database.db_functions.db_add_measurements"><code class="docutils literal notranslate"><span class="pre">db_add_measurements()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#database.db_functions.db_add_sensors"><code class="docutils literal notranslate"><span class="pre">db_add_sensors()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#database.db_functions.db_add_stations"><code class="docutils literal notranslate"><span class="pre">db_add_stations()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#database.db_functions.get_sensor_values"><code class="docutils literal notranslate"><span class="pre">get_sensor_values()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#database.db_functions.list_stations"><code class="docutils literal notranslate"><span class="pre">list_stations()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#database.db_functions.sensors_in_station"><code class="docutils literal notranslate"><span class="pre">sensors_in_station()</span></code></a></li>
+<li><a class="reference internal" href="#module-database.db_functions">database.db_functions module</a><ul>
+<li><a class="reference internal" href="#database.db_functions.db_add_measurements"><code class="docutils literal notranslate"><span class="pre">db_add_measurements()</span></code></a></li>
+<li><a class="reference internal" href="#database.db_functions.db_add_sensors"><code class="docutils literal notranslate"><span class="pre">db_add_sensors()</span></code></a></li>
+<li><a class="reference internal" href="#database.db_functions.db_add_stations"><code class="docutils literal notranslate"><span class="pre">db_add_stations()</span></code></a></li>
+<li><a class="reference internal" href="#database.db_functions.get_sensor_values"><code class="docutils literal notranslate"><span class="pre">get_sensor_values()</span></code></a></li>
+<li><a class="reference internal" href="#database.db_functions.list_stations"><code class="docutils literal notranslate"><span class="pre">list_stations()</span></code></a></li>
+<li><a class="reference internal" href="#database.db_functions.sensors_in_station"><code class="docutils literal notranslate"><span class="pre">sensors_in_station()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#module-database.start_database">database.start_database module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#database.start_database.BaseModel"><code class="docutils literal notranslate"><span class="pre">BaseModel</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#database.start_database.Measurement"><code class="docutils literal notranslate"><span class="pre">Measurement</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#database.start_database.Sensor"><code class="docutils literal notranslate"><span class="pre">Sensor</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#database.start_database.Station"><code class="docutils literal notranslate"><span class="pre">Station</span></code></a></li>
+<li><a class="reference internal" href="#module-database.start_database">database.start_database module</a><ul>
+<li><a class="reference internal" href="#database.start_database.BaseModel"><code class="docutils literal notranslate"><span class="pre">BaseModel</span></code></a><ul>
+<li><a class="reference internal" href="#database.start_database.BaseModel.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">BaseModel.DoesNotExist</span></code></a></li>
+<li><a class="reference internal" href="#database.start_database.BaseModel.id"><code class="docutils literal notranslate"><span class="pre">BaseModel.id</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#module-database">Module contents</a></li>
+<li><a class="reference internal" href="#database.start_database.Measurement"><code class="docutils literal notranslate"><span class="pre">Measurement</span></code></a><ul>
+<li><a class="reference internal" href="#database.start_database.Measurement.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Measurement.DoesNotExist</span></code></a></li>
+<li><a class="reference internal" href="#database.start_database.Measurement.date"><code class="docutils literal notranslate"><span class="pre">Measurement.date</span></code></a></li>
+<li><a class="reference internal" href="#database.start_database.Measurement.id"><code class="docutils literal notranslate"><span class="pre">Measurement.id</span></code></a></li>
+<li><a class="reference internal" href="#database.start_database.Measurement.sensorId"><code class="docutils literal notranslate"><span class="pre">Measurement.sensorId</span></code></a></li>
+<li><a class="reference internal" href="#database.start_database.Measurement.sensorId_id"><code class="docutils literal notranslate"><span class="pre">Measurement.sensorId_id</span></code></a></li>
+<li><a class="reference internal" href="#database.start_database.Measurement.value"><code class="docutils literal notranslate"><span class="pre">Measurement.value</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="utility.html">utility package</a></li>
+<li><a class="reference internal" href="#database.start_database.Sensor"><code class="docutils literal notranslate"><span class="pre">Sensor</span></code></a><ul>
+<li><a class="reference internal" href="#database.start_database.Sensor.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Sensor.DoesNotExist</span></code></a></li>
+<li><a class="reference internal" href="#database.start_database.Sensor.id"><code class="docutils literal notranslate"><span class="pre">Sensor.id</span></code></a></li>
+<li><a class="reference internal" href="#database.start_database.Sensor.idParam"><code class="docutils literal notranslate"><span class="pre">Sensor.idParam</span></code></a></li>
+<li><a class="reference internal" href="#database.start_database.Sensor.measurements"><code class="docutils literal notranslate"><span class="pre">Sensor.measurements</span></code></a></li>
+<li><a class="reference internal" href="#database.start_database.Sensor.paramCode"><code class="docutils literal notranslate"><span class="pre">Sensor.paramCode</span></code></a></li>
+<li><a class="reference internal" href="#database.start_database.Sensor.paramFormula"><code class="docutils literal notranslate"><span class="pre">Sensor.paramFormula</span></code></a></li>
+<li><a class="reference internal" href="#database.start_database.Sensor.paramName"><code class="docutils literal notranslate"><span class="pre">Sensor.paramName</span></code></a></li>
+<li><a class="reference internal" href="#database.start_database.Sensor.stationId"><code class="docutils literal notranslate"><span class="pre">Sensor.stationId</span></code></a></li>
+<li><a class="reference internal" href="#database.start_database.Sensor.stationId_id"><code class="docutils literal notranslate"><span class="pre">Sensor.stationId_id</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#database.start_database.Station"><code class="docutils literal notranslate"><span class="pre">Station</span></code></a><ul>
+<li><a class="reference internal" href="#database.start_database.Station.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Station.DoesNotExist</span></code></a></li>
+<li><a class="reference internal" href="#database.start_database.Station.addressStreet"><code class="docutils literal notranslate"><span class="pre">Station.addressStreet</span></code></a></li>
+<li><a class="reference internal" href="#database.start_database.Station.cityId"><code class="docutils literal notranslate"><span class="pre">Station.cityId</span></code></a></li>
+<li><a class="reference internal" href="#database.start_database.Station.cityName"><code class="docutils literal notranslate"><span class="pre">Station.cityName</span></code></a></li>
+<li><a class="reference internal" href="#database.start_database.Station.communeName"><code class="docutils literal notranslate"><span class="pre">Station.communeName</span></code></a></li>
+<li><a class="reference internal" href="#database.start_database.Station.gegrLat"><code class="docutils literal notranslate"><span class="pre">Station.gegrLat</span></code></a></li>
+<li><a class="reference internal" href="#database.start_database.Station.gegrLon"><code class="docutils literal notranslate"><span class="pre">Station.gegrLon</span></code></a></li>
+<li><a class="reference internal" href="#database.start_database.Station.id"><code class="docutils literal notranslate"><span class="pre">Station.id</span></code></a></li>
+<li><a class="reference internal" href="#database.start_database.Station.provinceName"><code class="docutils literal notranslate"><span class="pre">Station.provinceName</span></code></a></li>
+<li><a class="reference internal" href="#database.start_database.Station.sensors"><code class="docutils literal notranslate"><span class="pre">Station.sensors</span></code></a></li>
+<li><a class="reference internal" href="#database.start_database.Station.stationName"><code class="docutils literal notranslate"><span class="pre">Station.stationName</span></code></a></li>
 </ul>
 </li>
 </ul>
-
+</li>
+<li><a class="reference internal" href="#module-database">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
         </div>
       </div>
     </nav>
@@ -92,7 +119,6 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="modules.html">projek_koncowy</a></li>
       <li class="breadcrumb-item active">database package</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/database.rst.txt" rel="nofollow"> View page source</a>
@@ -113,11 +139,11 @@
 <p>Functions for Retrieving Data from GIOS API.</p>
 <p>This module contains functions to request data from the GIOS API and return responses in JSON format.</p>
 <p>Functions:</p>
-<blockquote>
-<div><p>get_stations(): Requests a list of all stations from the GIOS API.
-get_station_sensors(station_id): Requests all sensors for a specific station from the GIOS API.
-get_sensor_values(sensor_id): Requests collected data values for a specific sensor ID from the GIOS API.</p>
-</div></blockquote>
+<ul class="simple">
+<li><p>get_stations(): Requests a list of all stations from the GIOS API.</p></li>
+<li><p>get_station_sensors(station_id): Requests all sensors for a specific station from the GIOS API.</p></li>
+<li><p>get_sensor_values(sensor_id): Requests collected data values for a specific sensor ID from the GIOS API.</p></li>
+</ul>
 <dl class="py function">
 <dt class="sig sig-object py" id="database.api_request.get_sensor_values">
 <span class="sig-prename descclassname"><span class="pre">database.api_request.</span></span><span class="sig-name descname"><span class="pre">get_sensor_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sensor_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference internal" href="_modules/database/api_request.html#get_sensor_values"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database.api_request.get_sensor_values" title="Permalink to this definition"></a></dt>
@@ -169,14 +195,14 @@ the response in JSON format.</p>
 <p>This module contains functions to set up the SQLite database. It includes functions to add stations, sensors,
 and measurements to the database.</p>
 <p>Functions:</p>
-<blockquote>
-<div><p>db_add_stations(): Function that adds station records to the database.
-get_sensor_values(sensor_id): Retrieves sensor values from the GIOS API for a specific sensor.
-db_add_sensors(conection_flag): Requests station sensors from an API and adds them to the database.
-db_add_measurements(conection_flag): Adds measurements from the GIOS API to the database for all sensors.
-list_stations(): Prints out all stations saved in the database.
-sensors_in_station(station): Prints out all sensors for a given station ID.</p>
-</div></blockquote>
+<ul class="simple">
+<li><p>db_add_stations(): Function that adds station records to the database.</p></li>
+<li><p>get_sensor_values(sensor_id): Retrieves sensor values from the GIOS API for a specific sensor.</p></li>
+<li><p>db_add_sensors(conection_flag): Requests station sensors from an API and adds them to the database.</p></li>
+<li><p>db_add_measurements(conection_flag): Adds measurements from the GIOS API to the database for all sensors.</p></li>
+<li><p>list_stations(): Prints out all stations saved in the database.</p></li>
+<li><p>sensors_in_station(station): Prints out all sensors for a given station ID.</p></li>
+</ul>
 <dl class="py function">
 <dt class="sig sig-object py" id="database.db_functions.db_add_measurements">
 <span class="sig-prename descclassname"><span class="pre">database.db_functions.</span></span><span class="sig-name descname"><span class="pre">db_add_measurements</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conection_flag</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/database/db_functions.html#db_add_measurements"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database.db_functions.db_add_measurements" title="Permalink to this definition"></a></dt>
@@ -284,16 +310,16 @@ and prints their IDs and parameter codes.</p>
 <p>SQLite Database Models using Peewee ORM.</p>
 <p>This module defines the database models for SQLite using the Peewee ORM.</p>
 <p>Classes:</p>
-<blockquote>
-<div><p>BaseModel: Base model class for Peewee models.
-Station: Represents a station in the database.
-Sensor: Represents a sensor in the database.
-Measurement: Represents a measurement in the database.</p>
-</div></blockquote>
+<ul class="simple">
+<li><p>BaseModel: Base model class for Peewee models.</p></li>
+<li><p>Station: Represents a station in the database.</p></li>
+<li><p>Sensor: Represents a sensor in the database.</p></li>
+<li><p>Measurement: Represents a measurement in the database.</p></li>
+</ul>
 <p>Dependencies:</p>
-<blockquote>
-<div><p>Peewee: Python ORM for SQLite.</p>
-</div></blockquote>
+<ul class="simple">
+<li><p>Peewee: Python ORM for SQLite.</p></li>
+</ul>
 <dl class="py class">
 <dt class="sig sig-object py" id="database.start_database.BaseModel">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">database.start_database.</span></span><span class="sig-name descname"><span class="pre">BaseModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database/start_database.html#BaseModel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database.start_database.BaseModel" title="Permalink to this definition"></a></dt>
@@ -483,10 +509,7 @@ that correspond to the columns in the ‘station’ table in the database.</p>
 
            </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="data_filter.html" class="btn btn-neutral float-left" title="data_filter package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="utility.html" class="btn btn-neutral float-right" title="utility package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
+          <footer>
 
   <hr/>
 

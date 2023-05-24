@@ -27,20 +27,32 @@ Sprawdź połączenie z siecią lub status serwera pod adresem:
 https://nominatim.openstreetmap.org/status.php
 """
 
+test_popup = 'Raport z testów'
+test_success = 'Testy zakończone powodzeniem!'
+test_fail = 'Niektóre testy nie powiodły się.'
+
 gui_help = """ Witaj w module analizy danych.
 Jest to główny moduł aplikacji, który pozwala na pełną analizę i prezentację graficzną danych z bazy.
+
 1. Wybierz stację z listy dostępnej na dole okna (stacje poszeregowane wg. nazwy)
+
 * Możesz również skorzystać z wyszukiwarki stacji po opisie lokacji i promieniu poszukiwań
 - W tym celu w pole "Opis lokacji" wpisz krótki opis miejsca (np. Miasto, ulica lub nazwa własna jak UAM, Poznań)
 - Następnie wpisz promień poszukiwania stacji (w km)
 - Zatwierdź wybór przyciskiem "W zasięgu"
+
 2. Zatwierdź wybór przyciskiem "Wybierz stacji" nad polem tekstowym z aktywnym ID
+
 3. Teraz możesz przystąpić do analizy danych wybranej stacji pomiarowej.
+
 * Zaznacz parametr, który chciałbyś analizować
+
 * Przystąp do analizy wyników. W tym celu możesz:
 - Dokonać prostej analizy poprzez naciśnięcie przycisku "Wylicz dane"
 - Program wyliczy takie wartości jak: średnia pomiarów, maksymalną i minimalną oraz wskaże datę i godzinę pomiaru.
 - Wyrysować dane na wykresie. Wykres zawiera również regresję liniową oraz wskazuję pomiar maksymalny i minimalny.
+
 4. Przyciski do analizy danych dostępne są jedynie w trybie wyboru sensorów. 
+
 5. Przycisk wyboru stacji jest dostępny jedynie w trybie wyboru/wyszukiwania stacji.
 """
