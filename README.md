@@ -5,7 +5,7 @@ The application was developed as a final project for postgraduate studies
 The program requests data from the GIOS API and stores it in an SQLite database. 
 The main functionality of the application focuses on analyzing the measurement data from air quality monitoring stations in Poland.
 
-###Auuthor
+### Author:
 __Kacper Rajewski__
 
 ## Table of Contents
@@ -61,6 +61,6 @@ to open it localy
 - __Compilation__: pyinstaller
 - __Unit Tests Coverage__: coverage.py 
 
-###Disclaimer
+### Disclaimer
 I do apologize for github repo mess - need to work on git more
 
