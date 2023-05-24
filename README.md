@@ -48,7 +48,8 @@ Mocking the database is tricky - seems to work but not 100% sure
 
 ## Documentation
 Documentation generated with sphinx module
-download: https://github.com/Tungsten03/projek_koncowy/tree/tests/docs/_build/html
+download:  
+https://github.com/Tungsten03/projek_koncowy/tree/tests/docs/_build/html  
 to open it localy
 **Github Pages in progress** - a painfull loss for now
 
