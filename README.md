@@ -28,14 +28,14 @@ __requirements__ to set up the virtual environment prepared using pip freeze
 run: __pip install -r requirements.txt__
 
 __Source code__:
-Main.py
-analyze_full.py
-database
-data_filter
-utility
+- Main.py
+- analyze_full.py
+- database
+- data_filter
+- utility
 tests
 **optional** [generated on app start] 
-stations.db - for historical data
+- stations.db - for historical data
 
 ## Tests
 testing module: unittest
@@ -53,13 +53,13 @@ to open it localy
 **Github Pages in progress** - a painfull loss for now
 
 ## MainTech:
-__Language__: Python 3
-__GUI__: tkinter
-__Database__: SQLite
-__ORM__: peewee
-__Documentation__: sphinx
-__Compilation__: pyinstaller
-__Unit Tests Coverage__: coverage.py 
+- __Language__: Python 3
+- __GUI__: tkinter
+- __Database__: SQLite
+- __ORM__: peewee
+- __Documentation__: sphinx
+- __Compilation__: pyinstaller
+- __Unit Tests Coverage__: coverage.py 
 
 ###Disclaimer
 I do apologize for github repo mess - need to work on git more
