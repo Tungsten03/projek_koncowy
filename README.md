@@ -5,19 +5,17 @@ The application was developed as a final project for postgraduate studies
 The program requests data from the GIOS API and stores it in an SQLite database. 
 The main functionality of the application focuses on analyzing the measurement data from air quality monitoring stations in Poland.
 
-
+###Auuthor
+__Kacper Rajewski__
 
 ## Table of Contents
 
 - [HowToRun](#HowToRun)
 - [Tests](#Tests)
 - [Documentation](#documentation)
+- [MainTech](#MainTech)
 
-- [Requirements](#Requirements)
-- [License](#license)
-- [Project Status](#project-status)
-- [References](#references)
-- [Contact](#contact)
+
 
 ## HowToRun
 __MS Windows__ compiled version 1.0 located in:
@@ -53,6 +51,15 @@ Documentation generated with sphinx module
 download: https://github.com/Tungsten03/projek_koncowy/tree/tests/docs/_build/html
 to open it localy
 **Github Pages in progress** - a painfull loss for now
+
+## MainTech:
+__Language__: Python 3
+__GUI__: tkinter
+__Database__: SQLite
+__ORM__: peewee
+__Documentation__: sphinx
+__Compilation__: pyinstaller
+__Unit Tests Coverage__: coverage.py 
 
 ###Disclaimer
 I do apologize for github repo mess - need to work on git more
