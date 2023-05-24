@@ -1,8 +1,8 @@
 # KRAQEN 1.0
 ----Kacper Rajewski Air Quality Environment----
-The application was developed as a final project for postgraduate studies
-
-The program requests data from the GIOS API and stores it in an SQLite database. 
+The application was developed as a final project for postgraduate studies  
+  
+The program requests data from the GIOS API and stores it in an SQLite database. <br>
 The main functionality of the application focuses on analyzing the measurement data from air quality monitoring stations in Poland.
 
 ### Author:
@@ -18,13 +18,13 @@ __Kacper Rajewski__
 
 
 ## HowToRun
-__MS Windows__ compiled version 1.0 located in:
+__MS Windows__ compiled version 1.0 located in:<br>
 https://github.com/Tungsten03/projek_koncowy/tree/tests/dist/Main
 
 **OR**
 
-Download source code listed below and run __Main.py__
-__requirements__ to set up the virtual environment prepared using pip freeze
+Download source code listed below and run __Main.py__<br>
+__requirements__ to set up the virtual environment prepared using pip freeze<br>
 run: __pip install -r requirements.txt__
 
 __Source code__:
